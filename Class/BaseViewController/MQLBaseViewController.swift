@@ -13,6 +13,13 @@ import MJRefresh
 
 class MQLBaseViewController: UIViewController {
     
+    //是否登录
+    var isLogon: Bool = false
+    
+    //未登录显示游客视图
+    var visitorView: UIView = UIView(frame: CGRect.zero)
+    
+    //登录后显示表格
     var tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
     
     //自定义导航条
@@ -41,7 +48,9 @@ class MQLBaseViewController: UIViewController {
     
     /// 加载数据
     func loadData() -> () {
-        
+        //基类无任何加载
+        self.tableView.mj_header.endRefreshing()
+        self.tableView.mj_footer.endRefreshing()
     }
     
     //MARK: 屏幕旋转相关
@@ -81,7 +90,7 @@ extension MQLBaseViewController {
         specialSettingToNavigtionBar()
         
         /// 设置表格视图
-        setTableView()
+        isLogon ? setTableView() : setVisitorView()
     }
     
     
@@ -158,6 +167,20 @@ extension MQLBaseViewController {
         //设置脚
         tableView.mj_footer = footer
         
+    }
+    
+    //设置
+    func setVisitorView() -> () {
+        view.addSubview(visitorView)
+        
+        let height: CGFloat = tabBarController?.tabBar.bounds.height ?? 0
+        
+        visitorView.snp_makeConstraints { (make) in
+            make.left.equalTo(view.snp_left).offset(0)
+            make.top.equalTo(navigtionBar.snp_bottom).offset(0)
+            make.right.equalTo(view.snp_right).offset(0)
+            make.bottom.equalTo(view.snp_bottom).offset(-height)
+        }
     }
 }
 
