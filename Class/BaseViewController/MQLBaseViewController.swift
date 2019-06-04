@@ -129,6 +129,11 @@ extension MQLBaseViewController {
     private func addMJRefreshControl() -> () {
         //创建头
         let header = MJRefreshNormalHeader {
+            if self.tableView.mj_footer.state == .refreshing {
+                //自己结束
+                self.tableView.mj_header.endRefreshing()
+                return
+            }
             self.loadData()
         }
         //隐藏时间
@@ -140,6 +145,11 @@ extension MQLBaseViewController {
         
         //创建脚
         let footer = MJRefreshAutoNormalFooter {
+            if self.tableView.mj_header.state == .refreshing {
+                //自己结束
+                self.tableView.mj_footer.endRefreshing()
+                return
+            }
             self.loadData()
         }
         // 当上拉刷新控件出现10%时，就会自动刷新。这个值默认是1.0（也就是上拉刷新100%出现时，才会自动刷新）

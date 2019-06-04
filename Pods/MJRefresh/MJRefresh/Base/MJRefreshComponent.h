@@ -88,7 +88,7 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)(void);
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change NS_REQUIRES_SUPER;
 /** 当scrollView的contentSize发生改变的时候调用 */
 - (void)scrollViewContentSizeDidChange:(NSDictionary *)change NS_REQUIRES_SUPER;
-/** 当scrollView的拖拽状态发生改变的时候调用 */
+/** 当scrollView的拖拽状态发生改变的时候调用sta */
 - (void)scrollViewPanStateDidChange:(NSDictionary *)change NS_REQUIRES_SUPER;
 
 
