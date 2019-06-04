@@ -916,6 +916,12 @@ class MQLNavigationBar: UINavigationBar {
 
 }
 
+---在工程目录下执行pod install后，生成xxx.xcworkspace工程文件，用sourceTree提交,发现xxx.xcworkspace工程文件提不上去，原因是被gitignore过滤了，sourceTree有两处设置了过滤：
+1、全局忽略列表
+2、仓库指定忽略列表
+从这两个地方，去掉IDEWorkspaceChecks.plist和contents.xcworkspacedata
+
+
 
 　　
 　　
