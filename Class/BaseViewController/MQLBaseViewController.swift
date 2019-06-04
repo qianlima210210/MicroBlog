@@ -17,7 +17,7 @@ class MQLBaseViewController: UIViewController {
     var isLogon: Bool = false
     
     //未登录显示游客视图
-    var visitorView: UIView = UIView(frame: CGRect.zero)
+    var visitorView: MQLVisitorView = (Bundle.main.loadNibNamed("MQLVisitorView", owner: nil, options: nil)?.last as? MQLVisitorView) ?? MQLVisitorView()
     
     //登录后显示表格
     var tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)

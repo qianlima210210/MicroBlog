@@ -43,6 +43,8 @@
 		D01E2C93229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E2C86229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m */; };
 		D01E2C94229EC2DA00A22DE0 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E2C87229EC2DA00A22DE0 /* NSArray+Log.m */; };
 		D01E2CA6229ED6BD00A22DE0 /* MQLMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01E2CA5229ED6BD00A22DE0 /* MQLMainTabBarController.swift */; };
+		D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */; };
+		D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B372D22A66DE80073E781 /* MQLVisitorView.xib */; };
 		D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B51229FD989005E19FE /* Bundle+extension.swift */; };
 		D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */; };
 		D0E23B5622A100FA005E19FE /* MQLBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5422A100FA005E19FE /* MQLBaseTabBarController.swift */; };
@@ -108,6 +110,8 @@
 		D01E2C88229EC2DA00A22DE0 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		D01E2CA1229EC6E900A22DE0 /* MicroBlog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroBlog-Bridging-Header.h"; sourceTree = "<group>"; };
 		D01E2CA5229ED6BD00A22DE0 /* MQLMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MQLMainTabBarController.swift; path = ../../MicroBlog/MQLMainTabBarController.swift; sourceTree = "<group>"; };
+		D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLVisitorView.swift; sourceTree = "<group>"; };
+		D05B372D22A66DE80073E781 /* MQLVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLVisitorView.xib; sourceTree = "<group>"; };
 		D0E23B51229FD989005E19FE /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLBaseNavigationController.swift; sourceTree = "<group>"; };
 		D0E23B5422A100FA005E19FE /* MQLBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLBaseTabBarController.swift; sourceTree = "<group>"; };
@@ -461,6 +465,8 @@
 			isa = PBXGroup;
 			children = (
 				D0E23B5D22A174F5005E19FE /* MQLNavigationBar.swift */,
+				D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */,
+				D05B372D22A66DE80073E781 /* MQLVisitorView.xib */,
 			);
 			path = SubSystemViewClass;
 			sourceTree = "<group>";
@@ -537,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01E2C1722997F6000A22DE0 /* README.md in Resources */,
+				D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */,
 				D01E2C29229A5E2B00A22DE0 /* Localizable.strings in Resources */,
 				D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */,
 				D01E2C54229E8E1B00A22DE0 /* MQLProfileViewController.xib in Resources */,
@@ -643,6 +650,7 @@
 				D01E2C8F229EC2DA00A22DE0 /* UIButton+CZAddition.m in Sources */,
 				D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */,
 				D01E2C8E229EC2DA00A22DE0 /* NSString+CZPath.m in Sources */,
+				D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */,
 				D01E2C90229EC2DA00A22DE0 /* NSObject+CZRuntime.m in Sources */,
 				D01E2C61229EA16600A22DE0 /* MQLMessageViewModel.swift in Sources */,
 				D01E2C64229EA18600A22DE0 /* MQLMessageViewController.swift in Sources */,
