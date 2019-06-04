@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import MJRefresh
 
 
 class MQLBaseViewController: UIViewController {
@@ -28,7 +29,7 @@ class MQLBaseViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupUI()
-        loadData()
+        
     }
     
     override var title: String? {
@@ -119,9 +120,38 @@ extension MQLBaseViewController {
             make.right.equalTo(view.snp_right).offset(0)
             make.bottom.equalTo(view.snp_bottom).offset(-height)
         }
+        
+        addMJRefreshControl()
+    }
+    
+    
+    /// 添加MJ刷新控件
+    private func addMJRefreshControl() -> () {
+        //创建头
+        let header = MJRefreshNormalHeader {
+            self.loadData()
+        }
+        //隐藏时间
+        header?.lastUpdatedTimeLabel.isHidden = true
+        //自动进入刷新
+        header?.beginRefreshing()
+        //设置头
+        tableView.mj_header = header
+        
+        //创建脚
+        let footer = MJRefreshAutoNormalFooter {
+            self.loadData()
+        }
+        // 当上拉刷新控件出现10%时，就会自动刷新。这个值默认是1.0（也就是上拉刷新100%出现时，才会自动刷新）
+        footer?.triggerAutomaticallyRefreshPercent = 0.1
+        
+        //设置脚
+        tableView.mj_footer = footer
+        
     }
 }
 
+//MARK: UITableViewDataSource, UITableViewDelegate
 extension MQLBaseViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
@@ -130,6 +160,30 @@ extension MQLBaseViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
-    
 }
+
+//MARK: UIScrollViewDelegate
+extension MQLBaseViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        let maxHeight = scrollView.bounds.height
+        let contentHeight = scrollView.contentSize.height
+        
+        if contentHeight > maxHeight {
+            tableView.mj_footer.isHidden = false
+        }else{
+            tableView.mj_footer.isHidden = true
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

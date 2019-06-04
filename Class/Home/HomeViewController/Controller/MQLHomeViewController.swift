@@ -35,11 +35,13 @@ class MQLHomeViewController: MQLBaseViewController {
     override func loadData() {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            for i in 0..<20 {
+            for i in 0..<5 {
                 self.statusList.insert(i.description, at: 0)
             }
             
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
 
