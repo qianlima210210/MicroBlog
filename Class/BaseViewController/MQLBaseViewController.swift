@@ -22,6 +22,9 @@ class MQLBaseViewController: UIViewController {
     //登录后显示表格
     var tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
     
+    //出去导航和tabBar标签后，中间内容区域
+    private var contentView: UIView = UIView(frame: CGRect.zero)
+    
     //自定义导航条
     lazy var navigtionBar: MQLNavigationBar = MQLNavigationBar(frame: CGRect(x: 0,
                                                                            y: 0,
@@ -89,6 +92,9 @@ extension MQLBaseViewController {
         //添加自定义导航栏
         specialSettingToNavigtionBar()
         
+        //添加中间内容视图
+        setContentView()
+        
         /// 设置表格视图
         isLogon ? setTableView() : setVisitorView()
     }
@@ -114,20 +120,30 @@ extension MQLBaseViewController {
         view.addSubview(navigtionBar)
     }
     
-    
-    /// 设置表格视图
-    func setTableView() -> () {
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
-        
+    //添加中间内容视图
+    private func setContentView() ->() {
+        view.addSubview(contentView)
         let height: CGFloat = tabBarController?.tabBar.bounds.height ?? 0
         
-        tableView.snp_makeConstraints { (make) in
-            make.left.equalTo(view.snp_left).offset(0)
+        contentView.snp_makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
             make.top.equalTo(navigtionBar.snp_bottom).offset(0)
-            make.right.equalTo(view.snp_right).offset(0)
             make.bottom.equalTo(view.snp_bottom).offset(-height)
+        }
+    }
+    
+    /// 设置表格视图
+    private func setTableView() -> () {
+        tableView.dataSource = self
+        tableView.delegate = self
+        contentView.addSubview(tableView)
+        
+        tableView.snp_makeConstraints { (make) in
+            make.left.equalTo(contentView.snp_left).offset(0)
+            make.top.equalTo(contentView.snp_top).offset(0)
+            make.right.equalTo(contentView.snp_right).offset(0)
+            make.bottom.equalTo(contentView.snp_bottom).offset(0)
         }
         
         addMJRefreshControl()
@@ -170,16 +186,14 @@ extension MQLBaseViewController {
     }
     
     //设置
-    func setVisitorView() -> () {
-        view.addSubview(visitorView)
-        
-        let height: CGFloat = tabBarController?.tabBar.bounds.height ?? 0
+    private func setVisitorView() -> () {
+        contentView.addSubview(visitorView)
         
         visitorView.snp_makeConstraints { (make) in
-            make.left.equalTo(view.snp_left).offset(0)
-            make.top.equalTo(navigtionBar.snp_bottom).offset(0)
-            make.right.equalTo(view.snp_right).offset(0)
-            make.bottom.equalTo(view.snp_bottom).offset(-height)
+            make.center.equalToSuperview()
+            make.left.equalTo(contentView.snp_left).offset(0)
+            make.right.equalTo(contentView.snp_right).offset(0)
+            make.height.equalTo(300)
         }
     }
 }
