@@ -19,8 +19,14 @@ class MQLVisitorView: UIView {
             guard let imageName = visitorInfo?["imageName"],
                 let message = visitorInfo?["message"] else { return }
             
-            iconImageView.image = UIImage(named: imageName)
             hintLab.text = message
+            
+            if imageName == "" {
+                return
+            }
+            
+            iconImageView.image = UIImage(named: imageName)
+            houseImageView.isHidden = true
         }
     }
     
