@@ -51,6 +51,10 @@
                     <state key="normal" title="登录">
                         <color key="titleColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     </state>
+                    <connections>
+                        <action selector="loginBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="9GX-aV-Anw"/>
+                        <action selector="registerBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="eau-Rm-oX8"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWT-ei-qZL">
                     <rect key="frame" x="257.5" y="266" width="100" height="34"/>
@@ -84,6 +88,11 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="hintLab" destination="SNP-vW-Rb5" id="lUf-I2-jaL"/>
+                <outlet property="houseImageView" destination="Qog-AO-EKi" id="WFU-5u-QV9"/>
+                <outlet property="iconImageView" destination="Q8x-Vy-6XB" id="BxN-ni-ddi"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="112.83482142857142"/>
         </view>
     </objects>

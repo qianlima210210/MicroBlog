@@ -10,6 +10,20 @@ import UIKit
 
 class MQLVisitorView: UIView {
 
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var houseImageView: UIImageView!
+    @IBOutlet weak var hintLab: UILabel!
+    
+    var visitorInfo: [String : String]?{
+        didSet {
+            guard let imageName = visitorInfo?["imageName"],
+                let message = visitorInfo?["message"] else { return }
+            
+            iconImageView.image = UIImage(named: imageName)
+            hintLab.text = message
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -19,6 +33,12 @@ class MQLVisitorView: UIView {
         super.init(coder: aDecoder)
     }
     
+    @IBAction func loginBtnClicked(_ sender: Any) {
+        
+    }
     
-
+    @IBAction func registerBtnClicked(_ sender: Any) {
+        
+    }
+    
 }
