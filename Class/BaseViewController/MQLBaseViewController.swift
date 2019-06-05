@@ -14,7 +14,7 @@ import MJRefresh
 class MQLBaseViewController: UIViewController {
     
     //是否登录
-    var isLogon: Bool = false
+    var isLogon: Bool = true
     
     //未登录显示游客视图
     var visitorView: MQLVisitorView = (Bundle.main.loadNibNamed("MQLVisitorView", owner: nil, options: nil)?.last as? MQLVisitorView) ?? MQLVisitorView()
@@ -191,8 +191,8 @@ extension MQLBaseViewController {
         
         visitorView.snp_makeConstraints { (make) in
             make.center.equalToSuperview()
-            make.left.equalTo(contentView.snp_left).offset(0)
-            make.right.equalTo(contentView.snp_right).offset(0)
+            make.left.equalTo(contentView.snp_left).offset(20)
+            make.right.equalTo(contentView.snp_right).offset(-20)
             make.height.equalTo(300)
         }
     }

@@ -69,8 +69,8 @@ extension MQLMainTabBarController {
             
         }
         
-        guard let d = data,
-            let itemArray = (try? JSONSerialization.jsonObject(with: d, options: [.allowFragments])) as? Array<Dictionary<String, Any>> else { return }
+        guard let info = data,
+            let itemArray = (try? JSONSerialization.jsonObject(with: info, options: [.allowFragments])) as? Array<Dictionary<String, Any>> else { return }
 
         var arrayM = Array<UIViewController>()
         for item in itemArray {
