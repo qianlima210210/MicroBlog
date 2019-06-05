@@ -1,0 +1,45 @@
+[
+  {
+    "className" : "MQLHomeViewController",
+    "title" : "首页",
+    "selectedImage" : "tabbar_home_selected",
+    "visitorInfo" : {
+      "imageName" : "",
+      "message" : "网易是中国领先的互联网技术公司，为用户提供免费邮箱、游戏、搜索引擎服务，开设新闻、娱乐"
+    },
+    "image" : "tabbar_home"
+  },
+  {
+    "title" : "消息",
+    "selectedImage" : "tabbar_message_center_selected",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "message" : "63贵州人事考试信息网发布最新最全最好的贵州人事考试信息 公务员 事业单位 人才招聘等"
+    },
+    "className" : "MQLMessageViewController",
+    "image" : "tabbar_message_center"
+  },
+  {
+    "className" : ""
+  },
+  {
+    "title" : "发现",
+    "selectedImage" : "tabbar_discover_selected",
+    "className" : "MQLDiscoverViewController",
+    "image" : "tabbar_discover",
+    "visitorInfo" : {
+      "message" : "新闻,新闻中心,包含有时政新闻,国内新闻,国际新闻,社会新闻,时事评",
+      "imageName" : "visitordiscover_image_message"
+    }
+  },
+  {
+    "title" : "个人",
+    "className" : "MQLProfileViewController",
+    "visitorInfo" : {
+      "message" : "凯恩之角是暗黑破坏神3官方合作中文网站,提供暗黑破坏神3下载",
+      "imageName" : "visitordiscover_image_profile"
+    },
+    "selectedImage" : "tabbar_profile_selected",
+    "image" : "tabbar_profile"
+  }
+]

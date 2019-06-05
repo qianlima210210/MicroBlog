@@ -54,20 +54,21 @@ extension MQLMainTabBarController {
     //MARK: 设置子控制器
     private func setupChildControllers() -> () {
         
-        let itemArray: Array<Dictionary<String, Any>> = [
-            ["className":("MQLHomeViewController"), "title":"首页", "image":"tabbar_home", "selectedImage":"tabbar_home_selected", "visitorInfo":["imageName":"", "message":"网易是中国领先的互联网技术公司，为用户提供免费邮箱、游戏、搜索引擎服务，开设新闻、娱乐"]
-            ],
-            ["className":("MQLMessageViewController"), "title":"消息", "image":"tabbar_message_center", "selectedImage":"tabbar_message_center_selected", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"63贵州人事考试信息网发布最新最全最好的贵州人事考试信息 公务员 事业单位 人才招聘等"]
-            ],
-            ["className":("")],
-            ["className":("MQLDiscoverViewController"), "title":"发现", "image":"tabbar_discover", "selectedImage":"tabbar_discover_selected", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"新闻,新闻中心,包含有时政新闻,国内新闻,国际新闻,社会新闻,时事评"]
-            ],
-            ["className":("MQLProfileViewController"), "title":"个人", "image":"tabbar_profile", "selectedImage":"tabbar_profile_selected", "visitorInfo":["imageName":"visitordiscover_image_profile", "message":"凯恩之角是暗黑破坏神3官方合作中文网站,提供暗黑破坏神3下载"]
-            ]
-        ]
-        
-        //(itemArray as NSArray).write(toFile: "/Users/maqianli/Desktop/default.plist", atomically: true)
-        
+        guard let url = Bundle.main.url(forResource: "default", withExtension: "json"),
+            let data = try? Data.init(contentsOf: url),
+            let itemArray = (try? JSONSerialization.jsonObject(with: data, options: [.allowFragments])) as? Array<Dictionary<String, Any>> else { return }
+        /*
+        (itemArray as NSArray).write(toFile: "/Users/maqianli/Desktop/default.plist", atomically: true)
+        do {
+            let data = try JSONSerialization.data(withJSONObject: itemArray, options: [.prettyPrinted])
+            let url = URL(fileURLWithPath: "/Users/maqianli/Desktop/default.json")
+            
+            try data.write(to: url)
+            
+        } catch {
+            print(error)
+        }
+        */
         var arrayM = Array<UIViewController>()
         for item in itemArray {
             let vc = controller(item)
