@@ -24,12 +24,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
-        
+        imitateAppInfoLoad()
         
         return true
     }
 
-    
+}
 
+extension AppDelegate {
+    
+    /// 模拟网络加载
+    func imitateAppInfoLoad() -> () {
+        
+        DispatchQueue.global().async {
+            guard let url = Bundle.main.url(forResource: "default", withExtension: "json"),
+                let data = try? Data.init(contentsOf: url),
+                let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else{
+                
+                return;
+            }
+            
+            let destPath = (docPath as NSString).appendingPathComponent("net.json")
+            do {
+                let destUrl = URL(fileURLWithPath: destPath)
+                try data.write(to: destUrl)
+            } catch {
+                
+            }
+        }
+    }
 }
 

@@ -53,22 +53,25 @@ extension MQLMainTabBarController {
     
     //MARK: 设置子控制器
     private func setupChildControllers() -> () {
-        
-        guard let url = Bundle.main.url(forResource: "default", withExtension: "json"),
-            let data = try? Data.init(contentsOf: url),
-            let itemArray = (try? JSONSerialization.jsonObject(with: data, options: [.allowFragments])) as? Array<Dictionary<String, Any>> else { return }
-        /*
-        (itemArray as NSArray).write(toFile: "/Users/maqianli/Desktop/default.plist", atomically: true)
-        do {
-            let data = try JSONSerialization.data(withJSONObject: itemArray, options: [.prettyPrinted])
-            let url = URL(fileURLWithPath: "/Users/maqianli/Desktop/default.json")
-            
-            try data.write(to: url)
-            
-        } catch {
-            print(error)
+
+        guard let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else{
+                return;
         }
-        */
+        
+        let destPath = (docPath as NSString).appendingPathComponent("net.json")
+        let destUrl = URL(fileURLWithPath: destPath)
+        var data = try? Data.init(contentsOf: destUrl)
+        if data == nil {
+            if let defUrl = Bundle.main.url(forResource: "default", withExtension: "json"),
+                let defData = try? Data.init(contentsOf: defUrl) {
+                data = defData
+            }
+            
+        }
+        
+        guard let d = data,
+            let itemArray = (try? JSONSerialization.jsonObject(with: d, options: [.allowFragments])) as? Array<Dictionary<String, Any>> else { return }
+
         var arrayM = Array<UIViewController>()
         for item in itemArray {
             let vc = controller(item)
