@@ -22,12 +22,24 @@ class MQLVisitorView: UIView {
             hintLab.text = message
             
             if imageName == "" {
+                startAnimation()
                 return
             }
             
             iconImageView.image = UIImage(named: imageName)
             houseImageView.isHidden = true
         }
+    }
+    
+    // 旋转iconImageView
+    func startAnimation() -> () {
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.toValue = 2 * Double.pi
+        animation.duration = 15
+        animation.isRemovedOnCompletion = false
+        
+        //将动画添加到ImageView
+        iconImageView.layer.add(animation, forKey: nil)
     }
     
     override init(frame: CGRect) {
