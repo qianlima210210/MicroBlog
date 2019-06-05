@@ -48,13 +48,15 @@ class MQLHomeViewController: MQLBaseViewController {
 }
 
 extension MQLHomeViewController {
-    override func setupUI() {
-        super.setupUI()
+    
+    override func setTableView() {
+        super.setTableView()
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(titleBtnClicked(sender:)))
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
+    
 }
 
 //落地实现UITableViewDataSource, UITableViewDelegate

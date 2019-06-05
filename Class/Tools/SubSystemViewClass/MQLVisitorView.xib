@@ -92,6 +92,8 @@
                 <outlet property="hintLab" destination="SNP-vW-Rb5" id="lUf-I2-jaL"/>
                 <outlet property="houseImageView" destination="Qog-AO-EKi" id="WFU-5u-QV9"/>
                 <outlet property="iconImageView" destination="Q8x-Vy-6XB" id="BxN-ni-ddi"/>
+                <outlet property="loginBtn" destination="lyQ-Pa-jsF" id="6yh-a9-TFx"/>
+                <outlet property="registerBtn" destination="cWT-ei-qZL" id="nNO-ei-WXZ"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="112.83482142857142"/>
         </view>

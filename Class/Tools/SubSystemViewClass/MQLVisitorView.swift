@@ -13,6 +13,9 @@ class MQLVisitorView: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var houseImageView: UIImageView!
     @IBOutlet weak var hintLab: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
+    
     
     var visitorInfo: [String : String]?{
         didSet {

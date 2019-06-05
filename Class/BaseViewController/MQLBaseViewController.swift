@@ -14,7 +14,7 @@ import MJRefresh
 class MQLBaseViewController: UIViewController {
     
     //是否登录
-    var isLogon: Bool = true
+    var isLogon: Bool = false
     
     //未登录显示游客视图
     var visitorView: MQLVisitorView = (Bundle.main.loadNibNamed("MQLVisitorView", owner: nil, options: nil)?.last as? MQLVisitorView) ?? MQLVisitorView()
@@ -85,7 +85,7 @@ class MQLBaseViewController: UIViewController {
 extension MQLBaseViewController {
     
     /// 设置UI
-    @objc func setupUI() -> () {
+    private func setupUI() -> () {
         
         view.backgroundColor = UIColor.white
         
@@ -134,7 +134,7 @@ extension MQLBaseViewController {
     }
     
     /// 设置表格视图
-    private func setTableView() -> () {
+   @objc func setTableView() -> () {
         tableView.dataSource = self
         tableView.delegate = self
         contentView.addSubview(tableView)
@@ -186,7 +186,7 @@ extension MQLBaseViewController {
     }
     
     //设置
-    private func setVisitorView() -> () {
+    @objc func setVisitorView() -> () {
         contentView.addSubview(visitorView)
         
         visitorView.snp_makeConstraints { (make) in
@@ -195,6 +195,14 @@ extension MQLBaseViewController {
             make.right.equalTo(contentView.snp_right).offset(-20)
             make.height.equalTo(300)
         }
+        
+        //添加登录、注册响应
+        visitorView.loginBtn.addTarget(self, action: #selector(loginBtnClicked), for: .touchUpInside)
+        visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
+        
+        //设置左右导航项
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "登录", target: self, action: #selector(loginBtnClicked))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "注册", target: self, action: #selector(registerBtnClicked))
     }
 }
 
@@ -223,8 +231,16 @@ extension MQLBaseViewController {
     }
 }
 
-
-
+//MARK:登录、注册响应
+extension MQLBaseViewController {
+    @objc func loginBtnClicked() -> () {
+        print(#function)
+    }
+    
+    @objc func registerBtnClicked() -> () {
+        print(#function)
+    }
+}
 
 
 

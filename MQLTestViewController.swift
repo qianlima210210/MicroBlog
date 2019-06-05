@@ -31,10 +31,16 @@ class MQLTestViewController: MQLBaseViewController {
         
     }
     
-    override func setupUI() {
-        super.setupUI()
+
+    
+
+}
+
+extension MQLTestViewController {
+    
+    override func setTableView() {
+        super.setTableView()
         
         navItem.rightBarButtonItem = UIBarButtonItem(title: "next", target: self, action: #selector(titleBtnClicked(sender:)))
     }
-
 }
