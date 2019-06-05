@@ -39,6 +39,7 @@ class MQLVisitorView: UIView {
         let animation = CABasicAnimation(keyPath: "transform.rotation")
         animation.toValue = 2 * Double.pi
         animation.duration = 15
+        animation.repeatCount = MAXFLOAT
         animation.isRemovedOnCompletion = false
         
         //将动画添加到ImageView
