@@ -112,7 +112,7 @@ extension MQLBaseViewController {
         //设置导航背景颜色
         navigtionBar.barTintColor = .white
         //设置导航左右item文字颜色
-        navigtionBar.tintColor = .yellow
+        navigtionBar.tintColor = .orange
         //设置标题文字颜色、字体大小
         navigtionBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black,
                                             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)]
@@ -201,8 +201,8 @@ extension MQLBaseViewController {
         visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
         
         //设置左右导航项
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "登录", target: self, action: #selector(loginBtnClicked))
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "注册", target: self, action: #selector(registerBtnClicked))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(loginBtnClicked))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(registerBtnClicked))
     }
 }
 
