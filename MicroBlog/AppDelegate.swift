@@ -26,6 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         imitateAppInfoLoad()
         
+        NetWorkTool.goToLogin(userName: "", password: "", completionHandler: { (_) in
+            
+        }, errorHandler: { (_) in
+            
+        }) { (_) in
+            
+        }
+        
         return true
     }
 
