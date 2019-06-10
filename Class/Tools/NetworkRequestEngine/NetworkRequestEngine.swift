@@ -87,7 +87,37 @@ class NetworkRequestEngine: NSObject {
     }
     
     //上传文件
-    
+    func upload(url: URLConvertible, parameters: Parameters? = nil, completionHandler: @escaping (DataResponse<Any>) -> Void) {
+        
+        manager.upload(multipartFormData: { (multipartFormData) in
+            
+            /**multipartFormData.append(<#T##data: Data##Data#>, withName: <#T##String#>, fileName: <#T##String#>, mimeType: <#T##String#>)
+             采用post表单上传,参数解释：*  withName:和后台服务器的name要一致;
+                                       *  fileName:可以充分利用写成用户的id，但是格式要写对;
+                                       *   mimeType：规定的，要上传其他格式可以自行百度查一下;
+              如果需要上传多个文件,就多调用几次*/
+            
+            /**遍历参数字典
+            if let parameters = parameters {
+                for (key, value) in parameters {
+                    multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
+                    
+                }
+            }*/
+            
+        }, to: url) { (encodingResult) in
+            switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON(completionHandler: { (response) in
+                        //对于response的具体处理放在视图模型中
+                        completionHandler(response)
+                    })
+                case .failure(let error):
+                    print(error)
+            }
+        }
+        
+    }
 }
 
 
