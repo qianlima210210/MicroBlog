@@ -44,6 +44,8 @@
 		D01E2C94229EC2DA00A22DE0 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E2C87229EC2DA00A22DE0 /* NSArray+Log.m */; };
 		D01E2CA6229ED6BD00A22DE0 /* MQLMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01E2CA5229ED6BD00A22DE0 /* MQLMainTabBarController.swift */; };
 		D034A3DE22A7A8F700130D15 /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = D034A3DD22A7A8F700130D15 /* default.json */; };
+		D034A3E222AE274100130D15 /* NetworkRequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */; };
+		D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */; };
 		D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */; };
 		D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B372D22A66DE80073E781 /* MQLVisitorView.xib */; };
 		D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B51229FD989005E19FE /* Bundle+extension.swift */; };
@@ -112,6 +114,8 @@
 		D01E2CA1229EC6E900A22DE0 /* MicroBlog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroBlog-Bridging-Header.h"; sourceTree = "<group>"; };
 		D01E2CA5229ED6BD00A22DE0 /* MQLMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MQLMainTabBarController.swift; path = ../../MicroBlog/MQLMainTabBarController.swift; sourceTree = "<group>"; };
 		D034A3DD22A7A8F700130D15 /* default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default.json; sourceTree = "<group>"; };
+		D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestUrl.swift; sourceTree = "<group>"; };
+		D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestEngine.swift; sourceTree = "<group>"; };
 		D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLVisitorView.swift; sourceTree = "<group>"; };
 		D05B372D22A66DE80073E781 /* MQLVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLVisitorView.xib; sourceTree = "<group>"; };
 		D0E23B51229FD989005E19FE /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 		D01E2C6E229EC2C800A22DE0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D034A3E022AE26C800130D15 /* NetworkRequestEngine */,
 				D0E23B5C22A174F5005E19FE /* SubSystemViewClass */,
 				D0E23B5B22A16837005E19FE /* Macro */,
 				D0E23B50229FD913005E19FE /* Extension */,
@@ -446,6 +451,15 @@
 				D01E2C88229EC2DA00A22DE0 /* NSString+CZPath.h */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		D034A3E022AE26C800130D15 /* NetworkRequestEngine */ = {
+			isa = PBXGroup;
+			children = (
+				D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */,
+				D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */,
+			);
+			path = NetworkRequestEngine;
 			sourceTree = "<group>";
 		};
 		D0E23B50229FD913005E19FE /* Extension */ = {
@@ -660,6 +674,7 @@
 				D01E2C64229EA18600A22DE0 /* MQLMessageViewController.swift in Sources */,
 				D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */,
 				D0E23B5822A1346E005E19FE /* MQLTestViewController.swift in Sources */,
+				D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */,
 				D01E2C6B229EA1E900A22DE0 /* MQLHomeViewModel.swift in Sources */,
 				D01E2C4E229E8D7200A22DE0 /* MQLProfileDataModel.swift in Sources */,
 				D01E2C5C229EA13300A22DE0 /* MQLDiscoverViewController.swift in Sources */,
@@ -672,6 +687,7 @@
 				D01E2C5F229EA15900A22DE0 /* MQLMessageDataModel.swift in Sources */,
 				D01E2C92229EC2DA00A22DE0 /* NSString+CZHash.m in Sources */,
 				D01E2C6D229EA1F900A22DE0 /* MQLHomeDataModel.swift in Sources */,
+				D034A3E222AE274100130D15 /* NetworkRequestUrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

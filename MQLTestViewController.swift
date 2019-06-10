@@ -29,20 +29,16 @@ class MQLTestViewController: MQLBaseViewController {
     }
     
     private func generalInit() -> () {
+        let n0 = NetworkRequestEngine.share
+        let n1 = NetworkRequestEngine.share
         
-        request("https://httpbin.org/get").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
-        }
+//        n0.request("https://httpbin.org/get", parameters:["name":"MQL"]) { (response) in
+//            print(response)
+//        }
+        
+//        n1.request("https://httpbin.org/post", method: .post, parameters:["name":"MQL"]) { (response) in
+//            print(response)
+//        }
     }
     
 }
@@ -56,14 +52,7 @@ extension MQLTestViewController {
     }
 }
 
-/*
- * 配置你的网络环境
- */
-enum  NetworkEnvironment{
-    case Development
-    case Test
-    case Distribution
-}
+
 
 //定义多个私有属性，来存储不同的服务地址
 // 登录服务
