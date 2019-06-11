@@ -30,15 +30,14 @@ class MQLTestViewController: MQLBaseViewController {
     
     private func generalInit() -> () {
         let n0 = NetworkRequestEngine.share
-        let n1 = NetworkRequestEngine.share
         
-//        n0.request("https://httpbin.org/get", parameters:["name":"MQL"]) { (response) in
-//            print(response)
-//        }
-        
-//        n1.request("https://httpbin.org/post", method: .post, parameters:["name":"MQL"]) { (response) in
-//            print(response)
-//        }
+        n0.request("https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002SUK3C_5a2KB590f93dd00DxZ3yD") { (response) in
+            if let value = response.result.value,
+                let dic = value as? [String:AnyObject] {
+                print(dic)
+            }
+        }
+
     }
     
 }
