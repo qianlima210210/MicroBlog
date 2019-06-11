@@ -108,6 +108,12 @@ class NetworkRequestEngine: NSObject {
         }, to: url) { (encodingResult) in
             switch encodingResult {
                 case .success(let upload, _, _):
+                    //上传进度
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress.fractionCompleted)
+                    })
+                    
+                    //上传成功
                     upload.responseJSON(completionHandler: { (response) in
                         //对于response的具体处理放在视图模型中
                         completionHandler(response)
