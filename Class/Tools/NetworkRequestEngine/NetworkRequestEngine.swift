@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import MBProgressHUD
 
 /*
  * 配置各种网络请求环境
@@ -26,6 +27,9 @@ class NetworkRequestEngine: NSObject {
         share.currentNetworkEnvironment = .Development
         return share
     }()
+    
+    //
+    var access_token: String? = "2.002SUK3C_5a2KB590f93dd00DxZ3yD123"
     
     //定义多个私有属性，来存储不同的服务地址
     // 分享服务
@@ -78,16 +82,22 @@ class NetworkRequestEngine: NSObject {
         parameters: Parameters? = nil,
         encoding: ParameterEncoding = URLEncoding.default,
         headers: HTTPHeaders? = nil,
-        completionHandler: @escaping (DataResponse<Any>) -> Void){
+        completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void){
         
         manager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { (response) in
-            //对于response的具体处理放在视图模型中
-            completionHandler(response)
+            if let error = response.result.error as NSError? {
+                completionHandler(nil, error)
+            }else{
+                let value = response.result.value as? [String:AnyObject]
+                completionHandler(value, nil)
+                self.invalid_access_token(value)
+            }
+            
         }
     }
     
     //上传文件
-    func upload(url: URLConvertible, parameters: Parameters? = nil, completionHandler: @escaping (DataResponse<Any>) -> Void) {
+    func upload(url: URLConvertible, parameters: Parameters? = nil, completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void, uploadProgress: @escaping (Double) -> Void) {
         
         manager.upload(multipartFormData: { (multipartFormData) in
             
@@ -110,21 +120,65 @@ class NetworkRequestEngine: NSObject {
                 case .success(let upload, _, _):
                     //上传进度
                     upload.uploadProgress(closure: { (progress) in
-                        print(progress.fractionCompleted)
+                        uploadProgress(progress.fractionCompleted)
                     })
                     
                     //上传成功
                     upload.responseJSON(completionHandler: { (response) in
-                        //对于response的具体处理放在视图模型中
-                        completionHandler(response)
+                        if let error = response.result.error as NSError? {
+                            completionHandler(nil, error)
+                        }else{
+                            let value = response.result.value as? [String:AnyObject]
+                            completionHandler(value, nil)
+                        }
                     })
                 case .failure(let error):
-                    print(error)
+                    let error = error as NSError
+                    completionHandler(nil, error)
+                
             }
         }
         
     }
 }
 
+
+extension NetworkRequestEngine {
+    //accessToken Get、Post Request
+    func accessTokenRequest(
+        _ url: URLConvertible,
+        method: HTTPMethod = .get,
+        parameters: Parameters? = nil,
+        encoding: ParameterEncoding = URLEncoding.default,
+        headers: HTTPHeaders? = nil,
+        completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void){
+        
+        //添加access_token
+        var access_token = ""
+        if self.access_token != nil {
+            access_token = self.access_token!
+        }
+        
+        var parameters = parameters
+        if parameters == nil {
+            parameters = Parameters()
+        }
+        parameters?["access_token"] = access_token
+        
+        //发起请求
+        request(url, method: method, parameters: parameters, encoding: encoding, headers: headers, completionHandler: completionHandler)
+    }
+    
+    //统一处理access_token失效21332
+    func invalid_access_token(_ value: [String : AnyObject]?) -> () {
+        if let value = value,
+            let error_code = value["error_code"] as? Int{
+            if error_code == 21332{
+                let window = UIApplication.shared.delegate!.window!!
+                MBProgressHUD.showAdded(to: window, text: "access_token失效")
+            }
+        }
+    }
+}
 
 

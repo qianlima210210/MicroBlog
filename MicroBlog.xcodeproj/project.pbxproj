@@ -43,6 +43,15 @@
 		D01E2C93229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E2C86229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m */; };
 		D01E2C94229EC2DA00A22DE0 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D01E2C87229EC2DA00A22DE0 /* NSArray+Log.m */; };
 		D01E2CA6229ED6BD00A22DE0 /* MQLMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01E2CA5229ED6BD00A22DE0 /* MQLMainTabBarController.swift */; };
+		D01EA42F22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA42E22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.m */; };
+		D01EA43822B0E44A000FF0E6 /* toast_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43022B0E44A000FF0E6 /* toast_loading@2x.png */; };
+		D01EA43922B0E44A000FF0E6 /* toast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43122B0E44A000FF0E6 /* toast_warning@3x.png */; };
+		D01EA43A22B0E44A000FF0E6 /* toast_wrong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43222B0E44A000FF0E6 /* toast_wrong@3x.png */; };
+		D01EA43B22B0E44A000FF0E6 /* toast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43322B0E44A000FF0E6 /* toast_warning@2x.png */; };
+		D01EA43C22B0E44A000FF0E6 /* toast_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43422B0E44A000FF0E6 /* toast_right@3x.png */; };
+		D01EA43D22B0E44A000FF0E6 /* toast_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43522B0E44A000FF0E6 /* toast_right@2x.png */; };
+		D01EA43E22B0E44A000FF0E6 /* toast_loading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43622B0E44A000FF0E6 /* toast_loading@3x.png */; };
+		D01EA43F22B0E44A000FF0E6 /* toast_wrong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA43722B0E44A000FF0E6 /* toast_wrong@2x.png */; };
 		D034A3DE22A7A8F700130D15 /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = D034A3DD22A7A8F700130D15 /* default.json */; };
 		D034A3E222AE274100130D15 /* NetworkRequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */; };
 		D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */; };
@@ -113,6 +122,16 @@
 		D01E2C88229EC2DA00A22DE0 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		D01E2CA1229EC6E900A22DE0 /* MicroBlog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroBlog-Bridging-Header.h"; sourceTree = "<group>"; };
 		D01E2CA5229ED6BD00A22DE0 /* MQLMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MQLMainTabBarController.swift; path = ../../MicroBlog/MQLMainTabBarController.swift; sourceTree = "<group>"; };
+		D01EA42D22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+JRAdditional.h"; sourceTree = "<group>"; };
+		D01EA42E22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+JRAdditional.m"; sourceTree = "<group>"; };
+		D01EA43022B0E44A000FF0E6 /* toast_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_loading@2x.png"; sourceTree = "<group>"; };
+		D01EA43122B0E44A000FF0E6 /* toast_warning@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_warning@3x.png"; sourceTree = "<group>"; };
+		D01EA43222B0E44A000FF0E6 /* toast_wrong@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_wrong@3x.png"; sourceTree = "<group>"; };
+		D01EA43322B0E44A000FF0E6 /* toast_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_warning@2x.png"; sourceTree = "<group>"; };
+		D01EA43422B0E44A000FF0E6 /* toast_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_right@3x.png"; sourceTree = "<group>"; };
+		D01EA43522B0E44A000FF0E6 /* toast_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_right@2x.png"; sourceTree = "<group>"; };
+		D01EA43622B0E44A000FF0E6 /* toast_loading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_loading@3x.png"; sourceTree = "<group>"; };
+		D01EA43722B0E44A000FF0E6 /* toast_wrong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toast_wrong@2x.png"; sourceTree = "<group>"; };
 		D034A3DD22A7A8F700130D15 /* default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default.json; sourceTree = "<group>"; };
 		D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestUrl.swift; sourceTree = "<group>"; };
 		D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestEngine.swift; sourceTree = "<group>"; };
@@ -412,6 +431,7 @@
 		D01E2C6E229EC2C800A22DE0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D01EA42C22B0E252000FF0E6 /* MBProgressHUD+JRAdditional */,
 				D034A3E022AE26C800130D15 /* NetworkRequestEngine */,
 				D0E23B5C22A174F5005E19FE /* SubSystemViewClass */,
 				D0E23B5B22A16837005E19FE /* Macro */,
@@ -451,6 +471,23 @@
 				D01E2C88229EC2DA00A22DE0 /* NSString+CZPath.h */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		D01EA42C22B0E252000FF0E6 /* MBProgressHUD+JRAdditional */ = {
+			isa = PBXGroup;
+			children = (
+				D01EA43022B0E44A000FF0E6 /* toast_loading@2x.png */,
+				D01EA43622B0E44A000FF0E6 /* toast_loading@3x.png */,
+				D01EA43522B0E44A000FF0E6 /* toast_right@2x.png */,
+				D01EA43422B0E44A000FF0E6 /* toast_right@3x.png */,
+				D01EA43322B0E44A000FF0E6 /* toast_warning@2x.png */,
+				D01EA43122B0E44A000FF0E6 /* toast_warning@3x.png */,
+				D01EA43722B0E44A000FF0E6 /* toast_wrong@2x.png */,
+				D01EA43222B0E44A000FF0E6 /* toast_wrong@3x.png */,
+				D01EA42D22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.h */,
+				D01EA42E22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.m */,
+			);
+			path = "MBProgressHUD+JRAdditional";
 			sourceTree = "<group>";
 		};
 		D034A3E022AE26C800130D15 /* NetworkRequestEngine */ = {
@@ -559,15 +596,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01EA43F22B0E44A000FF0E6 /* toast_wrong@2x.png in Resources */,
 				D01E2C1722997F6000A22DE0 /* README.md in Resources */,
 				D034A3DE22A7A8F700130D15 /* default.json in Resources */,
 				D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */,
+				D01EA43822B0E44A000FF0E6 /* toast_loading@2x.png in Resources */,
+				D01EA43A22B0E44A000FF0E6 /* toast_wrong@3x.png in Resources */,
 				D01E2C29229A5E2B00A22DE0 /* Localizable.strings in Resources */,
 				D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */,
+				D01EA43D22B0E44A000FF0E6 /* toast_right@2x.png in Resources */,
+				D01EA43922B0E44A000FF0E6 /* toast_warning@3x.png in Resources */,
 				D01E2C54229E8E1B00A22DE0 /* MQLProfileViewController.xib in Resources */,
 				D01E2C69229EA1D400A22DE0 /* MQLHomeViewController.xib in Resources */,
+				D01EA43E22B0E44A000FF0E6 /* toast_loading@3x.png in Resources */,
 				D01E2C5D229EA13300A22DE0 /* MQLDiscoverViewController.xib in Resources */,
+				D01EA43B22B0E44A000FF0E6 /* toast_warning@2x.png in Resources */,
 				D00A0FBD22997B6700DF7A15 /* Assets.xcassets in Resources */,
+				D01EA43C22B0E44A000FF0E6 /* toast_right@3x.png in Resources */,
 				D01E2C65229EA18600A22DE0 /* MQLMessageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +722,7 @@
 				D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */,
 				D01E2C6B229EA1E900A22DE0 /* MQLHomeViewModel.swift in Sources */,
 				D01E2C4E229E8D7200A22DE0 /* MQLProfileDataModel.swift in Sources */,
+				D01EA42F22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.m in Sources */,
 				D01E2C5C229EA13300A22DE0 /* MQLDiscoverViewController.swift in Sources */,
 				D00A0FB622997B6500DF7A15 /* AppDelegate.swift in Sources */,
 				D01E2C68229EA1D400A22DE0 /* MQLHomeViewController.swift in Sources */,

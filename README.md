@@ -921,6 +921,11 @@ class MQLNavigationBar: UINavigationBar {
 2、仓库指定忽略列表
 从这两个地方，去掉IDEWorkspaceChecks.plist和contents.xcworkspacedata
 
+---Function types cannot have argument labels; use '_' before '
+在swift3.0之后，闭包不允许y设置外部参数，例如：
+completionHandler: @escaping (_ value: [String:AnyObject]?, _ error: NSError?) -> Void
+或
+completionHandler: @escaping ( [String:AnyObject]?, NSError?) -> Void
 
 
 　　

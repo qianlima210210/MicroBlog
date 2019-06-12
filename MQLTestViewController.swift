@@ -30,12 +30,22 @@ class MQLTestViewController: MQLBaseViewController {
     
     private func generalInit() -> () {
         let n0 = NetworkRequestEngine.share
-        
-        n0.request("https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002SUK3C_5a2KB590f93dd00DxZ3yD") { (response) in
-            if let value = response.result.value,
-                let dic = value as? [String:AnyObject] {
-                print(dic)
+        //https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002SUK3C_5a2KB590f93dd00DxZ3yD
+        n0.accessTokenRequest("https://api.weibo.com/2/statuses/home_timeline.json") { (value, error) in
+            
+            if error == nil && value != nil {
+                let error_code = value!["error_code"] as? Int ?? 0
+                if error_code == 0 {
+                    //成功获取正常数据
+                    
+                }else{
+                   //成功获取异常数据
+                    
+                }
+            }else{
+                //网络出错
             }
+            
         }
 
     }
@@ -52,83 +62,5 @@ extension MQLTestViewController {
 }
 
 
-
-//定义多个私有属性，来存储不同的服务地址
-// 登录服务
-private var LogInBase_Url = ""
-// 普通服务
-private var ProgressBase_Url = ""
-
-//根据设置的运行环境不同，服务地址发生改变
-private let CurrentNetWork : NetworkEnvironment = .Test
-
-private func judgeNetwork(network : NetworkEnvironment = CurrentNetWork){
-    
-    if(network == .Development){
-        
-        LogInBase_Url = "http://dev-***.com/common-portal/"
-        ProgressBase_Url = "http://dev-***.com:8080/isp-kongming/"
-        
-        
-    }else if(network == .Test){
-        
-        LogInBase_Url = "http://test-***.com/common-portal/"
-        ProgressBase_Url = "http://test-***.com/isp-kongming/"
-        
-    }else{
-        
-        LogInBase_Url = "https://***.com/common-portal/"
-        ProgressBase_Url = "https://***.com/isp-kongming/"
-        
-    }
-}
-
-@objc protocol NetworkToolDelegate {
-    // 登录请求
-    @objc static optional func goToLogin(userName:String,
-                          password:String,
-                          completionHandler: @escaping(_ dict:[String : AnyObject]) -> (),
-                          errorHandler: @escaping(_ errorMsg : String) ->(),
-                          networkFailHandler: @escaping(_ error : Error) -> ())
-    
-    //GET 请求
-   @objc static  optional func makeGetRequest(baseUrl : String,
-                               parameters : [String:AnyObject],
-                               successHandler: @escaping(_ json:Any) ->(),
-                               errorMsgHandler : @escaping(_ errorMsg : String) ->(),
-                               networkFailHandler:@escaping(_ error : Error) -> ())
-    
-    
-    //POST 请求
-    @objc static optional func makePostRequest(baseUrl : String,
-                                parameters : [String:Any],
-                                successHandler: @escaping(_ json:Any) ->(),
-                                errorMsgHandler : @escaping(_ errorMsg : String) ->(),
-                                networkFailHandler:@escaping(_ error : Error) -> ())
-    
-    /*  图片上传 请求
-     * imageData : 图片二进制数组
-     */
-    @objc static optional func upDataIamgeRequest(baseUrl : String,
-                                   parameters : [String : String],
-                                   imageArr : [UIImage],
-                                   successHandler: @escaping(_ dict:Any) ->(),
-                                   errorMsgHandler : @escaping(_ errorMsg : String) -> (),
-                                   networkFailHandler: @escaping(_ error:Error) -> ())
-    
-}
-
-class NetWorkTool: NetworkToolDelegate {
-    // 登录请求
-    static func goToLogin(userName:String,
-                          password:String,
-                          completionHandler: @escaping(_ dict:[String : AnyObject]) -> (),
-                          errorHandler: @escaping(_ errorMsg : String) ->(),
-                          networkFailHandler: @escaping(_ error : Error) -> ()){
-        
-        print(#function)
-        
-    }
-}
 
 

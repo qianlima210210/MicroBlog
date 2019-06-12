@@ -10,6 +10,7 @@
 #define MicroBlog_Bridging_Header_h
 
 #import "CZAdditions.h"
+#import "MBProgressHUD+JRAdditional.h"
 
 
 #endif /* MicroBlog_Bridging_Header_h */
