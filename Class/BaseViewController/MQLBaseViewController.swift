@@ -50,7 +50,7 @@ class MQLBaseViewController: UIViewController {
     
     
     /// 加载数据
-    func loadData() -> () {
+    func loadData(isPullUp: Bool) -> () {
         //基类无任何加载
         self.tableView.mj_header.endRefreshing()
         self.tableView.mj_footer.endRefreshing()
@@ -160,7 +160,7 @@ extension MQLBaseViewController {
                 return
             }
             
-            self.loadData()
+            self.loadData(isPullUp: false)
         }
         //隐藏时间
         header?.lastUpdatedTimeLabel.isHidden = true
@@ -177,7 +177,7 @@ extension MQLBaseViewController {
                 return
             }
             
-            self.loadData()
+            self.loadData(isPullUp: true)
         }
         // 当上拉刷新控件出现10%时，就会自动刷新。这个值默认是1.0（也就是上拉刷新100%出现时，才会自动刷新）
         footer?.triggerAutomaticallyRefreshPercent = 0.1

@@ -12,9 +12,12 @@ class MQLHomeViewModel: NSObject {
     
     var dataModel: MQLHomeDataModel = MQLHomeDataModel()
     
-    func getStatuses(since_id:Int64 = 0, max_id:Int64 = 0, completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void) -> (){
+    func getStatuses(isPullUp: Bool, completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void) -> (){
        
-        let parameters = ["since_id":"\(since_id)", "max_id":"\(max_id)"]
+        let since_id = isPullUp ? 0 : dataModel.statuses.first?.id ?? 0
+        let max_id = isPullUp ? dataModel.statuses.last?.id ?? 0 : 0
+        
+        let parameters = ["since_id":"\(since_id)", "max_id":"\(max_id > 0 ? max_id - 1 : 0)"]
         NetworkRequestEngine.share.accessTokenRequest("https://api.weibo.com/2/statuses/home_timeline.json", parameters:parameters) { (value, error) in
             
             if error == nil {//解析数据

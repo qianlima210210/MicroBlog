@@ -32,9 +32,9 @@ class MQLHomeViewController: MQLBaseViewController {
         
     }
     
-    override func loadData() {
+    override func loadData(isPullUp: Bool) {
         
-        getStatuses { (value, errr) in
+        getStatuses(isPullUp: isPullUp) { (value, errr) in
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
@@ -53,10 +53,9 @@ extension MQLHomeViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
-    func getStatuses(completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void) -> (){
+    func getStatuses(isPullUp: Bool, completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void) -> (){
         
-        let since_id = viewModel.dataModel.statuses.first?.id ?? 0
-        viewModel.getStatuses(since_id:since_id) { (value, error) in
+        viewModel.getStatuses(isPullUp: isPullUp) { (value, error) in
             completionHandler(value, error)
         }
         
