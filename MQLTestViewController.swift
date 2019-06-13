@@ -29,24 +29,7 @@ class MQLTestViewController: MQLBaseViewController {
     }
     
     private func generalInit() -> () {
-        let n0 = NetworkRequestEngine.share
-        //https://api.weibo.com/2/statuses/home_timeline.json?access_token=2.002SUK3C_5a2KB590f93dd00DxZ3yD
-        n0.accessTokenRequest("https://api.weibo.com/2/statuses/home_timeline.json") { (value, error) in
-            
-            if error == nil && value != nil {
-                let error_code = value!["error_code"] as? Int ?? 0
-                if error_code == 0 {
-                    //成功获取正常数据
-                    
-                }else{
-                   //成功获取异常数据
-                    
-                }
-            }else{
-                //网络出错
-            }
-            
-        }
+
 
     }
     

@@ -928,10 +928,61 @@ completionHandler: @escaping (_ value: [String:AnyObject]?, _ error: NSError?) -
 completionHandler: @escaping ( [String:AnyObject]?, NSError?) -> Void
 
 
-　　
-　　
-　　
-　　
+--MJFooter
+还有更多内容时调用self.tableView.mj_footer.endRefreshing()
+没有更多内容时调用self.tableView.mj_footer.endRefreshingWithNoMoreData()　　
+
+/// 添加MJ刷新控件
+private func addMJRefreshControl() -> () {
+//创建头
+let header = MJRefreshNormalHeader {
+if self.tableView.mj_footer.state != .idle {
+//自己结束
+self.tableView.mj_header.endRefreshing()
+return
+}
+
+self.loadData()
+}
+//隐藏时间
+header?.lastUpdatedTimeLabel.isHidden = true
+//自动进入刷新
+header?.beginRefreshing()
+//设置头
+tableView.mj_header = header
+
+//创建脚
+let footer = MJRefreshAutoNormalFooter {
+if self.tableView.mj_header.state != .idle {
+//自己结束
+self.tableView.mj_footer.endRefreshing()
+return
+}
+
+self.loadData()
+}
+// 当上拉刷新控件出现10%时，就会自动刷新。这个值默认是1.0（也就是上拉刷新100%出现时，才会自动刷新）
+footer?.triggerAutomaticallyRefreshPercent = 0.1
+
+//设置脚
+tableView.mj_footer = footer
+
+}
+
+//UIScrollView代理方法
+func scrollViewDidScroll(_ scrollView: UIScrollView){
+    let maxVisualHeight = scrollView.bounds.height
+    let contentHeight = scrollView.contentSize.height
+
+    print("contentHeight = \(contentHeight)")
+
+    if contentHeight < maxVisualHeight {
+        tableView.mj_footer.isHidden = true
+    }else{
+        tableView.mj_footer.isHidden = false
+    }
+
+}
 　　
 　　
 　　

@@ -154,11 +154,12 @@ extension MQLBaseViewController {
     private func addMJRefreshControl() -> () {
         //创建头
         let header = MJRefreshNormalHeader {
-            if self.tableView.mj_footer.state == .refreshing {
+            if self.tableView.mj_footer.state != .idle {
                 //自己结束
                 self.tableView.mj_header.endRefreshing()
                 return
             }
+            
             self.loadData()
         }
         //隐藏时间
@@ -170,11 +171,12 @@ extension MQLBaseViewController {
         
         //创建脚
         let footer = MJRefreshAutoNormalFooter {
-            if self.tableView.mj_header.state == .refreshing {
+            if self.tableView.mj_header.state != .idle {
                 //自己结束
                 self.tableView.mj_footer.endRefreshing()
                 return
             }
+            
             self.loadData()
         }
         // 当上拉刷新控件出现10%时，就会自动刷新。这个值默认是1.0（也就是上拉刷新100%出现时，才会自动刷新）
@@ -220,15 +222,19 @@ extension MQLBaseViewController : UITableViewDataSource, UITableViewDelegate {
 //MARK: UIScrollViewDelegate
 extension MQLBaseViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView){
-        let maxHeight = scrollView.bounds.height
+        let maxVisualHeight = scrollView.bounds.height
         let contentHeight = scrollView.contentSize.height
         
-        if contentHeight > maxHeight {
-            tableView.mj_footer.isHidden = false
-        }else{
+        print("contentHeight = \(contentHeight)")
+
+        if contentHeight < maxVisualHeight {
             tableView.mj_footer.isHidden = true
+        }else{
+            tableView.mj_footer.isHidden = false
         }
+
     }
+    
 }
 
 //MARK:登录、注册响应

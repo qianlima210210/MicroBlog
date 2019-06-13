@@ -11,7 +11,7 @@ import UIKit
 class MQLHomeViewController: MQLBaseViewController {
     
     private let cellId = "cellId"
-    private lazy var statusList = [String]()
+    private var viewModel: MQLHomeViewModel? = MQLHomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +34,7 @@ class MQLHomeViewController: MQLBaseViewController {
     
     override func loadData() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            for i in 0..<5 {
-                self.statusList.insert(i.description, at: 0)
-            }
-            
+        getStatuses { (value, errr) in
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
@@ -57,13 +53,20 @@ extension MQLHomeViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
+    func getStatuses(completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void) -> (){
+        viewModel?.getStatuses(completionHandler: { (value, error) in
+            completionHandler(value, error)
+        })
+    }
+    
 }
 
 //落地实现UITableViewDataSource, UITableViewDelegate
 extension MQLHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        let count = viewModel?.dataModel?.statuses.count ?? 0
+        return count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +75,8 @@ extension MQLHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         //设置
-        cell.textLabel?.text = statusList[indexPath.row]
+        let status = viewModel?.dataModel?.statuses[indexPath.row]
+        cell.textLabel?.text = status?.text
         
         //返回
         return cell

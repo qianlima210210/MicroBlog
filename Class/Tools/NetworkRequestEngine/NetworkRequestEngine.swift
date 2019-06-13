@@ -29,7 +29,7 @@ class NetworkRequestEngine: NSObject {
     }()
     
     //
-    var access_token: String? = "2.002SUK3C_5a2KB590f93dd00DxZ3yD123"
+    var access_token: String? = "2.002SUK3CklHa3E8941e9544e0QG8ke"
     
     //定义多个私有属性，来存储不同的服务地址
     // 分享服务
@@ -89,8 +89,8 @@ class NetworkRequestEngine: NSObject {
                 completionHandler(nil, error)
             }else{
                 let value = response.result.value as? [String:AnyObject]
-                completionHandler(value, nil)
-                self.invalid_access_token(value)
+                let err = self.invalid_access_token(value)
+                completionHandler(value, err)
             }
             
         }
@@ -170,14 +170,25 @@ extension NetworkRequestEngine {
     }
     
     //统一处理access_token失效21332
-    func invalid_access_token(_ value: [String : AnyObject]?) -> () {
-        if let value = value,
-            let error_code = value["error_code"] as? Int{
-            if error_code == 21332{
+    func invalid_access_token(_ value: [String : AnyObject]?) -> NSError? {
+        
+        if value != nil {
+            let error_code = value!["error_code"] as? Int ?? 0
+            let error = value!["error"] as? String ?? ""
+            
+            if error_code != 0 {
+                print("--------------")
                 let window = UIApplication.shared.delegate!.window!!
-                MBProgressHUD.showAdded(to: window, text: "access_token失效")
+                MBProgressHUD.showAdded(to: window, text: error)
+                return NSError(domain: error, code: error_code, userInfo: nil)
+            }else{
+                return nil
             }
+        }else{
+            return NSError(domain: "value为nil", code: -1, userInfo: nil)
         }
+        
+        
     }
 }
 

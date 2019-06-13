@@ -7,7 +7,21 @@
 //
 
 import UIKit
+import YYModel
 
-class MQLHomeDataModel: NSObject {
+@objcMembers class Status: NSObject {
+    @objc var id: Int64 = 0;
+    @objc var text: String?
+    
+    override var description: String{
+        return yy_modelDescription()
+    }
+}
 
+@objcMembers class MQLHomeDataModel: NSObject {
+    @objc var statuses = [Status]()
+    
+    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+        return ["statuses" : Status.classForCoder()]
+    }
 }
