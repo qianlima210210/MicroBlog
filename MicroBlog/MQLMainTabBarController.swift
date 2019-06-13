@@ -23,6 +23,8 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     private func generalInit() ->() {
         
+        unread_count()
+        
         specialSettingToTabBar()
         setupChildControllers()
         setupComposeBtn()
@@ -118,5 +120,17 @@ extension MQLMainTabBarController {
         
         //防止点击穿透
         composeBtn.frame = tabBar.bounds.inset(by: UIEdgeInsets(top: 0, left: 2 * w - 1, bottom: 0, right: 2 * w - 1))
+    }
+}
+
+extension MQLMainTabBarController {
+    
+    func unread_count() -> () {
+        let parameters = ["parameters":NetworkRequestEngine.share.uid ?? ""]
+        NetworkRequestEngine.share.accessTokenRequest("https://api.weibo.com/2/remind/unread_count.json", parameters: parameters) { (value, error) in
+            
+            let status = value?["status"] as? Int ?? 0
+            print("\(status)")
+        }
     }
 }

@@ -30,6 +30,7 @@ class NetworkRequestEngine: NSObject {
     
     //
     var access_token: String? = "2.002SUK3CklHa3E8941e9544e0QG8ke"
+    var uid: String? = "5043734238"
     
     //定义多个私有属性，来存储不同的服务地址
     // 分享服务
@@ -191,5 +192,7 @@ extension NetworkRequestEngine {
         
     }
 }
+
+
 
 
