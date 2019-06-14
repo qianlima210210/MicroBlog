@@ -150,6 +150,8 @@ extension MQLMainTabBarController {
             print("\(status)")
             
             self.tabBar.items?[0].badgeValue = status > 0 ? "\(status)" : nil
+            
+            UIApplication.shared.applicationIconBadgeNumber = status
         }
     }
 }
