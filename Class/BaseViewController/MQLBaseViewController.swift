@@ -236,6 +236,7 @@ extension MQLBaseViewController {
 extension MQLBaseViewController {
     @objc func loginBtnClicked() -> () {
         print(#function)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationOfUserLogin), object: nil, userInfo: nil)
     }
     
     @objc func registerBtnClicked() -> () {

@@ -27,7 +27,7 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     private func generalInit() ->() {
         
         delegate = self
-        
+        registerNotification()
         
         specialSettingToTabBar()
         setupChildControllers()
@@ -42,6 +42,15 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     deinit {
         timer?.invalidate()
+    }
+    
+    //注册全局通知notificationOfUserLogin
+    func registerNotification() -> () {
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceiveNotificationOfUserLogin(notification:)), name: NSNotification.Name(rawValue: notificationOfUserLogin), object: nil)
+    }
+    
+    @objc func onReceiveNotificationOfUserLogin(notification: Notification) -> () {
+        print("\(notification)")
     }
     
 }
