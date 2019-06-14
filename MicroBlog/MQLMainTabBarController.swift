@@ -51,6 +51,9 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     @objc func onReceiveNotificationOfUserLogin(notification: Notification) -> () {
         print("\(notification)")
+        let vc = MQLLoginViewController(nibName: "MQLLoginViewController", bundle: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
 }
