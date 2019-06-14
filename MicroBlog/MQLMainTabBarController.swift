@@ -26,6 +26,9 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     private func generalInit() ->() {
         
+        delegate = self
+        
+        
         specialSettingToTabBar()
         setupChildControllers()
         setupComposeBtn()
@@ -103,7 +106,7 @@ extension MQLMainTabBarController {
             let selected = UIImage(named: selectedImage)?.withRenderingMode(.alwaysOriginal) else {
                 
             let vc = UIViewController()
-            return MQLBaseNavigationController(rootViewController: vc)
+            return vc
         }
         
         let vc = cls.init(nibName: className, bundle: nil) as! MQLBaseViewController
@@ -126,7 +129,7 @@ extension MQLMainTabBarController {
         let w = tabBar.bounds.width / count
         
         //防止点击穿透
-        composeBtn.frame = tabBar.bounds.inset(by: UIEdgeInsets(top: 0, left: 2 * w - 1, bottom: 0, right: 2 * w - 1))
+        composeBtn.frame = tabBar.bounds.inset(by: UIEdgeInsets(top: 0, left: 2 * w, bottom: 0, right: 2 * w))
     }
 }
 
@@ -150,8 +153,29 @@ extension MQLMainTabBarController {
             print("\(status)")
             
             self.tabBar.items?[0].badgeValue = status > 0 ? "\(status)" : nil
-            
             UIApplication.shared.applicationIconBadgeNumber = status
         }
+    }
+}
+
+extension MQLMainTabBarController : UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
+        
+        if let index = (viewControllers as NSArray?)?.index(of: viewController){
+            if selectedIndex == 0 && selectedIndex == index {
+                let homeNav = viewController as? MQLBaseNavigationController
+                let home = homeNav?.children[0] as? MQLHomeViewController
+                if home != nil {
+                    home?.tableView.mj_header.beginRefreshing()
+                }
+            }
+        }
+        
+        return !viewController.isMember(of: UIViewController.self)
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController){
+        
     }
 }
