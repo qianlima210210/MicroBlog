@@ -224,8 +224,6 @@ extension MQLBaseViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView){
         let maxVisualHeight = scrollView.bounds.height
         let contentHeight = scrollView.contentSize.height
-        
-        print("contentHeight = \(contentHeight)")
 
         if contentHeight < maxVisualHeight {
             tableView.mj_footer.isHidden = true

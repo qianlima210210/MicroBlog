@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         imitateAppInfoLoad()
         
+        
+        
         return true
     }
 

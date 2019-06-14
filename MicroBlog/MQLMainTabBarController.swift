@@ -12,6 +12,9 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     //添加到tabBar上的撰写按钮
     private var composeBtn: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
+    
+    //
+    private var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +26,19 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     private func generalInit() ->() {
         
-        unread_count()
-        
         specialSettingToTabBar()
         setupChildControllers()
         setupComposeBtn()
+        
+        setupTimer()
     }
     
     @objc private func composeBtnClicked(sender: UIButton) -> () {
         print(#function)
+    }
+    
+    deinit {
+        timer?.invalidate()
     }
     
 }
@@ -123,14 +130,26 @@ extension MQLMainTabBarController {
     }
 }
 
+//定时刷新未读
 extension MQLMainTabBarController {
     
-    func unread_count() -> () {
+    func setupTimer() -> () {
+        timer = Timer(timeInterval: 5, target: self
+            , selector: #selector(unread_count), userInfo: nil, repeats: true)
+        if timer != nil{
+            RunLoop.current.add(timer!, forMode: .default)
+        }
+    }
+    
+    @objc func unread_count() -> () {
+        
         let parameters = ["parameters":NetworkRequestEngine.share.uid ?? ""]
         NetworkRequestEngine.share.accessTokenRequest("https://api.weibo.com/2/remind/unread_count.json", parameters: parameters) { (value, error) in
-            
+
             let status = value?["status"] as? Int ?? 0
             print("\(status)")
+            
+            self.tabBar.items?[0].badgeValue = status > 0 ? "\(status)" : nil
         }
     }
 }
