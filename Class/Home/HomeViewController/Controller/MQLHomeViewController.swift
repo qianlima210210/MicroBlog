@@ -34,6 +34,10 @@ class MQLHomeViewController: MQLBaseViewController {
     
     override func loadData(isPullUp: Bool) {
         
+        if NetworkRequestEngine.share.userLogon == false {
+            return
+        }
+        
         getStatuses(isPullUp: isPullUp) { (value, errr) in
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()

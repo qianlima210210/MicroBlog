@@ -146,6 +146,10 @@ extension MQLMainTabBarController {
     
     @objc func unread_count() -> () {
         
+        if NetworkRequestEngine.share.userLogon == false {
+            return
+        }
+        
         let parameters = ["parameters":NetworkRequestEngine.share.uid ?? ""]
         NetworkRequestEngine.share.accessTokenRequest("https://api.weibo.com/2/remind/unread_count.json", parameters: parameters) { (value, error) in
 
@@ -167,7 +171,7 @@ extension MQLMainTabBarController : UITabBarControllerDelegate {
                 let homeNav = viewController as? MQLBaseNavigationController
                 let home = homeNav?.children[0] as? MQLHomeViewController
                 if home != nil {
-                    home?.tableView.mj_header.beginRefreshing()
+                    home?.tableView.mj_header?.beginRefreshing()
                 }
             }
         }

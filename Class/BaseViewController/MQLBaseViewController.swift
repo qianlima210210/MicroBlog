@@ -13,9 +13,6 @@ import MJRefresh
 
 class MQLBaseViewController: UIViewController {
     
-    //是否登录
-    var isLogon: Bool = true
-    
     //未登录显示游客视图
     var visitorView: MQLVisitorView = (Bundle.main.loadNibNamed("MQLVisitorView", owner: nil, options: nil)?.last as? MQLVisitorView) ?? MQLVisitorView()
     
@@ -96,7 +93,7 @@ extension MQLBaseViewController {
         setContentView()
         
         /// 设置表格视图
-        isLogon ? setTableView() : setVisitorView()
+        NetworkRequestEngine.share.userLogon ? setTableView() : setVisitorView()
     }
     
     
