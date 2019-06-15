@@ -51,7 +51,7 @@ class MQLLoginViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
         
-        guard let url = URL(string: "https://www.baidu.com") else { return }
+        guard let url = URL(string: "https://api.weibo.com/oauth2/authorize?client_id=\(appKek)&redirect_uri=\(redirect_uri)") else { return }
         let request = URLRequest(url: url)
         webView.load(request)
     }
