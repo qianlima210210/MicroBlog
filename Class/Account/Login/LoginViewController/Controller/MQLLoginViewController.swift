@@ -30,18 +30,33 @@ class MQLLoginViewController: UIViewController {
         startWebView()
     }
     
-    @objc func backBtnClicked(sender: UIBarButtonItem) -> () {
+    @objc private func backBtnClicked(sender: UIBarButtonItem) -> () {
         dismiss(animated: true, completion: nil)
+    }
+    
+    /// 自动填充 - WebView 的注入，直接通过 js 修改 `本地浏览器中` 缓存的页面内容
+    /// 点击登录按钮，执行 submit() 将本地数据提交给服务器！
+    @objc private func autoFill() {
+        
+        // 准备 js
+        let js = "document.getElementById('userId').value = 'qianlima210210@163.com'; " +
+        "document.getElementById('passwd').value = '';"
+        
+        // 让 webview 执行 js
+        //webView.stringByEvaluatingJavaScript(from: js)
+        webView.evaluateJavaScript(js, completionHandler: nil)
     }
     
     func setupBarButtonItem() -> () {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(backBtnClicked(sender:)), isBack: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "自动填充", target: self, action: #selector(autoFill))
     }
     
     func startWebView() -> () {
         
         webView.backgroundColor = .orange
+        webView.navigationDelegate = self
         webViewContainer.addSubview(webView)
         
         webView.snp_remakeConstraints { (make) in
@@ -57,6 +72,15 @@ class MQLLoginViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+}
+
+
+extension MQLLoginViewController : WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void){
+        
+        decisionHandler(.allow)
         
     }
 }

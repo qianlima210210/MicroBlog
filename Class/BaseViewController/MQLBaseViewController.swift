@@ -200,8 +200,9 @@ extension MQLBaseViewController {
         visitorView.registerBtn.addTarget(self, action: #selector(registerBtnClicked), for: .touchUpInside)
         
         //设置左右导航项
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(loginBtnClicked))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "登录", target: self, action: #selector(loginBtnClicked))
         navItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(registerBtnClicked))
+
     }
 }
 
