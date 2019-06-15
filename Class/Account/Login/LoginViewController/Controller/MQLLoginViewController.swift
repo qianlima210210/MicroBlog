@@ -30,7 +30,7 @@ class MQLLoginViewController: UIViewController {
         startWebView()
     }
     
-    @objc private func backBtnClicked(sender: UIBarButtonItem) -> () {
+    @objc private func backBtnClicked(sender: UIBarButtonItem?) -> () {
         dismiss(animated: true, completion: nil)
     }
     
@@ -79,8 +79,36 @@ class MQLLoginViewController: UIViewController {
 
 extension MQLLoginViewController : WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void){
+        guard let url = navigationAction.request.url?.absoluteString as NSString? else{
+            decisionHandler(.cancel)
+            return
+        }
         
+        print("url=\(url)")
+        //error=access_denied
+        let contains = "error=access_denied"
+        if url.contains(contains) {
+            backBtnClicked(sender: nil)
+            decisionHandler(.cancel)
+            return
+        }
+        
+        let prefix = "https://api.weibo.com/oauth2/default.html?code="
+        if url.hasPrefix(prefix) {
+            let code = url.substring(from: prefix.count)
+            print("code=\(code)")
+            access_token(code: code)
+            decisionHandler(.cancel)
+            return
+        }
         decisionHandler(.allow)
         
     }
 }
+
+extension MQLLoginViewController {
+    func access_token(code: String) -> () {
+        viewModel.access_token()
+    }
+}
+
