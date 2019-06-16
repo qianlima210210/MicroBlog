@@ -8,16 +8,20 @@
 
 import UIKit
 
-class MQLUserAccountManager: NSObject {
+@objcMembers class MQLUserAccountManager: NSObject {
     
-    var access_token: String?
-    var uid: String?
-    var expires_in: TimeInterval = 0
+   @objc var access_token: String?
+   @objc var uid: String?
+   @objc var expires_in: TimeInterval = 0
     
     var userLogon: Bool{
         return access_token != nil
     }
     
     static let share: MQLUserAccountManager = MQLUserAccountManager()
+    
+    override var description: String{
+        return yy_modelDescription()
+    }
     
 }

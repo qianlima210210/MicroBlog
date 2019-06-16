@@ -18,10 +18,7 @@ class MQLLoginViewModel: NSObject {
         let parameters = ["client_id":appKey, "client_secret":appSecret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
         NetworkRequestEngine.share.request("https://api.weibo.com/oauth2/access_token", method: .post, parameters: parameters) { (value, error) in
             
-            MQLUserAccountManager.share.access_token = value?["access_token"] as? String
-            MQLUserAccountManager.share.uid = value?["uid"] as? String
-            MQLUserAccountManager.share.expires_in = value?["expires_in"] as? TimeInterval ?? 0
-            
+            MQLUserAccountManager.share.yy_modelSet(with: value ?? [:] )
             completionHandler(value, error)
         }
     }
