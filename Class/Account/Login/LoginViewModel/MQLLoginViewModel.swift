@@ -19,6 +19,8 @@ class MQLLoginViewModel: NSObject {
         NetworkRequestEngine.share.request("https://api.weibo.com/oauth2/access_token", method: .post, parameters: parameters) { (value, error) in
             
             MQLUserAccountManager.share.yy_modelSet(with: value ?? [:] )
+            MQLUserAccountManager.share.saveToLocal()
+            
             completionHandler(value, error)
         }
     }

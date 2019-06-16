@@ -984,7 +984,9 @@ func scrollViewDidScroll(_ scrollView: UIScrollView){
 
 }
 　　
-　　
+---'required' initializer must be declared directly in class 'MQLUserAccountManager' (not in an extension)　
+今天在做信息模型归档时，实现NSCoding协议时，因为是在extension中实现的，编译器报上述错误；
+解决方案：根据提示，将NSCoding协议的实现放在模型类中
 　　
 　　
 　　
