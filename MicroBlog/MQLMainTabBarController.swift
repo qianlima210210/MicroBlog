@@ -158,11 +158,11 @@ extension MQLMainTabBarController {
     
     @objc func unread_count() -> () {
         
-        if NetworkRequestEngine.share.userLogon == false {
+        if MQLUserAccountManager.share.userLogon == false {
             return
         }
         
-        let parameters = ["parameters":NetworkRequestEngine.share.uid ?? ""]
+        let parameters = ["parameters":MQLUserAccountManager.share.uid ?? ""]
         NetworkRequestEngine.share.accessTokenRequest("https://api.weibo.com/2/remind/unread_count.json", parameters: parameters) { (value, error) in
 
             let status = value?["status"] as? Int ?? 0

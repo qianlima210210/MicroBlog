@@ -93,7 +93,7 @@ extension MQLBaseViewController {
         setContentView()
         
         /// 设置表格视图
-        NetworkRequestEngine.share.userLogon ? setTableView() : setVisitorView()
+        MQLUserAccountManager.share.userLogon ? setTableView() : setVisitorView()
     }
     
     

@@ -34,7 +34,7 @@ class MQLHomeViewController: MQLBaseViewController {
     
     override func loadData(isPullUp: Bool) {
         
-        if NetworkRequestEngine.share.userLogon == false {
+        if MQLUserAccountManager.share.userLogon == false {
             return
         }
         

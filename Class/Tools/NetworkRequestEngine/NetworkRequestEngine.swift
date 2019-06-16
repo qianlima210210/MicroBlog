@@ -22,19 +22,11 @@ enum  NetworkEnvironment{
 class NetworkRequestEngine: NSObject {
     
     //单例
-    static let share:NetworkRequestEngine  = {
+    static let share:NetworkRequestEngine  = { ()-> NetworkRequestEngine in
         let share = NetworkRequestEngine()
         share.currentNetworkEnvironment = .Development
         return share
     }()
-    
-    //
-    var access_token: String? //= "2.002SUK3CklHa3E8941e9544e0QG8ke"
-    var uid: String? = "5043734238"
-    
-    var userLogon: Bool{
-        return access_token != nil
-    }
     
     //定义多个私有属性，来存储不同的服务地址
     // 分享服务
@@ -160,8 +152,8 @@ extension NetworkRequestEngine {
         
         //添加access_token
         var access_token = ""
-        if self.access_token != nil {
-            access_token = self.access_token!
+        if MQLUserAccountManager.share.access_token != nil {
+            access_token = MQLUserAccountManager.share.access_token!
         }
         
         var parameters = parameters

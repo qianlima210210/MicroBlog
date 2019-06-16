@@ -62,6 +62,7 @@
 		D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */; };
 		D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */; };
 		D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B372D22A66DE80073E781 /* MQLVisitorView.xib */; };
+		D0CC72B922B61A0A00D5FB0A /* MQLUserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */; };
 		D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B51229FD989005E19FE /* Bundle+extension.swift */; };
 		D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */; };
 		D0E23B5622A100FA005E19FE /* MQLBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5422A100FA005E19FE /* MQLBaseTabBarController.swift */; };
@@ -147,6 +148,7 @@
 		D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestEngine.swift; sourceTree = "<group>"; };
 		D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLVisitorView.swift; sourceTree = "<group>"; };
 		D05B372D22A66DE80073E781 /* MQLVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLVisitorView.xib; sourceTree = "<group>"; };
+		D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLUserAccountManager.swift; sourceTree = "<group>"; };
 		D0E23B51229FD989005E19FE /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLBaseNavigationController.swift; sourceTree = "<group>"; };
 		D0E23B5422A100FA005E19FE /* MQLBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLBaseTabBarController.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 		D01EA44322B3B6F3000FF0E6 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				D0CC72B722B619E700D5FB0A /* UserAccountManager */,
 				D01EA44422B3B706000FF0E6 /* Login */,
 			);
 			path = Account;
@@ -575,6 +578,14 @@
 				D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */,
 			);
 			path = NetworkRequestEngine;
+			sourceTree = "<group>";
+		};
+		D0CC72B722B619E700D5FB0A /* UserAccountManager */ = {
+			isa = PBXGroup;
+			children = (
+				D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */,
+			);
+			path = UserAccountManager;
 			sourceTree = "<group>";
 		};
 		D0E23B50229FD913005E19FE /* Extension */ = {
@@ -784,6 +795,7 @@
 				D01E2C30229E795500A22DE0 /* MQLBaseViewController.swift in Sources */,
 				D01E2C8F229EC2DA00A22DE0 /* UIButton+CZAddition.m in Sources */,
 				D01EA45222B3B7B9000FF0E6 /* MQLLoginViewController.swift in Sources */,
+				D0CC72B922B61A0A00D5FB0A /* MQLUserAccountManager.swift in Sources */,
 				D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */,
 				D01E2C8E229EC2DA00A22DE0 /* NSString+CZPath.m in Sources */,
 				D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */,

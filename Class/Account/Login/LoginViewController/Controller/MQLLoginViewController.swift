@@ -126,7 +126,13 @@ extension MQLLoginViewController : WKNavigationDelegate {
 
 extension MQLLoginViewController {
     func access_token(code: String) -> () {
-        viewModel.access_token(code: code)
+        viewModel.access_token(code: code) { (value, error) in
+            if error == nil {
+                print("授权成功")
+            }else{
+                print("授权失败")
+            }
+        }
     }
 }
 
