@@ -11,17 +11,22 @@ import WebKit
 
 class MQLLoginViewController: UIViewController {
     
+    var webView = WKWebView()
     
     @IBOutlet weak var webViewContainer: UIView!
-    
     var viewModel = MQLLoginViewModel()
-    var webView = WKWebView()
+    
+    var hud: MBProgressHUD?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         generalInit()
+    }
+    
+    deinit {
+        
     }
 
     func generalInit() -> () {
@@ -103,6 +108,18 @@ extension MQLLoginViewController : WKNavigationDelegate {
         }
         decisionHandler(.allow)
         
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!){
+        hud = MBProgressHUD.showAdded(to: webView, animated: true)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
+        hud?.hide(animated: true)
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error){
+        hud?.hide(animated: true)
     }
 }
 
