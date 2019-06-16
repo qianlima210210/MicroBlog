@@ -62,6 +62,7 @@ class MQLLoginViewController: UIViewController {
         
         webView.backgroundColor = .orange
         webView.navigationDelegate = self
+        webView.scrollView.isScrollEnabled = false
         webViewContainer.addSubview(webView)
         
         webView.snp_remakeConstraints { (make) in
@@ -71,7 +72,7 @@ class MQLLoginViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
         
-        guard let url = URL(string: "https://api.weibo.com/oauth2/authorize?client_id=\(appKek)&redirect_uri=\(redirect_uri)") else { return }
+        guard let url = URL(string: "https://api.weibo.com/oauth2/authorize?client_id=\(appKey)&redirect_uri=\(redirect_uri)") else { return }
         let request = URLRequest(url: url)
         webView.load(request)
     }
@@ -125,7 +126,7 @@ extension MQLLoginViewController : WKNavigationDelegate {
 
 extension MQLLoginViewController {
     func access_token(code: String) -> () {
-        viewModel.access_token()
+        viewModel.access_token(code: code)
     }
 }
 
