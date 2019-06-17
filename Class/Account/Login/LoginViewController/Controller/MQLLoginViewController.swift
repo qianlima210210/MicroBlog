@@ -128,9 +128,9 @@ extension MQLLoginViewController {
     func access_token(code: String) -> () {
         viewModel.access_token(code: code) { (value, error) in
             if error == nil {
-                print("授权成功")
+                MBProgressHUD.showSuccessHUDAdded(to: self.webView, text: "授权成功")
             }else{
-                print("授权失败")
+                MBProgressHUD.showFailtureHUDAdded(to: self.webView, text: "授权失败")
             }
         }
     }
