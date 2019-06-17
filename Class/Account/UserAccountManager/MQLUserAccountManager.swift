@@ -25,7 +25,13 @@ import UIKit
     
     static let share: MQLUserAccountManager = {
         
-        if let manager = MQLUserAccountManager.readFromLocal(){
+        if let manager = MQLUserAccountManager.readFromLocal(),
+            let expiresDate = manager.expiresDate {
+            
+            if expiresDate.compare(Date()) != .orderedDescending {
+                manager.reset()
+            }
+            
             return manager
         }else{
             return MQLUserAccountManager()
@@ -46,6 +52,8 @@ import UIKit
         uid = nil
         expires_in = 0
         expiresDate = nil
+        
+        saveToLocal()
     }
     
     func saveToLocal() -> () {
