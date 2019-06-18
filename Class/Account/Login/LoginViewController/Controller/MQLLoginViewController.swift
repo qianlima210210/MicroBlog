@@ -129,6 +129,8 @@ extension MQLLoginViewController {
         viewModel.access_token(code: code) { (value, error) in
             if error == nil {
                 MBProgressHUD.showSuccessHUDAdded(to: self.webView, text: "授权成功")
+                NotificationCenter.default.post(name: NSNotification.Name(notificationOfLoginSuccess), object: nil, userInfo: nil)
+                self.backBtnClicked(sender: nil)
             }else{
                 MBProgressHUD.showFailtureHUDAdded(to: self.webView, text: "授权失败")
             }

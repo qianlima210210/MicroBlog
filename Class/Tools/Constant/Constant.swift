@@ -9,6 +9,7 @@
 import Foundation
 
 let notificationOfUserLogin = "notificationOfUserLogin"
+let notificationOfLoginSuccess = "notificationOfLoginSuccess"
 
 let appKey = "1069040971"   //也叫作client_id
 let appSecret = "dced87f388fc65cf3eb6861e0614be24"

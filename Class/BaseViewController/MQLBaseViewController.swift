@@ -35,6 +35,8 @@ class MQLBaseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        registerNotifications()
         setupUI()
         
     }
@@ -51,6 +53,16 @@ class MQLBaseViewController: UIViewController {
         //基类无任何加载
         self.tableView.mj_header.endRefreshing()
         self.tableView.mj_footer.endRefreshing()
+    }
+    
+    //注册通知
+    func registerNotifications() -> () {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceiveNotificationOfLoginSuccess(notification:)), name: NSNotification.Name(notificationOfLoginSuccess), object: nil)
+    }
+    
+    @objc func onReceiveNotificationOfLoginSuccess(notification: NSNotification) -> () {
+        
     }
     
     //MARK: 屏幕旋转相关
@@ -78,7 +90,7 @@ class MQLBaseViewController: UIViewController {
 
 }
 
-
+//UI相关的扩展
 extension MQLBaseViewController {
     
     /// 设置UI
