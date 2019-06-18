@@ -34,6 +34,8 @@ class MQLMainTabBarController: MQLBaseTabBarController {
         setupComposeBtn()
         
         setupTimer()
+        
+        setNewFeatureViewOrWelcomeView()
     }
     
     @objc private func composeBtnClicked(sender: UIButton) -> () {
@@ -59,7 +61,7 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
 }
 
-
+//设置tabBar相关信息
 extension MQLMainTabBarController {
     
     //MARK: 对tabBar特定设置
@@ -175,6 +177,7 @@ extension MQLMainTabBarController {
     }
 }
 
+//UITabBarControllerDelegate代理实现
 extension MQLMainTabBarController : UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
@@ -194,5 +197,19 @@ extension MQLMainTabBarController : UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController){
         
+    }
+}
+
+//新特性或欢迎视图
+extension MQLMainTabBarController {
+    func setNewFeatureViewOrWelcomeView() -> () {
+        if MQLUserAccountManager.share.userLogon == false{
+            return
+        }
+        
+        //将应用版本和磁盘版本对比,不一样：显示新特性视图; 一样：显示欢迎界面
+        let showView = MQLUserAccountManager.share.isNewVersion == true ? NewFeatureView() : WelcomeView()
+        showView.frame = view.bounds
+        view.addSubview(showView)
     }
 }

@@ -62,6 +62,10 @@
 		D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */; };
 		D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */; };
 		D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B372D22A66DE80073E781 /* MQLVisitorView.xib */; };
+		D0C6DF8922B92235007B4F82 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6DF8822B92235007B4F82 /* NewFeatureView.swift */; };
+		D0C6DF8B22B9225B007B4F82 /* NewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C6DF8A22B9225B007B4F82 /* NewFeatureView.xib */; };
+		D0C6DF8D22B922BF007B4F82 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6DF8C22B922BF007B4F82 /* WelcomeView.swift */; };
+		D0C6DF8F22B922CE007B4F82 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C6DF8E22B922CE007B4F82 /* WelcomeView.xib */; };
 		D0CC72B922B61A0A00D5FB0A /* MQLUserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */; };
 		D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B51229FD989005E19FE /* Bundle+extension.swift */; };
 		D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */; };
@@ -149,6 +153,10 @@
 		D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestEngine.swift; sourceTree = "<group>"; };
 		D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLVisitorView.swift; sourceTree = "<group>"; };
 		D05B372D22A66DE80073E781 /* MQLVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLVisitorView.xib; sourceTree = "<group>"; };
+		D0C6DF8822B92235007B4F82 /* NewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewFeatureView.swift; path = Class/Account/UserAccountManager/NewFeatureView.swift; sourceTree = SOURCE_ROOT; };
+		D0C6DF8A22B9225B007B4F82 /* NewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewFeatureView.xib; path = Class/Account/UserAccountManager/NewFeatureView.xib; sourceTree = SOURCE_ROOT; };
+		D0C6DF8C22B922BF007B4F82 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = Class/Account/UserAccountManager/WelcomeView.swift; sourceTree = SOURCE_ROOT; };
+		D0C6DF8E22B922CE007B4F82 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WelcomeView.xib; path = Class/Account/UserAccountManager/WelcomeView.xib; sourceTree = SOURCE_ROOT; };
 		D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLUserAccountManager.swift; sourceTree = "<group>"; };
 		D0E23B51229FD989005E19FE /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLBaseNavigationController.swift; sourceTree = "<group>"; };
@@ -430,6 +438,10 @@
 		D01E2C4B229E8D4500A22DE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0C6DF8822B92235007B4F82 /* NewFeatureView.swift */,
+				D0C6DF8A22B9225B007B4F82 /* NewFeatureView.xib */,
+				D0C6DF8C22B922BF007B4F82 /* WelcomeView.swift */,
+				D0C6DF8E22B922CE007B4F82 /* WelcomeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -685,11 +697,13 @@
 				D01E2C1722997F6000A22DE0 /* README.md in Resources */,
 				D034A3DE22A7A8F700130D15 /* default.json in Resources */,
 				D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */,
+				D0C6DF8B22B9225B007B4F82 /* NewFeatureView.xib in Resources */,
 				D01EA43822B0E44A000FF0E6 /* toast_loading@2x.png in Resources */,
 				D01EA43A22B0E44A000FF0E6 /* toast_wrong@3x.png in Resources */,
 				D01EA45322B3B7B9000FF0E6 /* MQLLoginViewController.xib in Resources */,
 				D01E2C29229A5E2B00A22DE0 /* Localizable.strings in Resources */,
 				D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */,
+				D0C6DF8F22B922CE007B4F82 /* WelcomeView.xib in Resources */,
 				D01EA43D22B0E44A000FF0E6 /* toast_right@2x.png in Resources */,
 				D01EA43922B0E44A000FF0E6 /* toast_warning@3x.png in Resources */,
 				D01E2C54229E8E1B00A22DE0 /* MQLProfileViewController.xib in Resources */,
@@ -791,6 +805,7 @@
 				D01E2C50229E8D8500A22DE0 /* MQLProfileViewModel.swift in Sources */,
 				D01E2C93229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m in Sources */,
 				D01E2C91229EC2DA00A22DE0 /* UIViewController+CZAddition.m in Sources */,
+				D0C6DF8922B92235007B4F82 /* NewFeatureView.swift in Sources */,
 				D0E23B5E22A174F6005E19FE /* MQLNavigationBar.swift in Sources */,
 				D01E2C89229EC2DA00A22DE0 /* UIColor+CZAddition.m in Sources */,
 				D01E2CA6229ED6BD00A22DE0 /* MQLMainTabBarController.swift in Sources */,
@@ -822,6 +837,7 @@
 				D01E2C8A229EC2DA00A22DE0 /* UIView+CZAddition.m in Sources */,
 				D01E2C8C229EC2DA00A22DE0 /* UILabel+CZAddition.m in Sources */,
 				D0F3525822B8FE6800744952 /* TitleButton.swift in Sources */,
+				D0C6DF8D22B922BF007B4F82 /* WelcomeView.swift in Sources */,
 				D01E2C5F229EA15900A22DE0 /* MQLMessageDataModel.swift in Sources */,
 				D01E2C92229EC2DA00A22DE0 /* NSString+CZHash.m in Sources */,
 				D01E2C6D229EA1F900A22DE0 /* MQLHomeDataModel.swift in Sources */,

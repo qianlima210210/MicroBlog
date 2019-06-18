@@ -26,6 +26,11 @@ import UIKit
         return access_token != nil
     }
     
+    //是否新版本，即第一次使用该版本
+    var isNewVersion: Bool{
+        return false
+    }
+    
     static let share: MQLUserAccountManager = {
         
         if let manager = MQLUserAccountManager.readFromLocal(),
