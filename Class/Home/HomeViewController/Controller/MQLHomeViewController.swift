@@ -20,7 +20,7 @@ class MQLHomeViewController: MQLBaseViewController {
         generalInit()
     }
     
-    @objc func titleBtnClicked(sender: UIBarButtonItem) -> () {
+    @objc func leftBtnClicked(sender: UIBarButtonItem) -> () {
         print(#function)
         let vc = MQLTestViewController()
         let count = navigationController?.children.count ?? 0
@@ -28,8 +28,20 @@ class MQLHomeViewController: MQLBaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+
     func generalInit() -> () {
+        let btn: UIButton = UIButton.cz_textButton("good", fontSize: 16, normalColor: .black, highlightedColor: .black)
         
+        btn.setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
+        btn.setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
+        
+        btn.addTarget(self, action: #selector(titleBtnClicked(sender:)), for: .touchUpInside)
+        
+        navItem.titleView = btn
+    }
+    
+    @objc func titleBtnClicked(sender:UIButton) -> () {
+        sender.isSelected = !sender.isSelected
     }
     
     override func loadData(isPullUp: Bool) {
@@ -48,7 +60,7 @@ extension MQLHomeViewController {
     override func setTableView() {
         super.setTableView()
         
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(titleBtnClicked(sender:)))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(leftBtnClicked(sender:)))
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
