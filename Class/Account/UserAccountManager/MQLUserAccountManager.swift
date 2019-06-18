@@ -19,6 +19,9 @@ import UIKit
     }
     var expiresDate: Date?
     
+    var screen_name: String?    //用户昵称
+    var avatar_large: String?   //用户头像地址（大图）
+    
     var userLogon: Bool{
         return access_token != nil
     }
@@ -52,6 +55,8 @@ import UIKit
         uid = nil
         expires_in = 0
         expiresDate = nil
+        screen_name = nil
+        avatar_large = nil
         
         saveToLocal()
     }
@@ -77,12 +82,16 @@ import UIKit
         access_token = aDecoder.decodeObject(forKey: "access_token") as? String
         uid = aDecoder.decodeObject(forKey: "uid") as? String
         expiresDate = aDecoder.decodeObject(forKey: "expiresDate") as? Date
+        screen_name = aDecoder.decodeObject(forKey: "screen_name") as? String
+        avatar_large = aDecoder.decodeObject(forKey: "avatar_large") as? String
     }
     
     func encode(with aCoder: NSCoder){
         aCoder.encode(self.access_token, forKey: "access_token")
         aCoder.encode(self.uid, forKey: "uid")
         aCoder.encode(self.expiresDate, forKey: "expiresDate")
+        aCoder.encode(self.screen_name, forKey: "screen_name")
+        aCoder.encode(self.avatar_large, forKey: "avatar_large")
     }
 
 }
