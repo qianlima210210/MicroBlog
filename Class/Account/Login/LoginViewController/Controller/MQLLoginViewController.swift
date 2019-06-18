@@ -122,6 +122,10 @@ extension MQLLoginViewController : WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error){
         hud?.hide(animated: true)
     }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void){
+        decisionHandler(.allow)
+    }
 }
 
 extension MQLLoginViewController {

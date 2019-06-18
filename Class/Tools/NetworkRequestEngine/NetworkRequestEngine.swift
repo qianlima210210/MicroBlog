@@ -174,9 +174,20 @@ extension NetworkRequestEngine {
             let error = value!["error"] as? String ?? ""
             
             if error_code != 0 {
-                print("--------------")
+                
+                print("-----网络问题统一处理---------")
                 let window = UIApplication.shared.delegate!.window!!
                 MBProgressHUD.showAdded(to: window, text: error)
+                
+                print("-----网络问题单一处理---------")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    if error_code == 21332 {//invalid_access_token
+                        //发送登录通知
+                        NotificationCenter.default.post(name: NSNotification.Name(notificationOfUserLogin), object: self, userInfo: nil)
+                    }
+                }
+
                 return NSError(domain: error, code: error_code, userInfo: nil)
             }else{
                 return nil
@@ -184,8 +195,6 @@ extension NetworkRequestEngine {
         }else{
             return NSError(domain: "value为nil", code: -1, userInfo: nil)
         }
-        
-        
     }
 }
 

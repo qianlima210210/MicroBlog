@@ -14,6 +14,7 @@ class MQLMessageViewController: MQLBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        MQLUserAccountManager.share.access_token = ""
     }
 
 

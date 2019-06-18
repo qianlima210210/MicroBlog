@@ -51,6 +51,7 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     @objc func onReceiveNotificationOfUserLogin(notification: Notification) -> () {
         print("\(notification)")
+        
         let vc = MQLLoginViewController(nibName: "MQLLoginViewController", bundle: nil)
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
@@ -152,7 +153,7 @@ extension MQLMainTabBarController {
         timer = Timer(timeInterval: 5, target: self
             , selector: #selector(unread_count), userInfo: nil, repeats: true)
         if timer != nil{
-            RunLoop.current.add(timer!, forMode: .default)
+            //RunLoop.current.add(timer!, forMode: .default)
         }
     }
     

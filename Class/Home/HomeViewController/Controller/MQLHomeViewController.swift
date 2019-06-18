@@ -34,10 +34,6 @@ class MQLHomeViewController: MQLBaseViewController {
     
     override func loadData(isPullUp: Bool) {
         
-        if MQLUserAccountManager.share.userLogon == false {
-            return
-        }
-        
         getStatuses(isPullUp: isPullUp) { (value, errr) in
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
@@ -58,6 +54,11 @@ extension MQLHomeViewController {
     }
     
     func getStatuses(isPullUp: Bool, completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void) -> (){
+        
+        if MQLUserAccountManager.share.userLogon == false {
+            completionHandler(nil, NSError(domain: "未登录", code: -1, userInfo: nil))
+            return
+        }
         
         viewModel.getStatuses(isPullUp: isPullUp) { (value, error) in
             completionHandler(value, error)
