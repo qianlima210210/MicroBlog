@@ -62,7 +62,9 @@ class MQLBaseViewController: UIViewController {
     }
     
     @objc func onReceiveNotificationOfLoginSuccess(notification: NSNotification) -> () {
-        
+        view = nil
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
     }
     
     //MARK: 屏幕旋转相关
