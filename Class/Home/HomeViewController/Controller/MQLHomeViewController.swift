@@ -30,13 +30,8 @@ class MQLHomeViewController: MQLBaseViewController {
     
 
     func generalInit() -> () {
-        let btn: UIButton = UIButton.cz_textButton("good", fontSize: 16, normalColor: .black, highlightedColor: .black)
-        
-        btn.setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
-        btn.setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
-        
+        let btn = TitleButton(title: MQLUserAccountManager.share.screen_name != nil ?  MQLUserAccountManager.share.screen_name! + " " : "首页")
         btn.addTarget(self, action: #selector(titleBtnClicked(sender:)), for: .touchUpInside)
-        
         navItem.titleView = btn
     }
     

@@ -69,6 +69,7 @@
 		D0E23B5822A1346E005E19FE /* MQLTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5722A1346E005E19FE /* MQLTestViewController.swift */; };
 		D0E23B5A22A1467D005E19FE /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5922A1467D005E19FE /* UIBarButtonItem+extension.swift */; };
 		D0E23B5E22A174F6005E19FE /* MQLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5D22A174F5005E19FE /* MQLNavigationBar.swift */; };
+		D0F3525822B8FE6800744952 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3525722B8FE6800744952 /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,7 @@
 		D0E23B5722A1346E005E19FE /* MQLTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLTestViewController.swift; sourceTree = "<group>"; };
 		D0E23B5922A1467D005E19FE /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
 		D0E23B5D22A174F5005E19FE /* MQLNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLNavigationBar.swift; sourceTree = "<group>"; };
+		D0F3525722B8FE6800744952 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -603,6 +605,7 @@
 				D0E23B5D22A174F5005E19FE /* MQLNavigationBar.swift */,
 				D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */,
 				D05B372D22A66DE80073E781 /* MQLVisitorView.xib */,
+				D0F3525722B8FE6800744952 /* TitleButton.swift */,
 			);
 			path = SubSystemViewClass;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				D01E2C8B229EC2DA00A22DE0 /* UIScreen+CZAddition.m in Sources */,
 				D01E2C8A229EC2DA00A22DE0 /* UIView+CZAddition.m in Sources */,
 				D01E2C8C229EC2DA00A22DE0 /* UILabel+CZAddition.m in Sources */,
+				D0F3525822B8FE6800744952 /* TitleButton.swift in Sources */,
 				D01E2C5F229EA15900A22DE0 /* MQLMessageDataModel.swift in Sources */,
 				D01E2C92229EC2DA00A22DE0 /* NSString+CZHash.m in Sources */,
 				D01E2C6D229EA1F900A22DE0 /* MQLHomeDataModel.swift in Sources */,
