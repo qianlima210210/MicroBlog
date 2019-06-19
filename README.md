@@ -988,6 +988,10 @@ func scrollViewDidScroll(_ scrollView: UIScrollView){
 今天在做信息模型归档时，实现NSCoding协议时，因为是在extension中实现的，编译器报上述错误；
 解决方案：根据提示，将NSCoding协议的实现放在模型类中
 　　
+--https://www.jianshu.com/p/33c12a1b9693
+关于wifi环境下指定使用蜂窝网
+
+　　
 　　
 　　
 　　
