@@ -60,6 +60,8 @@
 		D034A3DE22A7A8F700130D15 /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = D034A3DD22A7A8F700130D15 /* default.json */; };
 		D034A3E222AE274100130D15 /* NetworkRequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */; };
 		D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */; };
+		D03D5DA422BA107F00D7C22F /* NewFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D5DA222BA107F00D7C22F /* NewFeatureCollectionViewCell.swift */; };
+		D03D5DA522BA107F00D7C22F /* NewFeatureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03D5DA322BA107F00D7C22F /* NewFeatureCollectionViewCell.xib */; };
 		D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */; };
 		D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B372D22A66DE80073E781 /* MQLVisitorView.xib */; };
 		D0C6DF8922B92235007B4F82 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6DF8822B92235007B4F82 /* NewFeatureView.swift */; };
@@ -151,6 +153,8 @@
 		D034A3DD22A7A8F700130D15 /* default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default.json; sourceTree = "<group>"; };
 		D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestUrl.swift; sourceTree = "<group>"; };
 		D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestEngine.swift; sourceTree = "<group>"; };
+		D03D5DA222BA107F00D7C22F /* NewFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewFeatureCollectionViewCell.swift; path = Class/Tools/SubSystemViewClass/NewFeatureCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		D03D5DA322BA107F00D7C22F /* NewFeatureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewFeatureCollectionViewCell.xib; path = Class/Tools/SubSystemViewClass/NewFeatureCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLVisitorView.swift; sourceTree = "<group>"; };
 		D05B372D22A66DE80073E781 /* MQLVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLVisitorView.xib; sourceTree = "<group>"; };
 		D0C6DF8822B92235007B4F82 /* NewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewFeatureView.swift; path = Class/Account/UserAccountManager/NewFeatureView.swift; sourceTree = SOURCE_ROOT; };
@@ -442,6 +446,8 @@
 				D0C6DF8A22B9225B007B4F82 /* NewFeatureView.xib */,
 				D0C6DF8C22B922BF007B4F82 /* WelcomeView.swift */,
 				D0C6DF8E22B922CE007B4F82 /* WelcomeView.xib */,
+				D03D5DA222BA107F00D7C22F /* NewFeatureCollectionViewCell.swift */,
+				D03D5DA322BA107F00D7C22F /* NewFeatureCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				D01E2C54229E8E1B00A22DE0 /* MQLProfileViewController.xib in Resources */,
 				D01E2C69229EA1D400A22DE0 /* MQLHomeViewController.xib in Resources */,
 				D01EA43E22B0E44A000FF0E6 /* toast_loading@3x.png in Resources */,
+				D03D5DA522BA107F00D7C22F /* NewFeatureCollectionViewCell.xib in Resources */,
 				D01E2C5D229EA13300A22DE0 /* MQLDiscoverViewController.xib in Resources */,
 				D01EA43B22B0E44A000FF0E6 /* toast_warning@2x.png in Resources */,
 				D00A0FBD22997B6700DF7A15 /* Assets.xcassets in Resources */,
@@ -805,6 +812,7 @@
 				D01E2C50229E8D8500A22DE0 /* MQLProfileViewModel.swift in Sources */,
 				D01E2C93229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m in Sources */,
 				D01E2C91229EC2DA00A22DE0 /* UIViewController+CZAddition.m in Sources */,
+				D03D5DA422BA107F00D7C22F /* NewFeatureCollectionViewCell.swift in Sources */,
 				D0C6DF8922B92235007B4F82 /* NewFeatureView.swift in Sources */,
 				D0E23B5E22A174F6005E19FE /* MQLNavigationBar.swift in Sources */,
 				D01E2C89229EC2DA00A22DE0 /* UIColor+CZAddition.m in Sources */,
