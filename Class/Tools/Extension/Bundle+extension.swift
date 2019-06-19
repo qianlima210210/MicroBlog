@@ -13,4 +13,9 @@ extension Bundle {
     var nameSpace: String? {
         return infoDictionary?["CFBundleName"] as? String
     }
+    
+    //当前版本
+    var currentVersion: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
 }

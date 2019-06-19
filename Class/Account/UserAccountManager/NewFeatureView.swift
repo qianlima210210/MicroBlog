@@ -9,14 +9,11 @@
 import UIKit
 
 class NewFeatureView: UIView {
+    class func newFeatureView() -> NewFeatureView? {
+        let view = UINib(nibName: "NewFeatureView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? NewFeatureView
+        view?.frame = UIScreen.main.bounds
+        return view
+    }
+    
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .orange
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
 }

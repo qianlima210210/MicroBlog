@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,10 +13,64 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WelcomeView" customModule="MicroBlog" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="0.1432312939" blue="0.1243967706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="9fg-Fc-ACT">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXH-IS-hDI" userLabel="headerView">
+                    <rect key="frame" x="0.0" y="493" width="375" height="135"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="yDd-rG-BFB">
+                            <rect key="frame" x="145" y="0.0" width="85" height="85"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="F9W-B8-uSa"/>
+                                <constraint firstAttribute="height" constant="85" id="gFd-IU-LnQ"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王者归来" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siC-AD-hfj">
+                            <rect key="frame" x="0.0" y="105" width="375" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="gp3-xh-DTv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yDd-rG-BFB" firstAttribute="centerX" secondItem="KXH-IS-hDI" secondAttribute="centerX" id="5kG-Q0-gcY"/>
+                        <constraint firstAttribute="trailing" secondItem="siC-AD-hfj" secondAttribute="trailing" id="CDX-jw-PH1"/>
+                        <constraint firstItem="siC-AD-hfj" firstAttribute="top" secondItem="yDd-rG-BFB" secondAttribute="bottom" constant="20" id="CxJ-kI-rA6"/>
+                        <constraint firstItem="siC-AD-hfj" firstAttribute="leading" secondItem="KXH-IS-hDI" secondAttribute="leading" id="iAJ-44-rDR"/>
+                        <constraint firstItem="yDd-rG-BFB" firstAttribute="top" secondItem="KXH-IS-hDI" secondAttribute="top" id="jnx-Eg-dhc"/>
+                        <constraint firstAttribute="height" constant="135" id="xjA-50-orl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="KXH-IS-hDI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="H1c-dG-CP7"/>
+                <constraint firstItem="9fg-Fc-ACT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Jol-ae-dQM"/>
+                <constraint firstItem="9fg-Fc-ACT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OZB-PV-8pq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9fg-Fc-ACT" secondAttribute="bottom" id="b49-pQ-2o9"/>
+                <constraint firstItem="KXH-IS-hDI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="bUf-U9-Tow"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KXH-IS-hDI" secondAttribute="bottom" constant="150" id="d3N-NY-uPP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9fg-Fc-ACT" secondAttribute="trailing" id="rUm-mW-deg"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="avatar_default_big" destination="yDd-rG-BFB" id="c98-Vi-rRO"/>
+                <outlet property="bottomLayoutContraintOfHeaderView" destination="d3N-NY-uPP" id="ref-jx-p2Z"/>
+                <outlet property="nickName" destination="siC-AD-hfj" id="qWv-8e-HQe"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </view>
     </objects>
+    <resources>
+        <image name="ad_background" width="414" height="736"/>
+        <image name="avatar_default_big" width="85" height="85"/>
+    </resources>
 </document>

@@ -13,8 +13,25 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     //添加到tabBar上的撰写按钮
     private var composeBtn: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
     
-    //
+    //定时获取未读
     private var timer: Timer?
+    
+    
+    //是否新版本，即第一次使用该版本
+    var isNewVersion: Bool{
+        //获取应用版本
+        let appV = Bundle.main.currentVersion ?? ""
+        
+        //获取UserDefault中版本
+        let key = "UDVersion"
+        let udV = UserDefaults.standard.object(forKey: key) as? String ?? ""
+        
+        //将appV存放到UserDefault
+        UserDefaults.standard.set(appV, forKey: key)
+        
+        
+        return appV != udV
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -208,8 +225,10 @@ extension MQLMainTabBarController {
         }
         
         //将应用版本和磁盘版本对比,不一样：显示新特性视图; 一样：显示欢迎界面
-        let showView = MQLUserAccountManager.share.isNewVersion == true ? NewFeatureView() : WelcomeView()
-        showView.frame = view.bounds
-        view.addSubview(showView)
+        let showView = isNewVersion == true ? NewFeatureView.newFeatureView() : WelcomeView.welcomeView()
+        if let showView = showView {
+            view.addSubview(showView)
+        }
+        
     }
 }
