@@ -172,7 +172,7 @@ extension MQLMainTabBarController {
         timer = Timer(timeInterval: 5, target: self
             , selector: #selector(unread_count), userInfo: nil, repeats: true)
         if timer != nil{
-            //RunLoop.current.add(timer!, forMode: .default)
+            RunLoop.current.add(timer!, forMode: .default)
         }
     }
     
@@ -205,6 +205,9 @@ extension MQLMainTabBarController : UITabBarControllerDelegate {
                 let home = homeNav?.children[0] as? MQLHomeViewController
                 if home != nil {
                     home?.tableView.mj_header?.beginRefreshing()
+                    
+                    tabBar.items?[0].badgeValue = nil
+                    UIApplication.shared.applicationIconBadgeNumber = 0
                 }
             }
         }
