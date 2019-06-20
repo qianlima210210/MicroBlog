@@ -57,7 +57,7 @@ extension MQLHomeViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(leftBtnClicked(sender:)))
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
     }
     
     func getStatuses(isPullUp: Bool, completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void) -> (){
@@ -91,6 +91,7 @@ extension MQLHomeViewController {
         //设置
         let status = viewModel.dataModel.statuses[indexPath.row]
         cell.textLabel?.text = status.text
+        cell.textLabel?.textColor = .blue
         
         //返回
         return cell
