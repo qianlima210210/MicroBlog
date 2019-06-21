@@ -79,6 +79,7 @@
 		D0E23B5E22A174F6005E19FE /* MQLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5D22A174F5005E19FE /* MQLNavigationBar.swift */; };
 		D0F3525822B8FE6800744952 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3525722B8FE6800744952 /* TitleButton.swift */; };
 		D0F8897822BCDD550041A7D0 /* MQLUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8897722BCDD550041A7D0 /* MQLUserDataModel.swift */; };
+		D0F8897A22BCF3130041A7D0 /* MQLStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8897922BCF3130041A7D0 /* MQLStatusViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +176,7 @@
 		D0E23B5D22A174F5005E19FE /* MQLNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLNavigationBar.swift; sourceTree = "<group>"; };
 		D0F3525722B8FE6800744952 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		D0F8897722BCDD550041A7D0 /* MQLUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLUserDataModel.swift; sourceTree = "<group>"; };
+		D0F8897922BCF3130041A7D0 /* MQLStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLStatusViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				D01E2C6A229EA1E900A22DE0 /* MQLHomeViewModel.swift */,
+				D0F8897922BCF3130041A7D0 /* MQLStatusViewModel.swift */,
 			);
 			path = HomeViewModel;
 			sourceTree = "<group>";
@@ -832,6 +835,7 @@
 				D01E2C8F229EC2DA00A22DE0 /* UIButton+CZAddition.m in Sources */,
 				D01EA45222B3B7B9000FF0E6 /* MQLLoginViewController.swift in Sources */,
 				D0CC72B922B61A0A00D5FB0A /* MQLUserAccountManager.swift in Sources */,
+				D0F8897A22BCF3130041A7D0 /* MQLStatusViewModel.swift in Sources */,
 				D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */,
 				D01E2C8E229EC2DA00A22DE0 /* NSString+CZPath.m in Sources */,
 				D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */,

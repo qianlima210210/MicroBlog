@@ -12,6 +12,7 @@ import YYModel
 @objcMembers class Status: NSObject {
     @objc var id: Int64 = 0;
     @objc var text: String?
+    @objc var user: MQLUserDataModel?
     
     override var description: String{
         return yy_modelDescription()

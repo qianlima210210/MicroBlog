@@ -80,7 +80,7 @@ extension MQLHomeViewController {
 extension MQLHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = viewModel.dataModel.statuses.count
+        let count = viewModel.statusListDataModel.statuses.count
         return count
     }
     
@@ -90,7 +90,7 @@ extension MQLHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StatusCell
         
         //设置
-        let status = viewModel.dataModel.statuses[indexPath.row]
+        let status = viewModel.statusListDataModel.statuses[indexPath.row]
         cell.setStatus(status: status)
         
         //返回
