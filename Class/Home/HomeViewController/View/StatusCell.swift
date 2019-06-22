@@ -18,7 +18,9 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var renZheng: UIImageView!
     @IBOutlet weak var zhengWen: UILabel!
     
-    var status: Status?
+    @IBOutlet weak var widthConstraintOfName: NSLayoutConstraint!
+    
+    var statusViewModel: MQLStatusViewModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,12 +33,12 @@ class StatusCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setStatus(status: Status?) -> () {
+    func setStatus(statusViewModel: MQLStatusViewModel?) -> () {
         //设置前清空所有控件老内容
         resetContent()
         
         //保持status
-        self.status = status
+        self.statusViewModel = statusViewModel
         
         //设置所有控件新内容
         setContent()
@@ -45,8 +47,8 @@ class StatusCell: UITableViewCell {
     //设置前清空所有控件老内容
     private func resetContent() -> () {
         
-//        touXiang.image = nil
-//        name.text = nil
+        touXiang.image = nil
+        name.text = nil
 //        huiYuan.image = nil
 //        shiJian.text = nil
 //        laiYuan.text = nil
@@ -56,13 +58,29 @@ class StatusCell: UITableViewCell {
     
     //设置所有控件新内容
     private func setContent() -> () {
-//        touXiang.image = nil
-//        name.text = nil
+        let url = statusViewModel?.dataModel.user?.profile_image_url ?? ""
+        let placeholderImage = UIImage(named: "avatar_default_big")
+        touXiang.sd_setImage(with: URL(string: url), placeholderImage: placeholderImage, options: [], completed: nil)
+        
+        name.text = statusViewModel?.dataModel.user?.screen_name
+        widthConstraintOfName.constant = 100
+        
 //        huiYuan.image = nil
 //        shiJian.text = nil
 //        laiYuan.text = nil
 //        renZheng.image = nil
-        zhengWen.text = status?.text
+        zhengWen.text = statusViewModel?.dataModel.text
     }
+    
+//    -(CGSize)sizeForItem{
+//
+//    if (self.size.width == 0 || self.size.height == 0) {
+//    CGFloat width = kScreenWidth - 10 * 2;
+//    CGRect frame = [self.dataModel.content boundingRectWithSize:CGSizeMake(width, 1000) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:15.0]} context:nil];
+//    self.size = CGSizeMake(width, ceil(frame.size.height) + 1 + 40);
+//    }
+//
+//    return self.size;
+//    }
 
 }

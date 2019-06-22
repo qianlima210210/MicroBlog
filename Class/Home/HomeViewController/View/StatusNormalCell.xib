@@ -114,6 +114,7 @@
                 <outlet property="renZheng" destination="5o5-XM-Rsi" id="DKO-Fx-80q"/>
                 <outlet property="shiJian" destination="DW2-Md-0c0" id="ouu-iM-Puf"/>
                 <outlet property="touXiang" destination="WYj-mr-F3a" id="7iX-OS-JAV"/>
+                <outlet property="widthConstraintOfName" destination="b3E-bb-dIt" id="8fE-RG-D4Z"/>
                 <outlet property="zhengWen" destination="VJ7-Mb-nJM" id="huS-Yy-Q0X"/>
             </connections>
             <point key="canvasLocation" x="21.739130434782609" y="81.026785714285708"/>
