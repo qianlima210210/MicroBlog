@@ -49,15 +49,18 @@ class StatusCell: UITableViewCell {
         
         touXiang.image = nil
         name.text = nil
-//        huiYuan.image = nil
+        huiYuan.image = nil
 //        shiJian.text = nil
 //        laiYuan.text = nil
-//        renZheng.image = nil
+        renZheng.image = nil
         zhengWen.text = nil
     }
     
     //设置所有控件新内容
     private func setContent() -> () {
+        //设置头像
+        let layer = self.touXiang.layer
+        layer.cornerRadius = self.touXiang.bounds.width / 2
         if statusViewModel?.touXiangImage == nil {
             let url = statusViewModel?.dataModel.user?.profile_image_url ?? ""
             let placeholderImage = UIImage(named: "avatar_default_big")
@@ -69,13 +72,20 @@ class StatusCell: UITableViewCell {
             self.touXiang.image = self.statusViewModel?.touXiangImage
         }
         
+        //设置名称
         name.text = statusViewModel?.dataModel.user?.screen_name
         widthConstraintOfName.constant = (((name.text ?? "") as NSString).size(font: name.font, width: 1000, height: name.bounds.height)).width
         
-//        huiYuan.image = nil
+        //设置会员
+        self.huiYuan.image = statusViewModel?.huiYuanImage
+
+        
 //        shiJian.text = nil
 //        laiYuan.text = nil
-//        renZheng.image = nil
+        
+        //设置认证
+        renZheng.image = statusViewModel?.renZhengImage
+        
         zhengWen.text = statusViewModel?.dataModel.text
     }
     
