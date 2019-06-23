@@ -43,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_membership" translatesAutoresizingMaskIntoConstraints="NO" id="Ssy-O5-X2h" userLabel="会员图标">
-                        <rect key="frame" x="97" y="19" width="14" height="14"/>
+                        <rect key="frame" x="92" y="19" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="14" id="HiS-qD-Neg"/>
                             <constraint firstAttribute="height" constant="14" id="U0G-3f-jIx"/>
@@ -93,7 +93,7 @@
                     <constraint firstItem="Fn5-ki-Jot" firstAttribute="bottom" secondItem="DW2-Md-0c0" secondAttribute="bottom" id="Obz-BZ-7Tj"/>
                     <constraint firstItem="m74-PX-1yH" firstAttribute="top" secondItem="4Cz-ZV-SQn" secondAttribute="top" id="T7S-Xg-DEL"/>
                     <constraint firstItem="sTZ-TK-wHA" firstAttribute="leading" secondItem="WYj-mr-F3a" secondAttribute="trailing" constant="10" id="VhH-5E-6Jk"/>
-                    <constraint firstItem="Ssy-O5-X2h" firstAttribute="leading" secondItem="sTZ-TK-wHA" secondAttribute="trailing" constant="10" id="WX6-p9-qBd"/>
+                    <constraint firstItem="Ssy-O5-X2h" firstAttribute="leading" secondItem="sTZ-TK-wHA" secondAttribute="trailing" constant="5" id="WX6-p9-qBd"/>
                     <constraint firstAttribute="trailing" secondItem="VJ7-Mb-nJM" secondAttribute="trailing" constant="10" id="agh-1d-H3Z"/>
                     <constraint firstItem="sTZ-TK-wHA" firstAttribute="top" secondItem="m74-PX-1yH" secondAttribute="bottom" constant="10" id="bcl-su-ojx"/>
                     <constraint firstItem="DW2-Md-0c0" firstAttribute="bottom" secondItem="WYj-mr-F3a" secondAttribute="bottom" id="bfx-U7-JW9"/>

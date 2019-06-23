@@ -70,6 +70,7 @@
 		D03D5DDD22BBAF3300D7C22F /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D5DDC22BBAF3300D7C22F /* StatusCell.swift */; };
 		D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */; };
 		D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B372D22A66DE80073E781 /* MQLVisitorView.xib */; };
+		D0C6DF9122BF3B64007B4F82 /* NSStrin+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6DF9022BF3B64007B4F82 /* NSStrin+extension.swift */; };
 		D0CC72B922B61A0A00D5FB0A /* MQLUserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */; };
 		D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B51229FD989005E19FE /* Bundle+extension.swift */; };
 		D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */; };
@@ -167,6 +168,7 @@
 		D03D5DDC22BBAF3300D7C22F /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		D05B372B22A66DDA0073E781 /* MQLVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLVisitorView.swift; sourceTree = "<group>"; };
 		D05B372D22A66DE80073E781 /* MQLVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLVisitorView.xib; sourceTree = "<group>"; };
+		D0C6DF9022BF3B64007B4F82 /* NSStrin+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStrin+extension.swift"; sourceTree = "<group>"; };
 		D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLUserAccountManager.swift; sourceTree = "<group>"; };
 		D0E23B51229FD989005E19FE /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLBaseNavigationController.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 			children = (
 				D0E23B51229FD989005E19FE /* Bundle+extension.swift */,
 				D0E23B5922A1467D005E19FE /* UIBarButtonItem+extension.swift */,
+				D0C6DF9022BF3B64007B4F82 /* NSStrin+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				D01E2C8E229EC2DA00A22DE0 /* NSString+CZPath.m in Sources */,
 				D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */,
 				D0F8897822BCDD550041A7D0 /* MQLUserDataModel.swift in Sources */,
+				D0C6DF9122BF3B64007B4F82 /* NSStrin+extension.swift in Sources */,
 				D01E2C90229EC2DA00A22DE0 /* NSObject+CZRuntime.m in Sources */,
 				D01EA44D22B3B77A000FF0E6 /* MQLLoginDataModel.swift in Sources */,
 				D01E2C61229EA16600A22DE0 /* MQLMessageViewModel.swift in Sources */,

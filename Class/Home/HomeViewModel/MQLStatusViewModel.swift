@@ -12,6 +12,8 @@ class MQLStatusViewModel: NSObject {
     
     var dataModel: Status
     
+    var touXiangImage: UIImage?
+    
     init(_ dataModel: Status) {
         self.dataModel = dataModel
         super.init()

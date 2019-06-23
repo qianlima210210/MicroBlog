@@ -58,12 +58,19 @@ class StatusCell: UITableViewCell {
     
     //设置所有控件新内容
     private func setContent() -> () {
-        let url = statusViewModel?.dataModel.user?.profile_image_url ?? ""
-        let placeholderImage = UIImage(named: "avatar_default_big")
-        touXiang.sd_setImage(with: URL(string: url), placeholderImage: placeholderImage, options: [], completed: nil)
+        if statusViewModel?.touXiangImage == nil {
+            let url = statusViewModel?.dataModel.user?.profile_image_url ?? ""
+            let placeholderImage = UIImage(named: "avatar_default_big")
+            touXiang.sd_setImage(with: URL(string: url), placeholderImage: placeholderImage, options: []) {[weak self] (image, _, _, _) in
+                self?.statusViewModel?.touXiangImage = image
+                self?.touXiang.image = image
+            }
+        }else{
+            self.touXiang.image = self.statusViewModel?.touXiangImage
+        }
         
         name.text = statusViewModel?.dataModel.user?.screen_name
-        widthConstraintOfName.constant = 100
+        widthConstraintOfName.constant = (((name.text ?? "") as NSString).size(font: name.font, width: 1000, height: name.bounds.height)).width
         
 //        huiYuan.image = nil
 //        shiJian.text = nil
@@ -72,15 +79,6 @@ class StatusCell: UITableViewCell {
         zhengWen.text = statusViewModel?.dataModel.text
     }
     
-//    -(CGSize)sizeForItem{
-//
-//    if (self.size.width == 0 || self.size.height == 0) {
-//    CGFloat width = kScreenWidth - 10 * 2;
-//    CGRect frame = [self.dataModel.content boundingRectWithSize:CGSizeMake(width, 1000) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:15.0]} context:nil];
-//    self.size = CGSizeMake(width, ceil(frame.size.height) + 1 + 40);
-//    }
-//
-//    return self.size;
-//    }
+
 
 }
