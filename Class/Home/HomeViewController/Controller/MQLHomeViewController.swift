@@ -98,7 +98,7 @@ extension MQLHomeViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 345
+        return 312
     }
 }
 

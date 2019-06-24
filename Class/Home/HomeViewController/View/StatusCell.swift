@@ -17,6 +17,9 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var laiYuan: UILabel!
     @IBOutlet weak var renZheng: UIImageView!
     @IBOutlet weak var zhengWen: UILabel!
+    @IBOutlet weak var bottomToolsBarContainer: UIView!
+    
+    
     
     @IBOutlet weak var widthConstraintOfName: NSLayoutConstraint!
     
@@ -25,6 +28,7 @@ class StatusCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -91,4 +95,15 @@ class StatusCell: UITableViewCell {
     
 
 
+}
+
+//底部工具栏
+extension StatusCell {
+    func addFenXiangPingLunDianZanToBottomToolsBarContainer() -> () {
+        let widthOfFenGeXian: CGFloat = 1
+        let widthOfBtn = (UIScreen.main.bounds.width - CGFloat(10 * 2) - 2 * widthOfFenGeXian) / 3
+        
+        
+        
+    }
 }
