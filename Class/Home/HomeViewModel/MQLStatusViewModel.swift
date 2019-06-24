@@ -13,7 +13,7 @@ class MQLStatusViewModel: NSObject {
     var dataModel: Status
     
     var heightOfZhengWen: CGFloat = 200
-    var heightOfPicturesViewContainer: CGFloat = 100
+    var sizeOfPicturesViewContainer = CGSize()
     var heightOfBottomToolBar: CGFloat = 28
     
     var touXiangImage: UIImage?
@@ -47,6 +47,14 @@ class MQLStatusViewModel: NSObject {
             renZhengImage = nil
         }
         
+        //获取配图大小
+        sizeOfPicturesViewContainer = calcPictureSize(count: dataModel.pic_urls?.count ?? 0)
+        
+    }
+    
+    func calcPictureSize(count: Int) -> CGSize {
+        
+        return CGSize(width: 100, height: 50)
     }
     
 }

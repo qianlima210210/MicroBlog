@@ -100,7 +100,7 @@ extension MQLHomeViewController {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let statusViewModel = viewModel.statusListViewModel[indexPath.row]
         return 64 + statusViewModel.heightOfZhengWen + 0
-                    + statusViewModel.heightOfPicturesViewContainer + 10
+                    + statusViewModel.sizeOfPicturesViewContainer.height + 10
                         + statusViewModel.heightOfBottomToolBar
     }
 }

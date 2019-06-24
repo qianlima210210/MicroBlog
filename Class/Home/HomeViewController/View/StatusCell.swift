@@ -31,6 +31,7 @@ class StatusCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
         addFenXiangPingLunDianZanToBottomToolsBarContainer()
     }
@@ -99,7 +100,7 @@ class StatusCell: UITableViewCell {
         zhengWen.text = statusViewModel?.dataModel.text
         
         //设置图像视图容器
-        heightConstraintOfPicturesViewContainer.constant = statusViewModel?.heightOfPicturesViewContainer ?? 0
+        heightConstraintOfPicturesViewContainer.constant = statusViewModel?.sizeOfPicturesViewContainer.height ?? 0
         
         //设置底部工具栏
         let reposts_count = statusViewModel?.dataModel.reposts_count ?? 0
