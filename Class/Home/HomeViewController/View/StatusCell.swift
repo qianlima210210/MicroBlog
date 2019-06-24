@@ -19,16 +19,18 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var zhengWen: UILabel!
     @IBOutlet weak var bottomToolsBarContainer: UIView!
     
-    
-    
     @IBOutlet weak var widthConstraintOfName: NSLayoutConstraint!
+    
+    var retweetBtn = UIButton(type: .custom)
+    var commentBtn = UIButton(type: .custom)
+    var likeBtn = UIButton(type: .custom)
     
     var statusViewModel: MQLStatusViewModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        addFenXiangPingLunDianZanToBottomToolsBarContainer()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,6 +60,7 @@ class StatusCell: UITableViewCell {
 //        laiYuan.text = nil
         renZheng.image = nil
         zhengWen.text = nil
+        
     }
     
     //设置所有控件新内容
@@ -103,7 +106,34 @@ extension StatusCell {
         let widthOfFenGeXian: CGFloat = 1
         let widthOfBtn = (UIScreen.main.bounds.width - CGFloat(10 * 2) - 2 * widthOfFenGeXian) / 3
         
+        //timeline_icon_retweet
+        retweetBtn.setImage(UIImage(named: "timeline_icon_retweet"), for: .normal)
+        bottomToolsBarContainer.addSubview(retweetBtn)
+        retweetBtn.snp_makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalToSuperview()
+            make.width.equalTo(widthOfBtn)
+        }
         
+        //timeline_icon_comment
+        commentBtn.setImage(UIImage(named: "timeline_icon_comment"), for: .normal)
+        bottomToolsBarContainer.addSubview(commentBtn)
+        commentBtn.snp_makeConstraints { (make) in
+            make.left.equalTo(retweetBtn.snp_right).offset(1)
+            make.top.equalToSuperview()
+            make.height.equalToSuperview()
+            make.width.equalTo(widthOfBtn)
+        }
         
+        //timeline_icon_unlike/timeline_icon_like
+        likeBtn.setImage(UIImage(named: "timeline_icon_unlike"), for: .normal)
+        bottomToolsBarContainer.addSubview(likeBtn)
+        likeBtn.snp_makeConstraints { (make) in
+            make.left.equalTo(commentBtn.snp_right).offset(1)
+            make.top.equalToSuperview()
+            make.height.equalToSuperview()
+            make.width.equalTo(widthOfBtn)
+        }
     }
 }
