@@ -14,6 +14,10 @@ import YYModel
     @objc var text: String?
     @objc var user: MQLUserDataModel?
     
+    @objc var reposts_count: Int64 = 0      //转发数
+    @objc var comments_count: Int64 = 0     //评论数
+    @objc var attitudes_count: Int64 = 0    //表态数
+    
     override var description: String{
         return yy_modelDescription()
     }

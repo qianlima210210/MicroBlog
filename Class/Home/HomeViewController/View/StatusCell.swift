@@ -93,7 +93,18 @@ class StatusCell: UITableViewCell {
         //设置认证
         renZheng.image = statusViewModel?.renZhengImage
         
+        //设置正文
         zhengWen.text = statusViewModel?.dataModel.text
+        
+        //设置底部工具栏
+        let reposts_count = statusViewModel?.dataModel.reposts_count ?? 0
+        retweetBtn.setTitle(reposts_count > 0 ? "\(reposts_count)" : "转发", for: .normal)
+        
+        let comments_count = statusViewModel?.dataModel.comments_count ?? 0
+        commentBtn.setTitle(comments_count > 0 ? "\(comments_count)" : "评论", for: .normal)
+        
+        let attitudes_count = statusViewModel?.dataModel.attitudes_count ?? 0
+        likeBtn.setTitle(attitudes_count > 0 ? "\(attitudes_count)" : "点赞", for: .normal)
     }
     
 
@@ -108,6 +119,11 @@ extension StatusCell {
         
         //timeline_icon_retweet
         retweetBtn.setImage(UIImage(named: "timeline_icon_retweet"), for: .normal)
+        retweetBtn.addTarget(self, action: #selector(retweetBtnClicked), for: .touchUpInside)
+        retweetBtn.setTitleColor(.gray, for: .normal)
+        retweetBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        retweetBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        
         bottomToolsBarContainer.addSubview(retweetBtn)
         retweetBtn.snp_makeConstraints { (make) in
             make.left.equalToSuperview()
@@ -118,6 +134,11 @@ extension StatusCell {
         
         //timeline_icon_comment
         commentBtn.setImage(UIImage(named: "timeline_icon_comment"), for: .normal)
+        commentBtn.addTarget(self, action: #selector(commentBtnClicked), for: .touchUpInside)
+        commentBtn.setTitleColor(.gray, for: .normal)
+        commentBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        commentBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        
         bottomToolsBarContainer.addSubview(commentBtn)
         commentBtn.snp_makeConstraints { (make) in
             make.left.equalTo(retweetBtn.snp_right).offset(1)
@@ -128,6 +149,11 @@ extension StatusCell {
         
         //timeline_icon_unlike/timeline_icon_like
         likeBtn.setImage(UIImage(named: "timeline_icon_unlike"), for: .normal)
+        likeBtn.addTarget(self, action: #selector(likeBtnClicked), for: .touchUpInside)
+        likeBtn.setTitleColor(.gray, for: .normal)
+        likeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        likeBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        
         bottomToolsBarContainer.addSubview(likeBtn)
         likeBtn.snp_makeConstraints { (make) in
             make.left.equalTo(commentBtn.snp_right).offset(1)
@@ -136,4 +162,17 @@ extension StatusCell {
             make.width.equalTo(widthOfBtn)
         }
     }
+    
+    @objc func retweetBtnClicked() -> () {
+        print(#function)
+    }
+    
+    @objc func commentBtnClicked() -> () {
+         print(#function)
+    }
+    
+    @objc func likeBtnClicked() -> () {
+         print(#function)
+    }
+    
 }
