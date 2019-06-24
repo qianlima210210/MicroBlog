@@ -20,6 +20,9 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var bottomToolsBarContainer: UIView!
     
     @IBOutlet weak var widthConstraintOfName: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintOfPicturesViewContainer: NSLayoutConstraint!
+    @IBOutlet weak var topConstraintOfPictureViewContainer: NSLayoutConstraint!
+    
     
     var retweetBtn = UIButton(type: .custom)
     var commentBtn = UIButton(type: .custom)
@@ -95,6 +98,12 @@ class StatusCell: UITableViewCell {
         
         //设置正文
         zhengWen.text = statusViewModel?.dataModel.text
+        
+        //设置图像视图容器
+        heightConstraintOfPicturesViewContainer.constant = statusViewModel?.heightOfPicturesViewContainer ?? 0
+        if heightConstraintOfPicturesViewContainer.constant == 0{
+            topConstraintOfPictureViewContainer.constant = 0
+        }
         
         //设置底部工具栏
         let reposts_count = statusViewModel?.dataModel.reposts_count ?? 0
