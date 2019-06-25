@@ -83,6 +83,7 @@ class StatusCell: UITableViewCell {
                                    width: widthOfImageView,
                                    height: widthOfImageView)
                 let imageView = UIImageView(frame: frame)
+                imageView.contentMode = .scaleToFill
                 imageView.backgroundColor = .red
                 picturesViewContainer.addSubview(imageView)
                 picturesImageViews.append(imageView)
@@ -137,6 +138,14 @@ class StatusCell: UITableViewCell {
         let count =  statusViewModel?.dataModel.pic_urls?.count ?? 0
         for i in count..<9 {
             picturesImageViews[i].isHidden = true
+        }
+        if count > 0 {
+            for i in 0..<count{
+                var thumbnail_pic = statusViewModel?.dataModel.pic_urls?[i]["thumbnail_pic"] as? NSString ?? ""
+                thumbnail_pic = thumbnail_pic.replacingOccurrences(of: "thumbnail", with: "bmiddle") as NSString
+                let url = URL(string: thumbnail_pic as String)
+                picturesImageViews[i].sd_setImage(with: url, placeholderImage: nil, options: [], context: nil)
+            }
         }
         
         //设置底部工具栏
