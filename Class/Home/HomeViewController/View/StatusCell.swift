@@ -22,6 +22,7 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var widthConstraintOfName: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintOfPicturesViewContainer: NSLayoutConstraint!
     
+    @IBOutlet weak var picturesViewContainer: UIView!
     
     var retweetBtn = UIButton(type: .custom)
     var commentBtn = UIButton(type: .custom)

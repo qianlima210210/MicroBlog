@@ -134,6 +134,7 @@
                 <outlet property="huiYuan" destination="Ssy-O5-X2h" id="YxD-wD-cpT"/>
                 <outlet property="laiYuan" destination="Fn5-ki-Jot" id="aCc-ha-p5W"/>
                 <outlet property="name" destination="sTZ-TK-wHA" id="hmi-UY-nCf"/>
+                <outlet property="picturesViewContainer" destination="a8l-CA-bNB" id="i8j-v3-5jO"/>
                 <outlet property="renZheng" destination="5o5-XM-Rsi" id="DKO-Fx-80q"/>
                 <outlet property="shiJian" destination="DW2-Md-0c0" id="ouu-iM-Puf"/>
                 <outlet property="touXiang" destination="WYj-mr-F3a" id="7iX-OS-JAV"/>

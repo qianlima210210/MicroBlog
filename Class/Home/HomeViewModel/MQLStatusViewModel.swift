@@ -54,7 +54,21 @@ class MQLStatusViewModel: NSObject {
     
     func calcPictureSize(count: Int) -> CGSize {
         
-        return CGSize(width: 100, height: 50)
+        if count == 0 {
+            return CGSize()
+        }
+        
+        //行数
+        let row: CGFloat = CGFloat((count - 1 ) / 3 + 1)
+            
+        //图片宽度
+        let picWidth = widthOfPicturesViewContainer / 3
+        
+        //PicturesViewContainer高度
+        let heightOfPicturesViewContainer = outerMargin + row * picWidth + CGFloat(row - 1) * innerMargin
+        
+        
+        return CGSize(width: widthOfPicturesViewContainer, height: heightOfPicturesViewContainer)
     }
     
 }
