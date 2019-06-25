@@ -24,6 +24,8 @@ class StatusCell: UITableViewCell {
     
     @IBOutlet weak var picturesViewContainer: UIView!
     
+    var picturesImageViews = [UIImageView]()
+    
     var retweetBtn = UIButton(type: .custom)
     var commentBtn = UIButton(type: .custom)
     var likeBtn = UIButton(type: .custom)
@@ -35,6 +37,7 @@ class StatusCell: UITableViewCell {
         
         // Initialization code
         addFenXiangPingLunDianZanToBottomToolsBarContainer()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -64,6 +67,35 @@ class StatusCell: UITableViewCell {
 //        laiYuan.text = nil
         renZheng.image = nil
         zhengWen.text = nil
+        
+        //清空picturesViewContainern内容
+        if picturesImageViews.count == 0 {
+            
+            picturesViewContainer.clipsToBounds = true
+            let widthOfImageView = widthOfPicturesViewContainer / 3
+            let count = 3
+            for i in 0..<count * count{
+                let row = i / 3
+                let col = i % 3
+                
+                let frame = CGRect(x: CGFloat(col) * (widthOfImageView + innerMargin),
+                                   y: outerMargin + CGFloat(row) * (widthOfImageView + innerMargin),
+                                   width: widthOfImageView,
+                                   height: widthOfImageView)
+                let imageView = UIImageView(frame: frame)
+                imageView.backgroundColor = .red
+                picturesViewContainer.addSubview(imageView)
+                picturesImageViews.append(imageView)
+            }
+            
+        }else{
+            for item in picturesImageViews {
+                item.isHidden = false
+                item.image = nil
+            }
+        }
+        
+
         
     }
     
@@ -102,6 +134,10 @@ class StatusCell: UITableViewCell {
         
         //设置图像视图容器
         heightConstraintOfPicturesViewContainer.constant = statusViewModel?.sizeOfPicturesViewContainer.height ?? 0
+        let count =  statusViewModel?.dataModel.pic_urls?.count ?? 0
+        for i in count..<9 {
+            picturesImageViews[i].isHidden = true
+        }
         
         //设置底部工具栏
         let reposts_count = statusViewModel?.dataModel.reposts_count ?? 0
