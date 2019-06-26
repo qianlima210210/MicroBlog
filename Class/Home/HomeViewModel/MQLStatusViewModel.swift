@@ -13,6 +13,7 @@ class MQLStatusViewModel: NSObject {
     var dataModel: Status
     
     var heightOfZhengWen: CGFloat = 200
+    var heightOfBeiZhuanFaZhengWen: CGFloat = 200
     var sizeOfPicturesViewContainer = CGSize()
     var heightOfBottomToolBar: CGFloat = 28
     

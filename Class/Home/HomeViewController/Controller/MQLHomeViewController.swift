@@ -57,7 +57,7 @@ extension MQLHomeViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(leftBtnClicked(sender:)))
         
-        tableView.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView.register(UINib(nibName: "StatusRetweetCell", bundle: nil), forCellReuseIdentifier: cellId)
         tableView.separatorStyle = .none
     }
     

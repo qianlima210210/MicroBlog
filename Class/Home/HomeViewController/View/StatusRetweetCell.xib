@@ -85,7 +85,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQh-cz-lpF" userLabel="转发微博背景按钮">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQh-cz-lpF" userLabel="被转发微博背景按钮">
                         <rect key="frame" x="10" y="264" width="845" height="180"/>
                         <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -153,7 +153,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="beiZhuanFaZhengWen" destination="cMz-5u-Ybo" id="yaE-xJ-5bc"/>
                 <outlet property="bottomToolsBarContainer" destination="OrM-aE-zL6" id="xCs-TV-Uuw"/>
+                <outlet property="heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu" destination="JMc-hY-sE3" id="Fkl-dj-Ie0"/>
+                <outlet property="heightConstraintOfBeiZhuanFaZhengWen" destination="Vkz-af-70t" id="g4b-GX-Xb4"/>
+                <outlet property="heightConstraintOfPicturesViewContainer" destination="4WK-fs-bST" id="UGS-ef-L2A"/>
+                <outlet property="heightConstraintOfZhengWen" destination="4UO-jG-1YB" id="CKi-pI-ZIv"/>
                 <outlet property="huiYuan" destination="Ssy-O5-X2h" id="YxD-wD-cpT"/>
                 <outlet property="laiYuan" destination="Fn5-ki-Jot" id="aCc-ha-p5W"/>
                 <outlet property="name" destination="sTZ-TK-wHA" id="hmi-UY-nCf"/>

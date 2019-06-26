@@ -17,12 +17,18 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var laiYuan: UILabel!
     @IBOutlet weak var renZheng: UIImageView!
     @IBOutlet weak var zhengWen: UILabel!
+    @IBOutlet weak var beiZhuanFaZhengWen: UILabel!
+    @IBOutlet weak var picturesViewContainer: UIView!
     @IBOutlet weak var bottomToolsBarContainer: UIView!
     
     @IBOutlet weak var widthConstraintOfName: NSLayoutConstraint!
-    @IBOutlet weak var heightConstraintOfPicturesViewContainer: NSLayoutConstraint!
     
-    @IBOutlet weak var picturesViewContainer: UIView!
+    @IBOutlet weak var heightConstraintOfZhengWen: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintOfBeiZhuanFaZhengWen: NSLayoutConstraint!
+    
+    @IBOutlet weak var heightConstraintOfPicturesViewContainer: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu: NSLayoutConstraint!
+    
     
     var picturesImageViews = [UIImageView]()
     
