@@ -10,7 +10,9 @@ import UIKit
 
 class MQLHomeViewController: MQLBaseViewController {
     
-    private let cellId = "cellId"
+    private let StatusNormalCellID = "StatusNormalCellID"
+    private let StatusRetweetCellID = "StatusRetweetCellID"
+    
     private var viewModel: MQLHomeViewModel = MQLHomeViewModel()
 
     override func viewDidLoad() {
@@ -57,7 +59,9 @@ extension MQLHomeViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(leftBtnClicked(sender:)))
         
-        tableView.register(UINib(nibName: "StatusRetweetCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView.register(UINib(nibName: "StatusRetweetCell", bundle: nil), forCellReuseIdentifier: StatusNormalCellID)
+        tableView.register(UINib(nibName: "StatusRetweetCell", bundle: nil), forCellReuseIdentifier: StatusRetweetCellID)
+        
         tableView.separatorStyle = .none
     }
     
@@ -87,7 +91,7 @@ extension MQLHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //获取
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: StatusNormalCellID, for: indexPath) as! StatusCell
         
         //设置
         let statusViewModel = viewModel.statusListViewModel[indexPath.row]
