@@ -31,6 +31,9 @@ class MQLStatusViewModel: NSObject {
         }
     }
     
+    //被转发微博文本
+    var beiZhuanFaZhengWenText: String?
+    
     
     init(_ dataModel: Status) {
         self.dataModel = dataModel
@@ -60,6 +63,9 @@ class MQLStatusViewModel: NSObject {
         
         //获取配图大小
         sizeOfPicturesViewContainer = calcPictureSize(count: pic_urls?.count ?? 0)
+        
+        //被转发微博文本
+        beiZhuanFaZhengWenText = "@" + (dataModel.retweeted_status?.user?.screen_name ?? "") + (dataModel.retweeted_status?.text ?? "")
         
     }
     

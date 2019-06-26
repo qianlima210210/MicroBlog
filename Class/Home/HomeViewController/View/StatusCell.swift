@@ -17,17 +17,17 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var laiYuan: UILabel!
     @IBOutlet weak var renZheng: UIImageView!
     @IBOutlet weak var zhengWen: UILabel!
-    @IBOutlet weak var beiZhuanFaZhengWen: UILabel!
+    @IBOutlet weak var beiZhuanFaZhengWen: UILabel?
     @IBOutlet weak var picturesViewContainer: UIView!
     @IBOutlet weak var bottomToolsBarContainer: UIView!
     
     @IBOutlet weak var widthConstraintOfName: NSLayoutConstraint!
     
     @IBOutlet weak var heightConstraintOfZhengWen: NSLayoutConstraint!
-    @IBOutlet weak var heightConstraintOfBeiZhuanFaZhengWen: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintOfBeiZhuanFaZhengWen: NSLayoutConstraint?
     
     @IBOutlet weak var heightConstraintOfPicturesViewContainer: NSLayoutConstraint!
-    @IBOutlet weak var heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu: NSLayoutConstraint?
     
     
     var picturesImageViews = [UIImageView]()
@@ -73,6 +73,7 @@ class StatusCell: UITableViewCell {
 //        laiYuan.text = nil
         renZheng.image = nil
         zhengWen.text = nil
+        beiZhuanFaZhengWen?.text = nil
         
         //清空picturesViewContainern内容
         if picturesImageViews.count == 0 {
@@ -141,9 +142,8 @@ class StatusCell: UITableViewCell {
         heightConstraintOfZhengWen.constant = statusViewModel?.heightOfZhengWen ?? 0
         
         //设置被转发正文
-        if beiZhuanFaZhengWen != nil {
-            heightConstraintOfBeiZhuanFaZhengWen.constant = statusViewModel?.heightOfBeiZhuanFaZhengWen ?? 0
-        }
+        beiZhuanFaZhengWen?.text = statusViewModel?.beiZhuanFaZhengWenText
+        heightConstraintOfBeiZhuanFaZhengWen?.constant = statusViewModel?.heightOfBeiZhuanFaZhengWen ?? 0
 
         //设置图像视图容器
         heightConstraintOfPicturesViewContainer.constant = statusViewModel?.sizeOfPicturesViewContainer.height ?? 0
@@ -161,9 +161,7 @@ class StatusCell: UITableViewCell {
         }
         
         //heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu=outerMargin+heightOfBeiZhuanFaZhengWen+picturesViewContainer.height
-        if beiZhuanFaZhengWen != nil {
-            heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu.constant = outerMargin + heightConstraintOfBeiZhuanFaZhengWen.constant + heightConstraintOfPicturesViewContainer.constant
-        }
+        heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu?.constant = outerMargin + (heightConstraintOfBeiZhuanFaZhengWen?.constant ?? 0) + heightConstraintOfPicturesViewContainer.constant
 
         //设置底部工具栏
         let reposts_count = statusViewModel?.dataModel.reposts_count ?? 0
