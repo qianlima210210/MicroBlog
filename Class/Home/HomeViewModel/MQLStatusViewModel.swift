@@ -13,13 +13,23 @@ class MQLStatusViewModel: NSObject {
     var dataModel: Status
     
     var heightOfZhengWen: CGFloat = 200
-    var heightOfBeiZhuanFaZhengWen: CGFloat = 200
+    var heightOfBeiZhuanFaZhengWen: CGFloat = 50
     var sizeOfPicturesViewContainer = CGSize()
     var heightOfBottomToolBar: CGFloat = 28
     
     var touXiangImage: UIImage?
     var huiYuanImage: UIImage?
     var renZhengImage: UIImage?
+    
+    //如果是转发微博，返回被转发的配图
+    //如果是自发微博，返回自发微博的配图
+    var pic_urls: [[String:AnyObject]]? {
+        if dataModel.retweeted_status != nil {
+            return dataModel.retweeted_status?.pic_urls
+        }else{
+            return dataModel.pic_urls
+        }
+    }
     
     
     init(_ dataModel: Status) {
@@ -49,7 +59,7 @@ class MQLStatusViewModel: NSObject {
         }
         
         //获取配图大小
-        sizeOfPicturesViewContainer = calcPictureSize(count: dataModel.pic_urls?.count ?? 0)
+        sizeOfPicturesViewContainer = calcPictureSize(count: pic_urls?.count ?? 0)
         
     }
     

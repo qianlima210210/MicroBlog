@@ -138,22 +138,33 @@ class StatusCell: UITableViewCell {
         
         //设置正文
         zhengWen.text = statusViewModel?.dataModel.text
+        heightConstraintOfZhengWen.constant = statusViewModel?.heightOfZhengWen ?? 0
         
+        //设置被转发正文
+        if beiZhuanFaZhengWen != nil {
+            heightConstraintOfBeiZhuanFaZhengWen.constant = statusViewModel?.heightOfBeiZhuanFaZhengWen ?? 0
+        }
+
         //设置图像视图容器
         heightConstraintOfPicturesViewContainer.constant = statusViewModel?.sizeOfPicturesViewContainer.height ?? 0
-        let count =  statusViewModel?.dataModel.pic_urls?.count ?? 0
+        let count =  statusViewModel?.pic_urls?.count ?? 0
         for i in count..<9 {
             picturesImageViews[i].isHidden = true
         }
         if count > 0 {
             for i in 0..<count{
-                var thumbnail_pic = statusViewModel?.dataModel.pic_urls?[i]["thumbnail_pic"] as? NSString ?? ""
+                var thumbnail_pic = statusViewModel?.pic_urls?[i]["thumbnail_pic"] as? NSString ?? ""
                 thumbnail_pic = thumbnail_pic.replacingOccurrences(of: "thumbnail", with: "bmiddle") as NSString
                 let url = URL(string: thumbnail_pic as String)
                 picturesImageViews[i].sd_setImage(with: url, placeholderImage: nil, options: [], context: nil)
             }
         }
         
+        //heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu=outerMargin+heightOfBeiZhuanFaZhengWen+picturesViewContainer.height
+        if beiZhuanFaZhengWen != nil {
+            heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu.constant = outerMargin + heightConstraintOfBeiZhuanFaZhengWen.constant + heightConstraintOfPicturesViewContainer.constant
+        }
+
         //设置底部工具栏
         let reposts_count = statusViewModel?.dataModel.reposts_count ?? 0
         retweetBtn.setTitle(reposts_count > 0 ? "\(reposts_count)" : "转发", for: .normal)

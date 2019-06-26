@@ -131,6 +131,7 @@
             <connections>
                 <outlet property="bottomToolsBarContainer" destination="OrM-aE-zL6" id="xCs-TV-Uuw"/>
                 <outlet property="heightConstraintOfPicturesViewContainer" destination="s3H-cQ-3EV" id="g9E-sz-KSJ"/>
+                <outlet property="heightConstraintOfZhengWen" destination="4UO-jG-1YB" id="1fi-ts-xwF"/>
                 <outlet property="huiYuan" destination="Ssy-O5-X2h" id="YxD-wD-cpT"/>
                 <outlet property="laiYuan" destination="Fn5-ki-Jot" id="aCc-ha-p5W"/>
                 <outlet property="name" destination="sTZ-TK-wHA" id="hmi-UY-nCf"/>

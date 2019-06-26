@@ -15,6 +15,7 @@ import YYModel
     @objc var user: MQLUserDataModel?
     
     @objc var pic_urls: [[String:AnyObject]]?
+    @objc var retweeted_status: Status?
     
     @objc var reposts_count: Int64 = 0      //转发数
     @objc var comments_count: Int64 = 0     //评论数

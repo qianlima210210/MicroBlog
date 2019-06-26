@@ -59,7 +59,7 @@ extension MQLHomeViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(leftBtnClicked(sender:)))
         
-        tableView.register(UINib(nibName: "StatusRetweetCell", bundle: nil), forCellReuseIdentifier: StatusNormalCellID)
+        tableView.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: StatusNormalCellID)
         tableView.register(UINib(nibName: "StatusRetweetCell", bundle: nil), forCellReuseIdentifier: StatusRetweetCellID)
         
         tableView.separatorStyle = .none
@@ -90,11 +90,13 @@ extension MQLHomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let statusViewModel = viewModel.statusListViewModel[indexPath.row]
+        let cellId = statusViewModel.dataModel.retweeted_status != nil ? StatusRetweetCellID : StatusNormalCellID
+        
         //获取
-        let cell = tableView.dequeueReusableCell(withIdentifier: StatusNormalCellID, for: indexPath) as! StatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StatusCell
         
         //设置
-        let statusViewModel = viewModel.statusListViewModel[indexPath.row]
         cell.setStatus(statusViewModel: statusViewModel)
         
         //返回
@@ -103,9 +105,18 @@ extension MQLHomeViewController {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let statusViewModel = viewModel.statusListViewModel[indexPath.row]
-        return 64 + statusViewModel.heightOfZhengWen + 0
-                    + statusViewModel.sizeOfPicturesViewContainer.height + 10
-                        + statusViewModel.heightOfBottomToolBar
+        
+        if statusViewModel.dataModel.retweeted_status != nil {
+            return 64 + statusViewModel.heightOfZhengWen + outerMargin
+                + statusViewModel.heightOfBeiZhuanFaZhengWen + 0
+                + statusViewModel.sizeOfPicturesViewContainer.height + outerMargin
+                + statusViewModel.heightOfBottomToolBar
+            
+        }else{
+            return 64 + statusViewModel.heightOfZhengWen + 0
+                + statusViewModel.sizeOfPicturesViewContainer.height + outerMargin
+                + statusViewModel.heightOfBottomToolBar
+        }
     }
 }
 
