@@ -34,7 +34,7 @@ class MQLStatusViewModel: NSObject {
     //被转发微博文本
     var beiZhuanFaZhengWenText: String?
     
-    
+    //在获取对应的数据模型对象后，立即做内部缓存处理；这样所谓处理一次，提升性能
     init(_ dataModel: Status) {
         self.dataModel = dataModel
         super.init()
@@ -88,4 +88,29 @@ class MQLStatusViewModel: NSObject {
         return CGSize(width: widthOfPicturesViewContainer, height: heightOfPicturesViewContainer)
     }
     
+    func updatePictureSize(image: UIImage?) -> () {
+        guard let image = image else {
+            sizeOfPicturesViewContainer = CGSize.zero
+            return
+        }
+        
+        var size = image.size
+        
+        let maxWidth = UIScreen.main.bounds.width - 2 * outerMargin
+        let minWidth = CGFloat(40)
+        
+        //处理过宽
+        if size.width > maxWidth {
+            size.height  = maxWidth *  size.height / size.width + outerMargin
+            size.width = maxWidth
+        }
+        
+        //处理过窄
+        if size.width < minWidth {
+            size.height  = minWidth * size.height / size.width + outerMargin
+            size.width = minWidth
+        }
+        
+        sizeOfPicturesViewContainer = size
+    }
 }

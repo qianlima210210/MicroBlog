@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MQLHomeViewModel: NSObject {
     
@@ -35,9 +36,42 @@ class MQLHomeViewModel: NSObject {
                     self.statusListViewModel = arrayM + self.statusListViewModel
                 }
                 
+                //completionHandler(value, error), NSError?
+                self.singlePic(arrayM: arrayM, completionHandler: completionHandler, value: value, error: error)
+                
+            }else{
+                completionHandler(value, error)
             }
-            completionHandler(value, error)
+            
             
         }
     }
+    
+    //获取单张图大小
+    func singlePic(arrayM: [MQLStatusViewModel], completionHandler: @escaping ([String:AnyObject]?, NSError?) -> Void, value: [String:AnyObject]?, error: NSError?) -> () {
+        let group = DispatchGroup()
+        
+        for item in arrayM {
+            
+            guard let count = item.pic_urls?.count else{
+                continue
+            }
+            
+            if count == 1 {
+                let thumbnail_pic = item.pic_urls?[0]["thumbnail_pic"] as? String ?? ""
+                let url = URL(string: thumbnail_pic)
+                
+                group.enter()
+                SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
+                    item.updatePictureSize(image: image)
+                    group.leave()
+                }
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            completionHandler(value, error)
+        }
+    }
+    
 }

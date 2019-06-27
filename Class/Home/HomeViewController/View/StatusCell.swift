@@ -76,6 +76,7 @@ class StatusCell: UITableViewCell {
         beiZhuanFaZhengWen?.text = nil
         
         //清空picturesViewContainern内容
+        //1.1 多图处理
         if picturesImageViews.count == 0 {
             
             picturesViewContainer.clipsToBounds = true
@@ -102,6 +103,12 @@ class StatusCell: UITableViewCell {
                 item.image = nil
             }
         }
+        
+        //恢复imageView0大小
+        picturesImageViews[0].frame = CGRect(x: CGFloat(0),
+                                             y: outerMargin,
+                                             width: widthOfPicturesViewContainer / 3,
+                                             height: widthOfPicturesViewContainer / 3)
         
 
         
@@ -147,6 +154,7 @@ class StatusCell: UITableViewCell {
 
         //设置图像视图容器
         heightConstraintOfPicturesViewContainer.constant = statusViewModel?.sizeOfPicturesViewContainer.height ?? 0
+        //1.1 配图一般处理
         let count =  statusViewModel?.pic_urls?.count ?? 0
         for i in count..<9 {
             picturesImageViews[i].isHidden = true
@@ -160,6 +168,19 @@ class StatusCell: UITableViewCell {
             }
         }
         
+        //1.1 配图特殊处理
+        if count == 1 {
+            
+            let width = statusViewModel?.sizeOfPicturesViewContainer.width ?? 0 //只有一张图是，宽度才有用武之地
+            let height = statusViewModel?.sizeOfPicturesViewContainer.height ?? 0
+            if height > CGFloat(0){
+                //变更imageView0大小
+                picturesImageViews[0].frame = CGRect(x: CGFloat(0),
+                                                     y: outerMargin,
+                                                     width: width,
+                                                     height: height - outerMargin)
+            }
+        }
         //heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu=outerMargin+heightOfBeiZhuanFaZhengWen+picturesViewContainer.height
         heightConstraintOfBeiZhuanFaWeiBoBeiJingAnNiu?.constant = outerMargin + (heightConstraintOfBeiZhuanFaZhengWen?.constant ?? 0) + heightConstraintOfPicturesViewContainer.constant
 
