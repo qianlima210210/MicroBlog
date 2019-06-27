@@ -67,6 +67,13 @@ class MQLStatusViewModel: NSObject {
         //被转发微博文本
         beiZhuanFaZhengWenText = "@" + (dataModel.retweeted_status?.user?.screen_name ?? "") + (dataModel.retweeted_status?.text ?? "")
         
+        //var heightOfZhengWen: CGFloat = 200获取正文高度
+        let zhengWenText =  (dataModel.text ?? "") as NSString
+        heightOfZhengWen = zhengWenText.size(font: UIFont.systemFont(ofSize: 15), width: widthOfPicturesViewContainer, height: 1000).height
+        
+        //var heightOfBeiZhuanFaZhengWen: CGFloat = 50获取被转发正文高度
+        let zhuanFaZhengWenText = (beiZhuanFaZhengWenText ?? "") as NSString
+        heightOfBeiZhuanFaZhengWen = zhuanFaZhengWenText.size(font: UIFont.systemFont(ofSize: 15), width: widthOfPicturesViewContainer, height: 1000).height
     }
     
     func calcPictureSize(count: Int) -> CGSize {
