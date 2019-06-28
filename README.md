@@ -992,6 +992,15 @@ func scrollViewDidScroll(_ scrollView: UIScrollView){
 关于wifi环境下指定使用蜂窝网
 
 
+--解决UIScrollView在xib或storyBoard中使用autoLayout产生的has ambiguous scrollable content height has ambiguous scrollable content width问题:
+在UIScrollView下添加UIView，就叫ContentView吧。为ContentView添加约束：
+Horizontally in Container; Vertically in Container; 
+Trailing Space to Superview;Leading Space to Superview; 
+Bottom Space to Superview; Top Space to Superview; 
+
+
+
+
 
 　　
 　　
