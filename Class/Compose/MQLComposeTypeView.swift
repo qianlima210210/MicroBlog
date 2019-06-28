@@ -72,23 +72,20 @@ extension MQLComposeTypeView {
     }
     
     func addBtns() -> () {
-        
+        //强行获取frame
         layoutIfNeeded()
         
-        let image = UIImage(named: "tabbar_compose_idea")
-        let title = "点子"
-        let btn = MQLMQLComposeTypeButton.composeTypeButton(image: image, title: title)
-        btn?.addTarget(self, action: #selector(btnClicked(sender:)), for: .touchUpInside)
+        //添加第一个视图
+        let viewOne = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height))
+        addBtnsToView(view: viewOne, idx: 0)
         
-        scrollView.addSubview(btn!)
-        btn!.snp_makeConstraints { (make) in
-            make.left.top.equalToSuperview()
-            make.width.height.equalTo(100)
-        }
-        
+        //添加第2个视图
+        let viewTwo = UIView(frame: CGRect(x: scrollView.bounds.width, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height))
+        addBtnsToView(view: viewTwo, idx: 6)
     }
     
-    @objc func btnClicked(sender: MQLMQLComposeTypeButton) -> () {
-        print(#function)
+    func addBtnsToView(view: UIView, idx: Int) -> () {
+        
     }
+
 }
