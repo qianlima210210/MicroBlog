@@ -57,6 +57,11 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     @objc private func composeBtnClicked(sender: UIButton) -> () {
         print(#function)
+        guard let composeTypeView = MQLComposeTypeView.composeTypeView() else {
+            return
+        }
+        
+        view.addSubview(composeTypeView)
     }
     
     deinit {
