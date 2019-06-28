@@ -9,9 +9,23 @@
 import UIKit
 
 class MQLComposeTypeView: UIView {
+
+    @IBOutlet weak var scrollViewContainer: UIView!
+    var scrollView = UIScrollView()
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
+    /// 按钮数据数组
+    private let buttonsInfo = [
+        ["imageName":"tabbar_compose_idea", "title":"文字"],
+        ["imageName":"tabbar_compose_photo", "title":"图片/视频"],
+        ["imageName":"tabbar_compose_weibo", "title":"长微博"],
+        ["imageName":"tabbar_compose_lbs", "title":"签到"],
+        ["imageName":"tabbar_compose_review", "title":"点评"],
+        ["imageName":"tabbar_compose_more", "title":"更多"],
+        ["imageName":"tabbar_compose_friend", "title":"好友圈"],
+        ["imageName":"tabbar_compose_wbcamera", "title":"微博相机"],
+        ["imageName":"tabbar_compose_music", "title":"音乐"],
+        ["imageName":"tabbar_compose_shooting", "title":"拍摄"]
+    ]
     
     class func composeTypeView() ->MQLComposeTypeView? {
         let nib = UINib(nibName: "MQLComposeTypeView", bundle: nil)
@@ -32,19 +46,46 @@ class MQLComposeTypeView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        addScrollView()
         addBtns()
     }
+    
+    @IBAction func close() {
+        self.removeFromSuperview()
+    }
+    
+    
     
 }
 
 extension MQLComposeTypeView {
+    
+    func addScrollView() -> () {
+        scrollViewContainer.addSubview(scrollView)
+        scrollView.snp_makeConstraints { (make) in
+            make.left.top.bottom.right.equalToSuperview()
+        }
+        
+        scrollView.contentSize = CGSize(width: scrollViewContainer.bounds.width * CGFloat(2), height: scrollViewContainer.bounds.height)
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.isPagingEnabled = false
+    }
+    
     func addBtns() -> () {
+        
+        layoutIfNeeded()
+        
         let image = UIImage(named: "tabbar_compose_idea")
         let title = "点子"
         let btn = MQLMQLComposeTypeButton.composeTypeButton(image: image, title: title)
-        btn?.center = contentView.center
         btn?.addTarget(self, action: #selector(btnClicked(sender:)), for: .touchUpInside)
-        contentView.addSubview(btn!)
+        
+        scrollView.addSubview(btn!)
+        btn!.snp_makeConstraints { (make) in
+            make.left.top.equalToSuperview()
+            make.width.height.equalTo(100)
+        }
+        
     }
     
     @objc func btnClicked(sender: MQLMQLComposeTypeButton) -> () {
