@@ -12,6 +12,8 @@
 		D00A0FBD22997B6700DF7A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00A0FBC22997B6700DF7A15 /* Assets.xcassets */; };
 		D01B8EA822C5A621007F1889 /* MQLComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8EA722C5A621007F1889 /* MQLComposeTypeView.swift */; };
 		D01B8EAA22C5A631007F1889 /* MQLComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */; };
+		D01B8EAC22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */; };
+		D01B8EAE22C5E576007F1889 /* MQLMQLComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01B8EAD22C5E576007F1889 /* MQLMQLComposeTypeButton.xib */; };
 		D01E2C1722997F6000A22DE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C1622997F6000A22DE0 /* README.md */; };
 		D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C23229A5D8300A22DE0 /* InfoPlist.strings */; };
 		D01E2C29229A5E2B00A22DE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C2B229A5E2B00A22DE0 /* Localizable.strings */; };
@@ -96,6 +98,8 @@
 		D00A0FC122997B6700DF7A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D01B8EA722C5A621007F1889 /* MQLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLComposeTypeView.swift; sourceTree = "<group>"; };
 		D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLComposeTypeView.xib; sourceTree = "<group>"; };
+		D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLMQLComposeTypeButton.swift; sourceTree = "<group>"; };
+		D01B8EAD22C5E576007F1889 /* MQLMQLComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLMQLComposeTypeButton.xib; sourceTree = "<group>"; };
 		D01E2C1622997F6000A22DE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D01E2C24229A5D8300A22DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D01E2C26229A5D9B00A22DE0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 			children = (
 				D01B8EA722C5A621007F1889 /* MQLComposeTypeView.swift */,
 				D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */,
+				D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */,
+				D01B8EAD22C5E576007F1889 /* MQLMQLComposeTypeButton.xib */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -749,6 +755,7 @@
 				D01E2C69229EA1D400A22DE0 /* MQLHomeViewController.xib in Resources */,
 				D01EA43E22B0E44A000FF0E6 /* toast_loading@3x.png in Resources */,
 				D03D5DDB22BBAEBC00D7C22F /* StatusNormalCell.xib in Resources */,
+				D01B8EAE22C5E576007F1889 /* MQLMQLComposeTypeButton.xib in Resources */,
 				D01B8EAA22C5A631007F1889 /* MQLComposeTypeView.xib in Resources */,
 				D03D5DDA22BBAEBC00D7C22F /* NewFeatureCollectionViewCell.xib in Resources */,
 				D01E2C5D229EA13300A22DE0 /* MQLDiscoverViewController.xib in Resources */,
@@ -867,6 +874,7 @@
 				D01EA44D22B3B77A000FF0E6 /* MQLLoginDataModel.swift in Sources */,
 				D01E2C61229EA16600A22DE0 /* MQLMessageViewModel.swift in Sources */,
 				D01E2C64229EA18600A22DE0 /* MQLMessageViewController.swift in Sources */,
+				D01B8EAC22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift in Sources */,
 				D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */,
 				D0E23B5822A1346E005E19FE /* MQLTestViewController.swift in Sources */,
 				D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */,

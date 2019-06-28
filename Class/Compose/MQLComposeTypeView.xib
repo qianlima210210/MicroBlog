@@ -89,6 +89,10 @@
                 <constraint firstItem="WXc-qb-E6D" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="o9U-PM-Aqj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="contentView" destination="Ew3-w7-KMY" id="mra-yl-dd8"/>
+                <outlet property="scrollView" destination="gvI-wU-UUv" id="o8I-F1-5WP"/>
+            </connections>
             <point key="canvasLocation" x="82.608695652173921" y="18.080357142857142"/>
         </view>
     </objects>

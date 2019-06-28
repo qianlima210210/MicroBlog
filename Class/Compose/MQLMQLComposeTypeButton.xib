@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MQLMQLComposeTypeButton" customModule="MicroBlog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_compose_idea" translatesAutoresizingMaskIntoConstraints="NO" id="ayX-Oa-8tV">
+                    <rect key="frame" x="14.5" y="0.0" width="71" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="7yp-65-QkV"/>
+                        <constraint firstAttribute="width" constant="71" id="muk-yu-5n5"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haT-yO-q3I">
+                    <rect key="frame" x="0.0" y="79" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="EB2-TK-o1h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="haT-yO-q3I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HLH-mF-4ii"/>
+                <constraint firstAttribute="trailing" secondItem="haT-yO-q3I" secondAttribute="trailing" id="HZC-As-i2c"/>
+                <constraint firstItem="ayX-Oa-8tV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ISK-H3-1d0"/>
+                <constraint firstAttribute="bottom" secondItem="haT-yO-q3I" secondAttribute="bottom" id="Lm0-I1-eyZ"/>
+                <constraint firstItem="ayX-Oa-8tV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="u9k-l3-7YD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="ayX-Oa-8tV" id="FtB-uZ-hti"/>
+                <outlet property="title" destination="haT-yO-q3I" id="VAc-Kv-oP6"/>
+            </connections>
+            <point key="canvasLocation" x="12" y="-203"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="tabbar_compose_idea" width="71" height="71"/>
+    </resources>
+</document>
