@@ -66,9 +66,9 @@ extension MQLComposeTypeView {
             make.left.top.bottom.right.equalToSuperview()
         }
         
-        scrollView.contentSize = CGSize(width: scrollViewContainer.bounds.width * CGFloat(2), height: scrollViewContainer.bounds.height)
+        scrollView.contentSize = CGSize(width: self.bounds.width * CGFloat(2), height: scrollViewContainer.bounds.height)
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.isPagingEnabled = false
+        scrollView.isPagingEnabled = true
     }
     
     func addBtns() -> () {
@@ -77,15 +77,48 @@ extension MQLComposeTypeView {
         
         //添加第一个视图
         let viewOne = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height))
+        viewOne.backgroundColor = .orange
+        scrollView.addSubview(viewOne)
         addBtnsToView(view: viewOne, idx: 0)
         
         //添加第2个视图
         let viewTwo = UIView(frame: CGRect(x: scrollView.bounds.width, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height))
+        viewTwo.backgroundColor = .yellow
+        scrollView.addSubview(viewTwo)
         addBtnsToView(view: viewTwo, idx: 6)
     }
     
     func addBtnsToView(view: UIView, idx: Int) -> () {
-        
+        for i in idx..<(6+idx) {
+            
+            if i >= buttonsInfo.count {
+                break
+            }
+            
+            let info = buttonsInfo[i]
+            let image = UIImage(named: info["imageName"] ?? "")
+            let title = info["title"]
+            let composeTypeButton = MQLMQLComposeTypeButton.composeTypeButton(image: image, title: title) ?? MQLMQLComposeTypeButton()
+            composeTypeButton.tag = i + 1
+            composeTypeButton.addTarget(self, action: #selector(composeTypeBtnClicked(sender:)), for: .touchUpInside)
+            view.addSubview(composeTypeButton)
+            
+            let row: CGFloat = CGFloat((i >= 6 ? i - 6 : i) / 3)
+            let col: CGFloat = CGFloat((i >= 6 ? i - 6 : i) % 3)
+            let buttonWidth: CGFloat = 100
+            let hMargin = (view.bounds.width - buttonWidth * 3) / 4
+            let vMargin: CGFloat = 24
+            composeTypeButton.frame = CGRect(x: (col + 1) * hMargin + col * buttonWidth,
+                   y: row * (vMargin + buttonWidth),
+                   width: buttonWidth,
+                   height: buttonWidth)
+            view.addSubview(composeTypeButton)
+            
+        }
+    }
+    
+    @objc func composeTypeBtnClicked(sender: MQLMQLComposeTypeButton) -> () {
+        print("tag = \(sender.tag)")
     }
 
 }

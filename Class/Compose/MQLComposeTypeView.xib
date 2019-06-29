@@ -52,10 +52,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yer-X8-FSx" userLabel="ScrollViewContainer">
-                                <rect key="frame" x="0.0" y="390" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="366" width="375" height="224"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Chi-S9-8Vp"/>
+                                    <constraint firstAttribute="height" constant="224" id="Chi-S9-8Vp"/>
                                 </constraints>
                             </view>
                         </subviews>
