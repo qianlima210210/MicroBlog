@@ -98,8 +98,30 @@ class MQLComposeTypeView: UIView {
         
     }
     
+    //隐藏所有按钮
+    func hideButtons() -> () {
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+        
+        for (i, btn) in v.subviews.enumerated().reversed() {
+            //创建动画
+            let anim = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            //设置动画属性
+            anim?.fromValue = btn.center.y
+            anim?.toValue = btn.center.y  + 300
+            
+            anim?.beginTime = CACurrentMediaTime() + Double(v.subviews.count - i) * 0.02
+            
+            //添加动画
+            btn.pop_add(anim, forKey: nil)
+        }
+        
+        
+    }
+    
     @IBAction func close() {
-        self.removeFromSuperview()
+        //self.removeFromSuperview()
+        hideButtons()
     }
     
     @IBAction func back() {
