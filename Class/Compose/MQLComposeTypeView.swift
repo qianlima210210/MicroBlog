@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 class MQLComposeTypeView: UIView {
 
@@ -52,6 +53,49 @@ class MQLComposeTypeView: UIView {
         super.awakeFromNib()
         addScrollView()
         addBtns()
+        
+        //动画显示当前视图
+        showCurrentView()
+        
+        //弹力显示所有按钮
+        showButtons()
+    }
+    
+    //动画显示当前视图
+    func showCurrentView() -> () {
+        //1.创建动画
+        let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim?.fromValue = 0
+        anim?.toValue = 1
+        anim?.duration = 0.5
+        
+        //添加到视图
+        pop_add(anim, forKey: nil)
+    }
+    
+    //弹力显示所有按钮
+    func showButtons() -> () {
+        //获取scrollView的子视图的第0个视图
+        let v = scrollView.subviews[0]
+        
+        //遍历v中所有按钮
+        for (i, btn) in v.subviews.enumerated() {
+            //创建动画
+            let anim = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            //设置动画属性
+            anim?.fromValue = btn.center.y + 300
+            anim?.toValue = btn.center.y
+            
+            //Defined as a value in the range [0, 20]. Defaults to 4.
+            anim?.springBounciness = 6
+            //Defined as a value in the range [0, 20]. Defaults to 12.
+            anim?.springSpeed = 4
+            
+            anim?.beginTime = CACurrentMediaTime() + Double(i) * 0.02
+            //添加动画
+            btn.pop_add(anim, forKey: nil)
+        }
+        
     }
     
     @IBAction func close() {
