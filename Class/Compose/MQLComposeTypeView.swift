@@ -114,13 +114,18 @@ class MQLComposeTypeView: UIView {
             
             //添加动画
             btn.pop_add(anim, forKey: nil)
+            
+            //添加i=0的动画监听
+            if i == 0{
+                anim?.completionBlock = {_, _ in
+                    self.removeFromSuperview()
+                }
+            }
         }
-        
-        
     }
     
     @IBAction func close() {
-        //self.removeFromSuperview()
+        
         hideButtons()
     }
     
@@ -162,13 +167,13 @@ extension MQLComposeTypeView {
         
         //添加第一个视图
         let viewOne = UIView(frame: CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height))
-        viewOne.backgroundColor = .orange
+        
         scrollView.addSubview(viewOne)
         addBtnsToView(view: viewOne, idx: 0)
         
         //添加第2个视图
         let viewTwo = UIView(frame: CGRect(x: scrollView.bounds.width, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height))
-        viewTwo.backgroundColor = .yellow
+        
         scrollView.addSubview(viewTwo)
         addBtnsToView(view: viewTwo, idx: 6)
     }
