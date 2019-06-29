@@ -43,11 +43,24 @@
                                             <action selector="close" destination="iN0-l3-epB" eventType="touchUpInside" id="JGb-Z0-mve"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svb-En-RWW" userLabel="BackButton">
+                                        <rect key="frame" x="174" y="8.6666666666666288" width="27" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="27" id="Atl-mY-Azi"/>
+                                            <constraint firstAttribute="height" constant="27" id="HIr-29-esf"/>
+                                        </constraints>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="back" destination="iN0-l3-epB" eventType="touchUpInside" id="OqF-RE-rwn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="svb-En-RWW" firstAttribute="centerY" secondItem="zhm-PO-yst" secondAttribute="centerY" id="HqB-Ze-sr4"/>
                                     <constraint firstItem="aB0-mu-sQQ" firstAttribute="centerX" secondItem="zhm-PO-yst" secondAttribute="centerX" id="fHP-WD-DIc"/>
                                     <constraint firstAttribute="height" constant="44" id="gXE-lI-scj"/>
+                                    <constraint firstItem="svb-En-RWW" firstAttribute="centerX" secondItem="zhm-PO-yst" secondAttribute="centerX" id="mPD-86-flH"/>
                                     <constraint firstItem="aB0-mu-sQQ" firstAttribute="centerY" secondItem="zhm-PO-yst" secondAttribute="centerY" id="wHu-Od-U4H"/>
                                 </constraints>
                             </view>
@@ -82,6 +95,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backBtn" destination="svb-En-RWW" id="UbT-uR-XSx"/>
+                <outlet property="centerXOfBackBtn" destination="mPD-86-flH" id="gwP-57-VYf"/>
+                <outlet property="centerXOfCloseBtn" destination="fHP-WD-DIc" id="9cg-rV-esY"/>
                 <outlet property="scrollViewContainer" destination="yer-X8-FSx" id="F4m-JM-cGs"/>
             </connections>
             <point key="canvasLocation" x="82.608695652173921" y="18.080357142857142"/>
@@ -90,5 +106,6 @@
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="tabbar_compose_background_icon_return" width="26.666666030883789" height="26.666666030883789"/>
     </resources>
 </document>

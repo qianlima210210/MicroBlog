@@ -13,6 +13,10 @@ class MQLComposeTypeView: UIView {
     @IBOutlet weak var scrollViewContainer: UIView!
     var scrollView = UIScrollView()
     
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var centerXOfBackBtn: NSLayoutConstraint!
+    @IBOutlet weak var centerXOfCloseBtn: NSLayoutConstraint!
+    
     /// 按钮数据数组
     private let buttonsInfo = [
         ["imageName":"tabbar_compose_idea", "title":"文字"],
@@ -54,7 +58,22 @@ class MQLComposeTypeView: UIView {
         self.removeFromSuperview()
     }
     
-    
+    @IBAction func back() {
+        //先滚动到第1页
+        let rect = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
+        scrollView.scrollRectToVisible(rect, animated: true)
+        
+        //调整返回按钮及关闭按钮的水平间距
+        centerXOfBackBtn.constant = 0
+        centerXOfCloseBtn.constant = 0
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.layoutIfNeeded()
+        }) { (_) in
+            //hide backBtn
+            self.backBtn.isHidden = true
+        }
+    }
     
 }
 
@@ -119,6 +138,27 @@ extension MQLComposeTypeView {
     
     @objc func composeTypeBtnClicked(sender: MQLMQLComposeTypeButton) -> () {
         print("tag = \(sender.tag)")
+        if sender.tag == 6 {
+            handleMore()
+        }
+    }
+    
+    func handleMore() -> () {
+        //先滚动到第二页
+        let rect = CGRect(x: scrollView.bounds.width, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
+        scrollView.scrollRectToVisible(rect, animated: true)
+        
+        //show backBtn
+        backBtn.isHidden = false
+        
+        //调整返回按钮及关闭按钮的水平间距
+        let margin = scrollView.bounds.width / 6
+        centerXOfBackBtn.constant = -margin
+        centerXOfCloseBtn.constant = margin
+        
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
     }
 
 }
