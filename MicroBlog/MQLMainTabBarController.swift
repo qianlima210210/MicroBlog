@@ -57,10 +57,28 @@ class MQLMainTabBarController: MQLBaseTabBarController {
     
     @objc private func composeBtnClicked(sender: UIButton) -> () {
         print(#function)
-        guard let composeTypeView = MQLComposeTypeView.composeTypeView() else {
+        guard let composeTypeView = MQLComposeTypeView.composeTypeView() ,
+        let nameSpace = Bundle.main.nameSpace else {
             return
         }
         
+        composeTypeView.selectedBlock = {[weak composeTypeView] clsName in
+            
+            guard let clsName = clsName else {
+                return
+            }
+            
+            let fullName = nameSpace+"."+clsName
+            guard let cls = NSClassFromString(fullName) as? MQLBaseViewController.Type else {
+                return
+            }
+            
+            let vc = cls.init(nibName: clsName, bundle: nil)
+            let nav = MQLBaseNavigationController(rootViewController: vc)
+            self.present(nav, animated: true, completion: {
+                composeTypeView?.removeFromSuperview()
+            })
+        }
         view.addSubview(composeTypeView)
     }
     

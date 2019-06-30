@@ -32,6 +32,8 @@ class MQLComposeTypeView: UIView {
         ["imageName":"tabbar_compose_shooting", "title":"拍摄"]
     ]
     
+    var selectedBlock: ((String?) -> ())?
+    
     class func composeTypeView() ->MQLComposeTypeView? {
         let nib = UINib(nibName: "MQLComposeTypeView", bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil)[0] as? MQLComposeTypeView
@@ -211,6 +213,8 @@ extension MQLComposeTypeView {
         print("tag = \(sender.tag)")
         if sender.tag == 6 {
             handleMore()
+        }else{
+            selectedBlock?("MQLComposeViewController")
         }
     }
     

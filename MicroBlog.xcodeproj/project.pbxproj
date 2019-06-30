@@ -76,6 +76,8 @@
 		D05B372E22A66DE80073E781 /* MQLVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B372D22A66DE80073E781 /* MQLVisitorView.xib */; };
 		D0C6DF9122BF3B64007B4F82 /* NSStrin+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6DF9022BF3B64007B4F82 /* NSStrin+extension.swift */; };
 		D0C6DF9322C25E91007B4F82 /* StatusRetweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C6DF9222C25E91007B4F82 /* StatusRetweetCell.xib */; };
+		D0C6DF9622C887D0007B4F82 /* MQLComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6DF9422C887D0007B4F82 /* MQLComposeViewController.swift */; };
+		D0C6DF9722C887D0007B4F82 /* MQLComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C6DF9522C887D0007B4F82 /* MQLComposeViewController.xib */; };
 		D0CC72B922B61A0A00D5FB0A /* MQLUserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */; };
 		D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B51229FD989005E19FE /* Bundle+extension.swift */; };
 		D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */; };
@@ -179,6 +181,8 @@
 		D05B372D22A66DE80073E781 /* MQLVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLVisitorView.xib; sourceTree = "<group>"; };
 		D0C6DF9022BF3B64007B4F82 /* NSStrin+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStrin+extension.swift"; sourceTree = "<group>"; };
 		D0C6DF9222C25E91007B4F82 /* StatusRetweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusRetweetCell.xib; sourceTree = "<group>"; };
+		D0C6DF9422C887D0007B4F82 /* MQLComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLComposeViewController.swift; sourceTree = "<group>"; };
+		D0C6DF9522C887D0007B4F82 /* MQLComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLComposeViewController.xib; sourceTree = "<group>"; };
 		D0CC72B822B61A0A00D5FB0A /* MQLUserAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLUserAccountManager.swift; sourceTree = "<group>"; };
 		D0E23B51229FD989005E19FE /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		D0E23B5322A100FA005E19FE /* MQLBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLBaseNavigationController.swift; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 				D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */,
 				D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */,
 				D01B8EAD22C5E576007F1889 /* MQLMQLComposeTypeButton.xib */,
+				D0C6DF9422C887D0007B4F82 /* MQLComposeViewController.swift */,
+				D0C6DF9522C887D0007B4F82 /* MQLComposeViewController.xib */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				D03D5DD222BBAE4A00D7C22F /* NewFeatureView.xib in Resources */,
 				D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */,
 				D0C6DF9322C25E91007B4F82 /* StatusRetweetCell.xib in Resources */,
+				D0C6DF9722C887D0007B4F82 /* MQLComposeViewController.xib in Resources */,
 				D01EA43D22B0E44A000FF0E6 /* toast_right@2x.png in Resources */,
 				D03D5DD022BBAE4A00D7C22F /* WelcomeView.xib in Resources */,
 				D01EA43922B0E44A000FF0E6 /* toast_warning@3x.png in Resources */,
@@ -872,6 +879,7 @@
 				D0C6DF9122BF3B64007B4F82 /* NSStrin+extension.swift in Sources */,
 				D01E2C90229EC2DA00A22DE0 /* NSObject+CZRuntime.m in Sources */,
 				D01EA44D22B3B77A000FF0E6 /* MQLLoginDataModel.swift in Sources */,
+				D0C6DF9622C887D0007B4F82 /* MQLComposeViewController.swift in Sources */,
 				D01E2C61229EA16600A22DE0 /* MQLMessageViewModel.swift in Sources */,
 				D01E2C64229EA18600A22DE0 /* MQLMessageViewController.swift in Sources */,
 				D01B8EAC22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift in Sources */,
