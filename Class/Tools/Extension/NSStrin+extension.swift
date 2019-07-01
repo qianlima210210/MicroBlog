@@ -41,6 +41,18 @@ extension NSString {
 
         return formatter1.string(from: date)
     }
+    
+    //<a href="http://app.weibo.com/t/feed/6vtZb0" rel="nofollow">微博 weibo.com</a>
+    func href() -> (link: String, text: String)? {
+        let pattern = "<a href=\"(.*?)\".*?>(.*?)</a>"
+        
+        guard let rgx = try? NSRegularExpression(pattern: pattern, options: []),
+        let match = rgx.firstMatch(in: self as String, options: [], range: NSRange(location: 0, length: self.length))else{
+            return nil
+        }
+        
+        return (self.substring(with: match.range(at: 1)), self.substring(with: match.range(at: 2)))
+    }
 }
 
 

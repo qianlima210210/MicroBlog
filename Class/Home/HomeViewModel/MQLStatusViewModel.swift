@@ -20,6 +20,7 @@ class MQLStatusViewModel: NSObject {
     var touXiangImage: UIImage?
     var huiYuanImage: UIImage?
     var renZhengImage: UIImage?
+    var laiYuanText: String?
     
     //如果是转发微博，返回被转发的配图
     //如果是自发微博，返回自发微博的配图
@@ -61,6 +62,11 @@ class MQLStatusViewModel: NSObject {
             renZhengImage = nil
         }
         
+        //设置涞源文本
+        if let source = (dataModel.source as NSString?)?.href()?.text {
+            laiYuanText = source.count > 0 ? "来自:\(source)" : ""
+        }
+
         //获取配图大小
         sizeOfPicturesViewContainer = calcPictureSize(count: pic_urls?.count ?? 0)
         

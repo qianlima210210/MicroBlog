@@ -143,7 +143,7 @@ class StatusCell: UITableViewCell {
              shiJian_text = created_at.dateFromGMTString()
         }
         shiJian.text = shiJian_text
-        laiYuan.text = statusViewModel?.dataModel.source
+        laiYuan.text = statusViewModel?.laiYuanText
         
         //设置认证
         renZheng.image = statusViewModel?.renZhengImage
