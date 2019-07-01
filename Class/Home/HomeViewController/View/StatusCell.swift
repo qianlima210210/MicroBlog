@@ -69,8 +69,8 @@ class StatusCell: UITableViewCell {
         touXiang.image = nil
         name.text = nil
         huiYuan.image = nil
-//        shiJian.text = nil
-//        laiYuan.text = nil
+        shiJian.text = nil
+        laiYuan.text = nil
         renZheng.image = nil
         zhengWen.text = nil
         beiZhuanFaZhengWen?.text = nil
@@ -137,9 +137,13 @@ class StatusCell: UITableViewCell {
         //设置会员
         self.huiYuan.image = statusViewModel?.huiYuanImage
 
-        
-//        shiJian.text = nil
-//        laiYuan.text = nil
+        //设置时间、涞源dateFromString
+        var shiJian_text = ""
+        if let created_at = statusViewModel?.dataModel.created_at as NSString? {
+             shiJian_text = created_at.dateFromGMTString()
+        }
+        shiJian.text = shiJian_text
+        laiYuan.text = statusViewModel?.dataModel.source
         
         //设置认证
         renZheng.image = statusViewModel?.renZhengImage

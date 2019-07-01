@@ -21,6 +21,9 @@ import YYModel
     @objc var comments_count: Int64 = 0     //评论数
     @objc var attitudes_count: Int64 = 0    //表态数
     
+    @objc var created_at: String?
+    @objc var source: String?
+    
     override var description: String{
         return yy_modelDescription()
     }
