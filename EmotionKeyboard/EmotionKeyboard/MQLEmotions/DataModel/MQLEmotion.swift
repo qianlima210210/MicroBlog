@@ -27,12 +27,23 @@ import YYModel
         guard let directory = directory,
             let png = png,
             let path = Bundle.main.path(forResource: "MQLEmotions.bundle", ofType: nil),
-            let bundle = Bundle(path: path),
-            let imagePath = bundle.path(forResource: "\(png)", ofType: nil, inDirectory: directory)else {
+            let bundle = Bundle(path: path) else {
             return nil
         }
         
-        return UIImage(contentsOfFile: imagePath)
+        //从非mainBundle中获取资源
+        return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
+    }
+    
+    func imageText(font: UIFont) -> NSAttributedString {
+        guard let image = image else {
+            return NSAttributedString(string: "")
+        }
+        
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = CGRect(x: 0, y: -4, width: font.lineHeight, height: font.lineHeight)
+        return NSAttributedString(attachment: attachment)
     }
     
     override var description: String{
