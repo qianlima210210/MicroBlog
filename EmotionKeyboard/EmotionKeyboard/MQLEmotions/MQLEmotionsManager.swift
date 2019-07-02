@@ -35,3 +35,21 @@ extension MQLEmotionsManager {
         self.packages += packages
     }
 }
+
+extension MQLEmotionsManager {
+    func getEmotionWith(chs: String?) -> MQLEmotion? {
+        guard let chs = chs else { return nil }
+        
+        for package in packages {
+            let emotions = package.emotions
+            let result = emotions.filter { (emotion) -> Bool in
+                return emotion.chs == chs
+            }
+            if result.count > 0{
+                return result[0]
+            }
+        }
+        
+        return nil
+    }
+}
