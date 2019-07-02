@@ -21,6 +21,10 @@ import YYModel
                 let array = NSArray(contentsOfFile: infoPath),
                 let items = NSArray.yy_modelArray(with: MQLEmotion.self, json: array) as? [MQLEmotion]
                 else { return }
+            
+            for item in items {
+                item.directory = directory
+            }
 
             emotions += items
             
