@@ -998,7 +998,18 @@ Horizontally in Container; Vertically in Container;
 Trailing Space to Superview;Leading Space to Superview; 
 Bottom Space to Superview; Top Space to Superview; 
 
+--从非mainBundle中获取资源
+var image: UIImage?{
+guard let directory = directory,
+let png = png,
+let path = Bundle.main.path(forResource: "MQLEmotions.bundle", ofType: nil),
+let bundle = Bundle(path: path) else {
+return nil
+}
 
+//从非mainBundle中获取资源
+return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
+}
 
 
 
