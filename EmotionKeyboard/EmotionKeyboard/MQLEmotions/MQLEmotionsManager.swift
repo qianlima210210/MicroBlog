@@ -86,7 +86,7 @@ extension MQLEmotionsManager {
         }
         
         //MARK: 关键统一设置字体用addAttributes，不要用setAttributes
-        attributeString.addAttributes([NSAttributedString.Key.font: font], range: NSRange(location: 0, length: attributeString.string.count))
+        attributeString.addAttributes([NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor : UIColor.red], range: NSRange(location: 0, length: attributeString.string.count))
         
         return attributeString
     }

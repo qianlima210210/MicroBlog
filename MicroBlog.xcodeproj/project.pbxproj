@@ -19,6 +19,7 @@
 		D01B8F4822CC6367007F1889 /* MQLEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4422CC6367007F1889 /* MQLEmotion.swift */; };
 		D01B8F4922CC6367007F1889 /* MQLEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */; };
 		D01B8F4B22CC860B007F1889 /* NSAttributedString+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4A22CC860B007F1889 /* NSAttributedString+extension.swift */; };
+		D01B8F4E22CCC009007F1889 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4D22CCC009007F1889 /* FFLabel.swift */; };
 		D01E2C1722997F6000A22DE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C1622997F6000A22DE0 /* README.md */; };
 		D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C23229A5D8300A22DE0 /* InfoPlist.strings */; };
 		D01E2C29229A5E2B00A22DE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C2B229A5E2B00A22DE0 /* Localizable.strings */; };
@@ -112,6 +113,7 @@
 		D01B8F4422CC6367007F1889 /* MQLEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotion.swift; sourceTree = "<group>"; };
 		D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionPackage.swift; sourceTree = "<group>"; };
 		D01B8F4A22CC860B007F1889 /* NSAttributedString+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+extension.swift"; sourceTree = "<group>"; };
+		D01B8F4D22CCC009007F1889 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		D01E2C1622997F6000A22DE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D01E2C24229A5D8300A22DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D01E2C26229A5D9B00A22DE0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -291,6 +293,14 @@
 				D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		D01B8F4C22CCC009007F1889 /* FFLabel */ = {
+			isa = PBXGroup;
+			children = (
+				D01B8F4D22CCC009007F1889 /* FFLabel.swift */,
+			);
+			path = FFLabel;
 			sourceTree = "<group>";
 		};
 		D01E2C2D229E781900A22DE0 /* Class */ = {
@@ -537,6 +547,7 @@
 		D01E2C6E229EC2C800A22DE0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D01B8F4C22CCC009007F1889 /* FFLabel */,
 				D01B8F4022CC6367007F1889 /* MQLEmotions */,
 				D01EA44022B3AE65000FF0E6 /* Constant */,
 				D01EA42C22B0E252000FF0E6 /* MBProgressHUD+JRAdditional */,
@@ -936,6 +947,7 @@
 				D01E2C8B229EC2DA00A22DE0 /* UIScreen+CZAddition.m in Sources */,
 				D01E2C8A229EC2DA00A22DE0 /* UIView+CZAddition.m in Sources */,
 				D01E2C8C229EC2DA00A22DE0 /* UILabel+CZAddition.m in Sources */,
+				D01B8F4E22CCC009007F1889 /* FFLabel.swift in Sources */,
 				D03D5DD122BBAE4A00D7C22F /* NewFeatureView.swift in Sources */,
 				D0F3525822B8FE6800744952 /* TitleButton.swift in Sources */,
 				D01E2C5F229EA15900A22DE0 /* MQLMessageDataModel.swift in Sources */,
