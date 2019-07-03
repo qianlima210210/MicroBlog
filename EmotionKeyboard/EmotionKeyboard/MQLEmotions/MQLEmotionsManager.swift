@@ -37,6 +37,11 @@ extension MQLEmotionsManager {
 }
 
 extension MQLEmotionsManager {
+    
+    /// 获取表情对象
+    ///
+    /// - Parameter chs: 中文描述
+    /// - Returns: 表情对象
     func getEmotionWith(chs: String?) -> MQLEmotion? {
         guard let chs = chs else { return nil }
         
@@ -53,5 +58,36 @@ extension MQLEmotionsManager {
         return nil
     }
     
-
+    /// 将给定的字符串转换成属性字符串
+    ///
+    /// - Parameter string: 完整字符串
+    /// - Returns: 属性字符串
+    func emotionString(string: String, font: UIFont) -> NSAttributedString {
+        let attributeString = NSMutableAttributedString(string: string)
+        
+        let pattern = "\\[.*?\\]"
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return attributeString
+        }
+        
+        let matches = regx.matches(in: attributeString.string, options: [], range: NSRange(location: 0, length: attributeString.string.count))
+        
+        for m in matches.reversed() {
+            let r = m.range(at: 0)
+            let subStr = (attributeString.string as NSString).substring(with: r)
+            
+            guard let em = MQLEmotionsManager.emotionsManager.getEmotionWith(chs: subStr) else{
+                continue
+            }
+            
+            let imageText = em.imageText(font: font)
+            attributeString.replaceCharacters(in: r, with: imageText)
+            
+        }
+        
+        //MARK: 关键统一设置字体用addAttributes，不要用setAttributes
+        attributeString.addAttributes([NSAttributedString.Key.font: font], range: NSRange(location: 0, length: attributeString.string.count))
+        
+        return attributeString
+    }
 }

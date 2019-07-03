@@ -16,11 +16,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        let emotion = MQLEmotionsManager.emotionsManager.getEmotionWith(chs: "[男孩儿]")
-        lab.attributedText = emotion?.imageText(font: lab.font)
+        lab.attributedText = MQLEmotionsManager.emotionsManager.emotionString(string: "我[笑哈哈]你[马到成功]啊", font: lab.font)
+
     }
 
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
