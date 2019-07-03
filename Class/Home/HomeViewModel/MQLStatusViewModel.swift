@@ -32,8 +32,11 @@ class MQLStatusViewModel: NSObject {
         }
     }
     
+    //微博文本
+    var zhengWenAttText: NSAttributedString?
+    
     //被转发微博文本
-    var beiZhuanFaZhengWenText: String?
+    var beiZhuanFaZhengWenAttText: NSAttributedString?
     
     //在获取对应的数据模型对象后，立即做内部缓存处理；这样所谓处理一次，提升性能
     init(_ dataModel: Status) {
@@ -70,16 +73,19 @@ class MQLStatusViewModel: NSObject {
         //获取配图大小
         sizeOfPicturesViewContainer = calcPictureSize(count: pic_urls?.count ?? 0)
         
+        //微博文本
+        let font = UIFont.systemFont(ofSize: 15)
+        zhengWenAttText = MQLEmotionsManager.emotionsManager.emotionString(string: dataModel.text ?? "", font: font)
+        
+        //微博文本高度
+        heightOfZhengWen = zhengWenAttText?.size(width: widthOfPicturesViewContainer, height: 1000).height ?? 0
+        
         //被转发微博文本
-        beiZhuanFaZhengWenText = "@" + (dataModel.retweeted_status?.user?.screen_name ?? "") + (dataModel.retweeted_status?.text ?? "")
+        let beiZhuanFaZhengWenText = "@" + (dataModel.retweeted_status?.user?.screen_name ?? "") + (dataModel.retweeted_status?.text ?? "")
+        beiZhuanFaZhengWenAttText = MQLEmotionsManager.emotionsManager.emotionString(string:beiZhuanFaZhengWenText, font: font)
         
-        //var heightOfZhengWen: CGFloat = 200获取正文高度
-        let zhengWenText =  (dataModel.text ?? "") as NSString
-        heightOfZhengWen = zhengWenText.size(font: UIFont.systemFont(ofSize: 15), width: widthOfPicturesViewContainer, height: 1000).height
-        
-        //var heightOfBeiZhuanFaZhengWen: CGFloat = 50获取被转发正文高度
-        let zhuanFaZhengWenText = (beiZhuanFaZhengWenText ?? "") as NSString
-        heightOfBeiZhuanFaZhengWen = zhuanFaZhengWenText.size(font: UIFont.systemFont(ofSize: 15), width: widthOfPicturesViewContainer, height: 1000).height
+        //被转发微博文本高度
+        heightOfBeiZhuanFaZhengWen = beiZhuanFaZhengWenAttText?.size(width: widthOfPicturesViewContainer, height: 1000).height ?? 0
     }
     
     func calcPictureSize(count: Int) -> CGSize {

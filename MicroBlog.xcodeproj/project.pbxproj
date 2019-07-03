@@ -18,6 +18,7 @@
 		D01B8F4722CC6367007F1889 /* MQLEmotions.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F4222CC6367007F1889 /* MQLEmotions.bundle */; };
 		D01B8F4822CC6367007F1889 /* MQLEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4422CC6367007F1889 /* MQLEmotion.swift */; };
 		D01B8F4922CC6367007F1889 /* MQLEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */; };
+		D01B8F4B22CC860B007F1889 /* NSAttributedString+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4A22CC860B007F1889 /* NSAttributedString+extension.swift */; };
 		D01E2C1722997F6000A22DE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C1622997F6000A22DE0 /* README.md */; };
 		D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C23229A5D8300A22DE0 /* InfoPlist.strings */; };
 		D01E2C29229A5E2B00A22DE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C2B229A5E2B00A22DE0 /* Localizable.strings */; };
@@ -110,6 +111,7 @@
 		D01B8F4222CC6367007F1889 /* MQLEmotions.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MQLEmotions.bundle; sourceTree = "<group>"; };
 		D01B8F4422CC6367007F1889 /* MQLEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotion.swift; sourceTree = "<group>"; };
 		D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionPackage.swift; sourceTree = "<group>"; };
+		D01B8F4A22CC860B007F1889 /* NSAttributedString+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+extension.swift"; sourceTree = "<group>"; };
 		D01E2C1622997F6000A22DE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D01E2C24229A5D8300A22DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D01E2C26229A5D9B00A22DE0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				D0E23B51229FD989005E19FE /* Bundle+extension.swift */,
 				D0E23B5922A1467D005E19FE /* UIBarButtonItem+extension.swift */,
 				D0C6DF9022BF3B64007B4F82 /* NSStrin+extension.swift */,
+				D01B8F4A22CC860B007F1889 /* NSAttributedString+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				D01B8F4922CC6367007F1889 /* MQLEmotionPackage.swift in Sources */,
 				D01E2C94229EC2DA00A22DE0 /* NSArray+Log.m in Sources */,
 				D01E2C57229EA0FF00A22DE0 /* MQLDiscoverDataModel.swift in Sources */,
+				D01B8F4B22CC860B007F1889 /* NSAttributedString+extension.swift in Sources */,
 				D01E2C8D229EC2DA00A22DE0 /* NSString+CZBase64.m in Sources */,
 				D01E2C50229E8D8500A22DE0 /* MQLProfileViewModel.swift in Sources */,
 				D01E2C93229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m in Sources */,

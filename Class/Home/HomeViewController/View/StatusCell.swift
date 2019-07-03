@@ -149,11 +149,11 @@ class StatusCell: UITableViewCell {
         renZheng.image = statusViewModel?.renZhengImage
         
         //设置正文
-        zhengWen.text = statusViewModel?.dataModel.text
+        zhengWen.attributedText = statusViewModel?.zhengWenAttText
         heightConstraintOfZhengWen.constant = statusViewModel?.heightOfZhengWen ?? 0
         
         //设置被转发正文
-        beiZhuanFaZhengWen?.text = statusViewModel?.beiZhuanFaZhengWenText
+        beiZhuanFaZhengWen?.attributedText = statusViewModel?.beiZhuanFaZhengWenAttText
         heightConstraintOfBeiZhuanFaZhengWen?.constant = statusViewModel?.heightOfBeiZhuanFaZhengWen ?? 0
 
         //设置图像视图容器
