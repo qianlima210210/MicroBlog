@@ -8,7 +8,13 @@
 
 import UIKit
 
+@objc protocol StatusCellDelegate : NSObjectProtocol {
+    @objc optional func urlClicked(cell: StatusCell, text: String) -> ()
+}
+
 class StatusCell: UITableViewCell {
+    
+    var delegate: StatusCellDelegate?
 
     @IBOutlet weak var touXiang: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -16,8 +22,8 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var shiJian: UILabel!
     @IBOutlet weak var laiYuan: UILabel!
     @IBOutlet weak var renZheng: UIImageView!
-    @IBOutlet weak var zhengWen: UILabel!
-    @IBOutlet weak var beiZhuanFaZhengWen: UILabel?
+    @IBOutlet weak var zhengWen: FFLabel!
+    @IBOutlet weak var beiZhuanFaZhengWen: FFLabel?
     @IBOutlet weak var picturesViewContainer: UIView!
     @IBOutlet weak var bottomToolsBarContainer: UIView!
     
@@ -43,7 +49,8 @@ class StatusCell: UITableViewCell {
         
         // Initialization code
         addFenXiangPingLunDianZanToBottomToolsBarContainer()
-
+        zhengWen.delegate = self
+        beiZhuanFaZhengWen?.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -267,4 +274,12 @@ extension StatusCell {
          print(#function)
     }
     
+}
+
+extension StatusCell : FFLabelDelegate {
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        if text.hasPrefix("http") {
+            delegate?.urlClicked?(cell: self, text: text)
+        }
+    }
 }

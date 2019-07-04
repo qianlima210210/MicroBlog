@@ -20,7 +20,7 @@ class MQLBaseViewController: UIViewController {
     var tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
     
     //出去导航和tabBar标签后，中间内容区域
-    private var contentView: UIView = UIView(frame: CGRect.zero)
+    var contentView: UIView = UIView(frame: CGRect.zero)
     
     //自定义导航条
     lazy var navigtionBar: MQLNavigationBar = MQLNavigationBar(frame: CGRect(x: 0,
@@ -142,7 +142,11 @@ extension MQLBaseViewController {
     //添加中间内容视图
     private func setContentView() ->() {
         view.addSubview(contentView)
-        let height: CGFloat = tabBarController?.tabBar.bounds.height ?? 0
+        
+        var height: CGFloat = tabBarController?.tabBar.bounds.height ?? 0
+        if (tabBarController?.selectedViewController?.children.count ?? 0) > 1 {
+            height = (height > 49) ? (height - 49) : 0
+        }
         
         contentView.snp_makeConstraints { (make) in
             make.left.equalToSuperview()

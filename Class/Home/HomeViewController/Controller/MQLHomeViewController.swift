@@ -95,6 +95,7 @@ extension MQLHomeViewController {
         
         //获取
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! StatusCell
+        cell.delegate = self
         
         //设置
         cell.setStatus(statusViewModel: statusViewModel)
@@ -120,4 +121,12 @@ extension MQLHomeViewController {
     }
 }
 
-
+extension MQLHomeViewController : StatusCellDelegate {
+    func urlClicked(cell: StatusCell, text: String) {
+        
+        let webVC = MQLWebViewController(nibName: "MQLWebViewController", bundle: nil)
+        webVC.title = "网页"
+        navigationController?.pushViewController(webVC, animated: true)
+        
+    }
+}
