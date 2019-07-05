@@ -18,20 +18,33 @@ class MQLComposeViewController: MQLBaseViewController {
         
         generalInit()
     }
-
-
 }
 
 extension MQLComposeViewController {
     
     func generalInit() {
-        
-//        navItem.leftBarButtonItem = UIBarButtonItem(title: "back", target: self, action: #selector(backBtnClicked))
-        
-        navItem.leftBarButtonItem = UIBarButtonItem.init(title: "back", target: self, action: #selector(backBtnClicked), isBack:true)
+        navItem.leftBarButtonItem = UIBarButtonItem.init(title: "返回", target: self, action: #selector(backBtnClicked), isBack:true)
+        addMQLComposeViewContent()
     }
     
     @objc func backBtnClicked() -> () {
         dismiss(animated: true, completion: nil)
     }
+    
+    override func setTableView() {
+        
+    }
+    
+    func addMQLComposeViewContent() -> () {
+        guard let composeViewContent = MQLComposeViewContent.composeViewContent() else {
+            return
+        }
+        
+        contentView.addSubview(composeViewContent)
+        composeViewContent.snp_makeConstraints({ (make) in
+            make.left.right.bottom.top.equalToSuperview()
+        })
+    }
 }
+
+

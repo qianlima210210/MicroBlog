@@ -22,6 +22,8 @@
 		D01B8F4E22CCC009007F1889 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4D22CCC009007F1889 /* FFLabel.swift */; };
 		D01B8F5222CD8D87007F1889 /* MQLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F5022CD8D87007F1889 /* MQLWebViewController.swift */; };
 		D01B8F5322CD8D87007F1889 /* MQLWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F5122CD8D87007F1889 /* MQLWebViewController.xib */; };
+		D01B8F5622CEE014007F1889 /* MQLComposeViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F5522CEE014007F1889 /* MQLComposeViewContent.swift */; };
+		D01B8F5822CEE023007F1889 /* MQLComposeViewContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F5722CEE023007F1889 /* MQLComposeViewContent.xib */; };
 		D01E2C1722997F6000A22DE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C1622997F6000A22DE0 /* README.md */; };
 		D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C23229A5D8300A22DE0 /* InfoPlist.strings */; };
 		D01E2C29229A5E2B00A22DE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D01E2C2B229A5E2B00A22DE0 /* Localizable.strings */; };
@@ -118,6 +120,8 @@
 		D01B8F4D22CCC009007F1889 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		D01B8F5022CD8D87007F1889 /* MQLWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLWebViewController.swift; sourceTree = "<group>"; };
 		D01B8F5122CD8D87007F1889 /* MQLWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLWebViewController.xib; sourceTree = "<group>"; };
+		D01B8F5522CEE014007F1889 /* MQLComposeViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLComposeViewContent.swift; sourceTree = "<group>"; };
+		D01B8F5722CEE023007F1889 /* MQLComposeViewContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLComposeViewContent.xib; sourceTree = "<group>"; };
 		D01E2C1622997F6000A22DE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D01E2C24229A5D8300A22DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D01E2C26229A5D9B00A22DE0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -269,9 +273,7 @@
 		D01B8EA622C5A5E8007F1889 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
-				D01B8EA722C5A621007F1889 /* MQLComposeTypeView.swift */,
-				D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */,
-				D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */,
+				D01B8F5422CEDE2E007F1889 /* View */,
 				D01B8EAD22C5E576007F1889 /* MQLMQLComposeTypeButton.xib */,
 				D0C6DF9422C887D0007B4F82 /* MQLComposeViewController.swift */,
 				D0C6DF9522C887D0007B4F82 /* MQLComposeViewController.xib */,
@@ -314,6 +316,18 @@
 				D01B8F5122CD8D87007F1889 /* MQLWebViewController.xib */,
 			);
 			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		D01B8F5422CEDE2E007F1889 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */,
+				D01B8EA722C5A621007F1889 /* MQLComposeTypeView.swift */,
+				D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */,
+				D01B8F5522CEE014007F1889 /* MQLComposeViewContent.swift */,
+				D01B8F5722CEE023007F1889 /* MQLComposeViewContent.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D01E2C2D229E781900A22DE0 /* Class */ = {
@@ -812,6 +826,7 @@
 				D01E2C25229A5D8300A22DE0 /* InfoPlist.strings in Resources */,
 				D01B8F5322CD8D87007F1889 /* MQLWebViewController.xib in Resources */,
 				D0C6DF9322C25E91007B4F82 /* StatusRetweetCell.xib in Resources */,
+				D01B8F5822CEE023007F1889 /* MQLComposeViewContent.xib in Resources */,
 				D0C6DF9722C887D0007B4F82 /* MQLComposeViewController.xib in Resources */,
 				D01EA43D22B0E44A000FF0E6 /* toast_right@2x.png in Resources */,
 				D03D5DD022BBAE4A00D7C22F /* WelcomeView.xib in Resources */,
@@ -952,6 +967,7 @@
 				D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */,
 				D01E2C6B229EA1E900A22DE0 /* MQLHomeViewModel.swift in Sources */,
 				D01EA44F22B3B790000FF0E6 /* MQLLoginViewModel.swift in Sources */,
+				D01B8F5622CEE014007F1889 /* MQLComposeViewContent.swift in Sources */,
 				D01E2C4E229E8D7200A22DE0 /* MQLProfileDataModel.swift in Sources */,
 				D01EA42F22B0E253000FF0E6 /* MBProgressHUD+JRAdditional.m in Sources */,
 				D01E2C5C229EA13300A22DE0 /* MQLDiscoverViewController.swift in Sources */,
