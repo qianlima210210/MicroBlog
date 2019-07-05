@@ -143,9 +143,23 @@ extension MQLBaseViewController {
     private func setContentView() ->() {
         view.addSubview(contentView)
         
-        var height: CGFloat = tabBarController?.tabBar.bounds.height ?? 0
-        if (tabBarController?.selectedViewController?.children.count ?? 0) > 1 {
-            height = (height > 49) ? (height - 49) : 0
+        //tabBar有效且height大于0（83和49）时，判断是带有tabBar的rootVC, 还是没带tabBar的rootVC，
+        //带的话contentView的底部间距为（83）或（49）
+        //不带的话contentView的底部间距为（83-49）或（49-49）
+        //tabBar为nil时,
+        
+        var height: CGFloat = 0.0
+        if tabBarController?.tabBar != nil {
+            height = (tabBarController?.tabBar.bounds.height)!
+            
+            if (tabBarController?.selectedViewController?.children.count ?? 0) > 1 {
+                height = (height > 49) ? (height - 49) : 0
+            }
+        }else{
+            height = 0
+            if UIApplication.shared.statusBarFrame.height == 44 {
+                height = 44
+            }
         }
         
         contentView.snp_makeConstraints { (make) in
