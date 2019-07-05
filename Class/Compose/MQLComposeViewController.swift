@@ -9,6 +9,24 @@
 import UIKit
 
 class MQLComposeViewController: MQLBaseViewController {
+    
+    
+    @IBOutlet var titleView: UILabel!
+    
+    lazy var sendButton : UIButton = {
+        let btn = UIButton()
+        btn.setTitle("发布", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.setTitleColor(.gray, for: .disabled)
+        
+        btn.setBackgroundImage(UIImage(named: "common_button_orange"), for: .normal)
+        btn.setBackgroundImage(UIImage(named: "common_button_orange_highlighted"), for: .highlighted)
+        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
+        
+        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 30)
+        
+        return btn
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +38,17 @@ class MQLComposeViewController: MQLBaseViewController {
     }
 }
 
+//UI相关
 extension MQLComposeViewController {
     
     func generalInit() {
-        navItem.leftBarButtonItem = UIBarButtonItem.init(title: "返回", target: self, action: #selector(backBtnClicked), isBack:true)
+        navItem.leftBarButtonItem = UIBarButtonItem.init(title: "关闭", target: self, action: #selector(backBtnClicked), isBack:true)
+        navItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
+        
+        navItem.titleView = titleView
+        
+        sendButton.isEnabled = false
+        
         addMQLComposeViewContent()
     }
     
