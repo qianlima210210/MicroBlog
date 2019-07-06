@@ -31,6 +31,8 @@ class MQLComposeViewContent: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupToolbar()
+        registerNotification()
+        
     }
     
     /// 设置工具栏
@@ -80,6 +82,22 @@ class MQLComposeViewContent: UIView {
     
     @objc func emoticonKeyboard() -> () {
         
+    }
+    
+}
+
+extension MQLComposeViewContent {
+    
+    @objc func receiveNotificationOfUIKeyboardWillChangeFrame(n: Notification) -> () {
+        print(#function)
+    }
+    
+    func registerNotification() -> () {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(receiveNotificationOfUIKeyboardWillChangeFrame(n:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                                object:nil)
     }
     
 }

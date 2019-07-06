@@ -158,7 +158,7 @@ extension MQLBaseViewController {
         }else{
             height = 0
             if UIApplication.shared.statusBarFrame.height == 44 {
-                height = 44
+                height = 34
             }
         }
         
