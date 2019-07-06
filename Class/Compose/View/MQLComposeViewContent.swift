@@ -11,7 +11,7 @@ import UIKit
 class MQLComposeViewContent: UIView {
     
     @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: MQLComposeTextView!
     @IBOutlet weak var bottomConstraintOfToolBar: NSLayoutConstraint!
     
     class func composeViewContent() -> MQLComposeViewContent? {
@@ -34,6 +34,7 @@ class MQLComposeViewContent: UIView {
         setupToolbar()
         registerNotification()
         
+        textView.delegateHasText = self
     }
     
     /// 设置工具栏
@@ -87,6 +88,7 @@ class MQLComposeViewContent: UIView {
     
 }
 
+//处理键盘通知
 extension MQLComposeViewContent {
     
     @objc func receiveNotificationOfUIKeyboardWillChangeFrame(n: Notification) -> () {
@@ -120,4 +122,10 @@ extension MQLComposeViewContent {
                                                 object:nil)
     }
     
+}
+
+extension MQLComposeViewContent : MQLComposeTextViewDelegate {
+    func hasText(has: Bool) -> (){
+        
+    }
 }

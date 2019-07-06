@@ -25,10 +25,9 @@
                         <barButtonItem title="Item" id="QhV-Ra-ZOc"/>
                     </items>
                 </toolbar>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7T6-tG-SpY">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="7T6-tG-SpY" customClass="MQLComposeTextView" customModule="MicroBlog" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="554" height="365"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -46,9 +45,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fN2-49-urO"/>
             <connections>
-                <outlet property="bottomConstraintOfToolBar" destination="SAH-zS-01f" id="2E1-yv-wp7"/>
-                <outlet property="textView" destination="7T6-tG-SpY" id="Uhc-Hg-xMz"/>
-                <outlet property="toolbar" destination="UDf-4V-D5i" id="mHC-DN-KaR"/>
+                <outlet property="bottomConstraintOfToolBar" destination="SAH-zS-01f" id="E9x-ib-l6J"/>
+                <outlet property="textView" destination="7T6-tG-SpY" id="Ahy-Ct-HgN"/>
+                <outlet property="toolbar" destination="UDf-4V-D5i" id="yjo-k2-bDY"/>
             </connections>
             <point key="canvasLocation" x="55.072463768115945" y="-116.18303571428571"/>
         </view>

@@ -27,6 +27,8 @@ class MQLComposeViewController: MQLBaseViewController {
         
         return btn
     }()
+    
+    var composeViewContent = MQLComposeViewContent.composeViewContent()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,32 +36,45 @@ class MQLComposeViewController: MQLBaseViewController {
         // Do any additional setup after loading the view.
         generalInit()
     }
+    
+    override func setTableView() {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        composeViewContent?.textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        composeViewContent?.textView.resignFirstResponder()
+    }
 }
 
 //UI相关
 extension MQLComposeViewController {
     
     func generalInit() {
+        addNavElement()
+        addMQLComposeViewContent()
+    }
+    
+    func addNavElement() -> () {
         navItem.leftBarButtonItem = UIBarButtonItem.init(title: "关闭", target: self, action: #selector(backBtnClicked), isBack:true)
         navItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
         
         navItem.titleView = titleView
         
         sendButton.isEnabled = false
-        
-        addMQLComposeViewContent()
     }
     
     @objc func backBtnClicked() -> () {
         dismiss(animated: true, completion: nil)
     }
     
-    override func setTableView() {
-        
-    }
-    
     func addMQLComposeViewContent() -> () {
-        guard let composeViewContent = MQLComposeViewContent.composeViewContent() else {
+        guard let composeViewContent = composeViewContent else {
             return
         }
         
@@ -69,9 +84,6 @@ extension MQLComposeViewController {
         })
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("")
-    }
 }
 
 
