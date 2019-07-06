@@ -12,6 +12,7 @@ class MQLComposeViewContent: UIView {
     
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var bottomConstraintOfToolBar: NSLayoutConstraint!
     
     class func composeViewContent() -> MQLComposeViewContent? {
         let nib = UINib(nibName: "MQLComposeViewContent", bundle: nil)
@@ -89,7 +90,26 @@ class MQLComposeViewContent: UIView {
 extension MQLComposeViewContent {
     
     @objc func receiveNotificationOfUIKeyboardWillChangeFrame(n: Notification) -> () {
-        print(#function)
+        //获取键盘坐标（基于UIScreen）
+        guard let frame = n.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect,
+        let duration = n.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? Double else {
+            return
+        }
+        //调整工具条底部约束（X系列之后的需要减去34，因为bottomConstraintOfToolBar已处于UIScreen底部34位置）
+        bottomConstraintOfToolBar.constant = UIScreen.main.bounds.height - frame.minY
+        if UIApplication.shared.statusBarFrame.height == 44 {
+            if frame.minY != UIScreen.main.bounds.height {
+                bottomConstraintOfToolBar.constant = UIScreen.main.bounds.height - frame.minY - 34//键盘弹出
+            }else{
+                bottomConstraintOfToolBar.constant = 0//键盘收起
+            }
+        }
+        
+        //动画
+        UIView.animate(withDuration: duration) {
+            self.layoutIfNeeded()
+        }
+        
     }
     
     func registerNotification() -> () {

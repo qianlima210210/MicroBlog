@@ -68,6 +68,10 @@ extension MQLComposeViewController {
             make.left.right.bottom.top.equalToSuperview()
         })
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("")
+    }
 }
 
 

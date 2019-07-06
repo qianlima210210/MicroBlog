@@ -122,7 +122,7 @@
 		D01B8F5122CD8D87007F1889 /* MQLWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLWebViewController.xib; sourceTree = "<group>"; };
 		D01B8F5522CEE014007F1889 /* MQLComposeViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLComposeViewContent.swift; sourceTree = "<group>"; };
 		D01B8F5722CEE023007F1889 /* MQLComposeViewContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLComposeViewContent.xib; sourceTree = "<group>"; };
-		D01E2C1622997F6000A22DE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		D01E2C1622997F6000A22DE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D01E2C24229A5D8300A22DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D01E2C26229A5D9B00A22DE0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D01E2C2A229A5E2B00A22DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1149,7 +1149,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MicroBlog/MicroBlog-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1170,7 +1170,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MicroBlog/MicroBlog-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

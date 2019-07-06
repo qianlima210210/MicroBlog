@@ -46,6 +46,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fN2-49-urO"/>
             <connections>
+                <outlet property="bottomConstraintOfToolBar" destination="SAH-zS-01f" id="2E1-yv-wp7"/>
                 <outlet property="textView" destination="7T6-tG-SpY" id="Uhc-Hg-xMz"/>
                 <outlet property="toolbar" destination="UDf-4V-D5i" id="mHC-DN-KaR"/>
             </connections>
