@@ -24,6 +24,7 @@ class MQLComposeViewController: MQLBaseViewController {
         btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
         
         btn.frame = CGRect(x: 0, y: 0, width: 45, height: 30)
+        btn.addTarget(self, action: #selector(sendButtonClicked), for: .touchUpInside)
         
         return btn
     }()
@@ -50,6 +51,21 @@ class MQLComposeViewController: MQLBaseViewController {
         super.viewWillDisappear(animated)
         composeViewContent?.textView.resignFirstResponder()
     }
+    
+    //notificationOfMQLComposeTextViewDidChange
+    override func registerNotifications() {
+        super.registerNotifications()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceiveNotificationOfMQLComposeTextViewDidChange(n:)), name: NSNotification.Name(notificationOfMQLComposeTextViewDidChange), object: nil)
+    }
+    
+    @objc func onReceiveNotificationOfMQLComposeTextViewDidChange(n: Notification) -> () {
+        guard let hasText = n.userInfo?["hasText"] as? Bool else {
+            return
+        }
+        
+        sendButton.isEnabled = hasText
+    }
 }
 
 //UI相关
@@ -58,6 +74,7 @@ extension MQLComposeViewController {
     func generalInit() {
         addNavElement()
         addMQLComposeViewContent()
+        
     }
     
     func addNavElement() -> () {
@@ -73,6 +90,10 @@ extension MQLComposeViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func sendButtonClicked() -> () {
+        
+    }
+    
     func addMQLComposeViewContent() -> () {
         guard let composeViewContent = composeViewContent else {
             return
@@ -83,6 +104,7 @@ extension MQLComposeViewController {
             make.left.right.bottom.top.equalToSuperview()
         })
     }
+    
     
 }
 

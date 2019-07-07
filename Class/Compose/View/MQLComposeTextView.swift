@@ -36,8 +36,14 @@ class MQLComposeTextView: UITextView {
 extension MQLComposeTextView : UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView){
+        //处理展位标签
         placeholderLab.isHidden = textView.hasText
-        
+        //处理代理
         delegateHasText?.hasText?(has: textView.hasText)
+        //发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(notificationOfMQLComposeTextViewDidChange), object: nil, userInfo: ["hasText":textView.hasText])
+        
     }
+    
+    
 }

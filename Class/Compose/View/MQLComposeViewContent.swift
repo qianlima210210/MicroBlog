@@ -33,8 +33,6 @@ class MQLComposeViewContent: UIView {
         super.awakeFromNib()
         setupToolbar()
         registerNotification()
-        
-        textView.delegateHasText = self
     }
     
     /// 设置工具栏
@@ -122,10 +120,4 @@ extension MQLComposeViewContent {
                                                 object:nil)
     }
     
-}
-
-extension MQLComposeViewContent : MQLComposeTextViewDelegate {
-    func hasText(has: Bool) -> (){
-        
-    }
 }

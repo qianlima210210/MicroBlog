@@ -22,4 +22,7 @@ let innerMargin: CGFloat = 3
 //PicturesViewContainer宽度
 let widthOfPicturesViewContainer = UIScreen.main.bounds.width - 2 * outerMargin - 2 * innerMargin
 
+//MQLComposeTextView文本变化通知
+let notificationOfMQLComposeTextViewDidChange = "notificationOfMQLComposeTextViewDidChange"
+
 
