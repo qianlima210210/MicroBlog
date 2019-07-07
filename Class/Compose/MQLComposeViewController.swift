@@ -30,6 +30,9 @@ class MQLComposeViewController: MQLBaseViewController {
     }()
     
     var composeViewContent = MQLComposeViewContent.composeViewContent()
+    
+    var composeViewModel = MQLComposeViewModel()
+    var hud: MBProgressHUD?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +95,23 @@ extension MQLComposeViewController {
     
     @objc func sendButtonClicked() -> () {
         
+        guard let text = composeViewContent?.textView.text else {
+            return
+        }
+        
+        //showRotationHUDAddedTo
+        hud = MBProgressHUD.showRotationHUDAdded(to: view, text: "正在请求...")
+        composeViewModel.statusesUpdate(text: text) { (value, error) in
+            //先隐藏hud
+            self.hud?.hide(animated: true)
+            
+            //在处理请求返回
+            if error != nil {//请求出错
+                
+            }else{//请求成功
+                
+            }
+        }
     }
     
     func addMQLComposeViewContent() -> () {

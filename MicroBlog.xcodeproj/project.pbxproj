@@ -70,6 +70,7 @@
 		D01EA44F22B3B790000FF0E6 /* MQLLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01EA44E22B3B790000FF0E6 /* MQLLoginViewModel.swift */; };
 		D01EA45222B3B7B9000FF0E6 /* MQLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01EA45022B3B7B9000FF0E6 /* MQLLoginViewController.swift */; };
 		D01EA45322B3B7B9000FF0E6 /* MQLLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01EA45122B3B7B9000FF0E6 /* MQLLoginViewController.xib */; };
+		D02F7D7722D1AC3D004FE15E /* MQLComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D7622D1AC3D004FE15E /* MQLComposeViewModel.swift */; };
 		D034A3DE22A7A8F700130D15 /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = D034A3DD22A7A8F700130D15 /* default.json */; };
 		D034A3E222AE274100130D15 /* NetworkRequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */; };
 		D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */; };
@@ -186,6 +187,7 @@
 		D01EA44E22B3B790000FF0E6 /* MQLLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLLoginViewModel.swift; sourceTree = "<group>"; };
 		D01EA45022B3B7B9000FF0E6 /* MQLLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLLoginViewController.swift; sourceTree = "<group>"; };
 		D01EA45122B3B7B9000FF0E6 /* MQLLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLLoginViewController.xib; sourceTree = "<group>"; };
+		D02F7D7622D1AC3D004FE15E /* MQLComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLComposeViewModel.swift; sourceTree = "<group>"; };
 		D034A3DD22A7A8F700130D15 /* default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default.json; sourceTree = "<group>"; };
 		D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestUrl.swift; sourceTree = "<group>"; };
 		D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestEngine.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		D01B8EA622C5A5E8007F1889 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				D02F7D7522D1AC26004FE15E /* ComposeViewModel */,
 				D01B8F5422CEDE2E007F1889 /* View */,
 				D0C6DF9422C887D0007B4F82 /* MQLComposeViewController.swift */,
 				D0C6DF9522C887D0007B4F82 /* MQLComposeViewController.xib */,
@@ -707,6 +710,14 @@
 			path = LoginDataModel;
 			sourceTree = "<group>";
 		};
+		D02F7D7522D1AC26004FE15E /* ComposeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D02F7D7622D1AC3D004FE15E /* MQLComposeViewModel.swift */,
+			);
+			path = ComposeViewModel;
+			sourceTree = "<group>";
+		};
 		D034A3E022AE26C800130D15 /* NetworkRequestEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -944,6 +955,7 @@
 				D03D5DD822BBAEBC00D7C22F /* NewFeatureCollectionViewCell.swift in Sources */,
 				D0E23B5E22A174F6005E19FE /* MQLNavigationBar.swift in Sources */,
 				D01E2C89229EC2DA00A22DE0 /* UIColor+CZAddition.m in Sources */,
+				D02F7D7722D1AC3D004FE15E /* MQLComposeViewModel.swift in Sources */,
 				D01E2CA6229ED6BD00A22DE0 /* MQLMainTabBarController.swift in Sources */,
 				D01E2C59229EA11700A22DE0 /* MQLDiscoverViewModel.swift in Sources */,
 				D01B8F4622CC6367007F1889 /* MQLEmotionsManager.swift in Sources */,
