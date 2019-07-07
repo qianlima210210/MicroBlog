@@ -14,6 +14,8 @@ class MQLComposeViewContent: UIView {
     @IBOutlet weak var textView: MQLComposeTextView!
     @IBOutlet weak var bottomConstraintOfToolBar: NSLayoutConstraint!
     
+    var keybordHeight: CGFloat = 0.0
+    
     class func composeViewContent() -> MQLComposeViewContent? {
         let nib = UINib(nibName: "MQLComposeViewContent", bundle: nil)
         let content = nib.instantiate(withOwner: nil, options:nil)[0] as? MQLComposeViewContent
@@ -81,7 +83,15 @@ class MQLComposeViewContent: UIView {
     }
     
     @objc func emoticonKeyboard() -> () {
+        //1、创建自定义键盘视图（当textView.inputView等于nil时，使用的是系统键盘）
+        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: keybordHeight))
+        keyboardView.backgroundColor = .orange
         
+        //2、设置输入视图
+        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        
+        //3、Updates the custom input and accessory views when the object is the first responder
+        textView.reloadInputViews()
     }
     
 }
@@ -95,6 +105,12 @@ extension MQLComposeViewContent {
         let duration = n.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? Double else {
             return
         }
+        
+        //记录键盘高度(只记录一次，要确认是否高度不变)
+        if keybordHeight == 0.0 {
+            keybordHeight = frame.height
+        }
+        
         //调整工具条底部约束（X系列之后的需要减去34，因为bottomConstraintOfToolBar已处于UIScreen底部34位置）
         bottomConstraintOfToolBar.constant = UIScreen.main.bounds.height - frame.minY
         if UIApplication.shared.statusBarFrame.height == 44 {
