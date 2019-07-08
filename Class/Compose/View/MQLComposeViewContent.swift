@@ -106,8 +106,8 @@ extension MQLComposeViewContent {
             return
         }
         
-        //记录键盘高度(只记录一次，要确认是否高度不变)
-        if keybordHeight == 0.0 {
+        //记录键盘高度(只记录弹出时的高度)
+        if frame.minY != UIScreen.main.bounds.height {
             keybordHeight = frame.height
         }
         
