@@ -99,8 +99,8 @@
 		D01B8F2E22CB26E9007F1889 /* MQLEmotions */ = {
 			isa = PBXGroup;
 			children = (
-				D01B8F3B22CB352D007F1889 /* DataModel */,
 				D01B8F2F22CB27C6007F1889 /* MQLEmotionsManager.swift */,
+				D01B8F3B22CB352D007F1889 /* DataModel */,
 				D01B8F2C22CB26BE007F1889 /* MQLEmotions.bundle */,
 			);
 			path = MQLEmotions;

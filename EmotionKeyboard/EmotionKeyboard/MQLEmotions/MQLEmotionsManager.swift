@@ -13,6 +13,14 @@ class MQLEmotionsManager: NSObject {
     static var emotionsManager = MQLEmotionsManager()
     @objc var packages = [MQLEmotionPackage]()
     
+    var bundle: Bundle? = {
+        guard let path = Bundle.main.path(forResource: "MQLEmotions.bundle", ofType: nil) else {
+                return nil
+        }
+        
+        return Bundle(path: path)
+    }()
+    
     private override init() {
         super.init()
         loadPackages()
@@ -25,8 +33,7 @@ class MQLEmotionsManager: NSObject {
 
 extension MQLEmotionsManager {
     func loadPackages() -> () {
-        guard let path = Bundle.main.path(forResource: "MQLEmotions.bundle", ofType: nil),
-            let bundle = Bundle(path: path),
+        guard let bundle = bundle,
             let plistPath = bundle.path(forResource: "emoticons.plist", ofType: nil),
             let array = NSArray(contentsOfFile: plistPath) as? [[String:String]],
             let packages = NSArray.yy_modelArray(with: MQLEmotionPackage.self, json: array) as? [MQLEmotionPackage]

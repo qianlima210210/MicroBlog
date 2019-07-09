@@ -27,9 +27,9 @@ import YYModel
             }
 
             emotions += items
-            
         }
     }
+    @objc var bgImageName: String?
     
     @objc var emotions = [MQLEmotion]()
     
