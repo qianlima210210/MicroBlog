@@ -9,15 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
-    @IBOutlet weak var lab: UILabel!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        lab.attributedText = MQLEmotionsManager.emotionsManager.emotionString(string: "我[笑哈哈]你[马到成功]啊", font: lab.font)
-
+        textView.inputView = MQLEmotionsView.emotionsView()
+        
     }
 
     

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MQLEmotionsView" customModule="EmotionKeyboard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="531" height="425"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnA-9j-NIU" userLabel="BottomToolbar" customClass="MQLEmotionsBottomToolbar" customModule="EmotionKeyboard" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="385" width="531" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="uZW-4y-asf"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="n69-j9-Fpu">
+                    <rect key="frame" x="0.0" y="0.0" width="531" height="385"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ubL-AD-Vf1">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+            <constraints>
+                <constraint firstItem="n69-j9-Fpu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5KR-jS-TdB"/>
+                <constraint firstAttribute="bottom" secondItem="wnA-9j-NIU" secondAttribute="bottom" id="5OD-Ie-9hB"/>
+                <constraint firstItem="wnA-9j-NIU" firstAttribute="top" secondItem="n69-j9-Fpu" secondAttribute="bottom" id="MoX-2H-hwA"/>
+                <constraint firstItem="wnA-9j-NIU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Onp-E1-VBj"/>
+                <constraint firstItem="n69-j9-Fpu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gbM-PP-Prj"/>
+                <constraint firstItem="n69-j9-Fpu" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="hTC-b5-mIw"/>
+                <constraint firstItem="wnA-9j-NIU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="zD0-SB-0pf"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bottomConstraintOfBottomToolbar" destination="5OD-Ie-9hB" id="OFo-W0-PS2"/>
+                <outlet property="bottomToolbar" destination="wnA-9j-NIU" id="6gG-ur-zuC"/>
+                <outlet property="collectionView" destination="n69-j9-Fpu" id="kFE-Qw-dkj"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="92.745535714285708"/>
+        </view>
+    </objects>
+</document>
