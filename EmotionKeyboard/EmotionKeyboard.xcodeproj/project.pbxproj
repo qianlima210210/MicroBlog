@@ -19,6 +19,8 @@
 		D02F10B422D338EE00A6E44F /* MQLEmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F10B322D338EE00A6E44F /* MQLEmotionsView.swift */; };
 		D02F10B622D3390000A6E44F /* MQLEmotionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02F10B522D3390000A6E44F /* MQLEmotionsView.xib */; };
 		D02F10BA22D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F10B922D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift */; };
+		D02F7D7A22D4D5A1004FE15E /* MQLEmotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D7822D4D5A1004FE15E /* MQLEmotionsCell.swift */; };
+		D02F7D7B22D4D5A1004FE15E /* MQLEmotionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02F7D7922D4D5A1004FE15E /* MQLEmotionsCell.xib */; };
 		EB0CD740B72BF4549A1EA0CD /* Pods_EmotionKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DF28687B31F9A8BCEB9313 /* Pods_EmotionKeyboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		D02F10B322D338EE00A6E44F /* MQLEmotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLEmotionsView.swift; sourceTree = "<group>"; };
 		D02F10B522D3390000A6E44F /* MQLEmotionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLEmotionsView.xib; sourceTree = "<group>"; };
 		D02F10B922D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLEmotionsBottomToolbar.swift; sourceTree = "<group>"; };
+		D02F7D7822D4D5A1004FE15E /* MQLEmotionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLEmotionsCell.swift; sourceTree = "<group>"; };
+		D02F7D7922D4D5A1004FE15E /* MQLEmotionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLEmotionsCell.xib; sourceTree = "<group>"; };
 		FB2D224112288B9D6ECECB80 /* Pods-EmotionKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmotionKeyboard/Pods-EmotionKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,8 @@
 				D02F10B322D338EE00A6E44F /* MQLEmotionsView.swift */,
 				D02F10B522D3390000A6E44F /* MQLEmotionsView.xib */,
 				D02F10B922D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift */,
+				D02F7D7822D4D5A1004FE15E /* MQLEmotionsCell.swift */,
+				D02F7D7922D4D5A1004FE15E /* MQLEmotionsCell.xib */,
 			);
 			path = MQLEmotionsView;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				D01B8F2522CB2675007F1889 /* LaunchScreen.storyboard in Resources */,
 				D01B8F2222CB2675007F1889 /* Assets.xcassets in Resources */,
 				D01B8F2D22CB26BE007F1889 /* MQLEmotions.bundle in Resources */,
+				D02F7D7B22D4D5A1004FE15E /* MQLEmotionsCell.xib in Resources */,
 				D01B8F2022CB2674007F1889 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02F7D7A22D4D5A1004FE15E /* MQLEmotionsCell.swift in Sources */,
 				D01B8F3D22CB354A007F1889 /* MQLEmotion.swift in Sources */,
 				D02F10BA22D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift in Sources */,
 				D02F10B422D338EE00A6E44F /* MQLEmotionsView.swift in Sources */,

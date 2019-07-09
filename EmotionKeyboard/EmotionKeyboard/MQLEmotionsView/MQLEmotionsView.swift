@@ -14,6 +14,8 @@ class MQLEmotionsView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bottomConstraintOfBottomToolbar: NSLayoutConstraint!
     
+    let cellId = "MQLEmotionsCell"
+    
     class func emotionsView() -> MQLEmotionsView? {
         let nib = UINib(nibName: "MQLEmotionsView", bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil)[0] as? MQLEmotionsView
@@ -24,10 +26,64 @@ class MQLEmotionsView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         bottomConstraintOfBottomToolbar.constant = 34
         if UIApplication.shared.statusBarFrame.height == 20 {
             bottomConstraintOfBottomToolbar.constant = 0
         }
+        
+        initCollectionView()
+    }
+    
+    func initCollectionView() -> () {
+        collectionView.register(MQLEmotionsCell.self, forCellWithReuseIdentifier: cellId)
     }
 
+}
+
+extension MQLEmotionsView : UICollectionViewDataSource{
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int{
+        return MQLEmotionsManager.emotionsManager.packages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        switch section {
+        case 0:
+            return 5
+        case 1:
+            return 10
+        case 2:
+            return 15
+        case 3:
+            return 20
+            
+        default:
+            return 20
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        
+        switch indexPath.section {
+        case 0:
+            cell.backgroundColor = .red
+        case 1:
+            cell.backgroundColor = .green
+        case 2:
+            cell.backgroundColor = .blue
+        case 3:
+            cell.backgroundColor = .yellow
+            
+        default:
+            cell.backgroundColor = .black
+        }
+        
+        
+        return cell
+    }
+    
+    
 }
