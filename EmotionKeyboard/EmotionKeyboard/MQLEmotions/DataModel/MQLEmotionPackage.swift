@@ -37,6 +37,23 @@ import YYModel
         return (emotions.count - 1 ) / 20 + 1
     }
     
+    //根据页数返回20个表情
+    func emotion(page: Int) -> [MQLEmotion] {
+        
+        let count = 20
+        
+        let location = page * count
+        var length = count
+        
+        if (location + length) > emotions.count {
+            length = emotions.count - location
+        }
+        
+        let array = emotions as NSArray
+        let range = NSRange(location: location, length: length)
+        return array.subarray(with: range) as! [MQLEmotion]
+    }
+    
     static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["emotions" : MQLEmotion.classForCoder()]
     }

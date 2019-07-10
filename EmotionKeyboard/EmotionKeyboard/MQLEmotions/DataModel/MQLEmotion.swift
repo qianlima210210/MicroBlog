@@ -17,7 +17,21 @@ import YYModel
     @objc var type: Bool = false
     
     //emoji十六进制字符串
-    @objc var code: String?
+    @objc var code: String?{
+        didSet{
+            guard let code = code else { return  }
+            
+            let scanner = Scanner(string: code)
+            var result: UInt32 = 0
+            scanner.scanHexInt32(&result)
+            
+            emoji = String(Character(UnicodeScalar(result)!))
+            
+        }
+    }
+    
+    //emoji字符串
+    var emoji: String?
     
     //所在目录
      @objc var directory: String?

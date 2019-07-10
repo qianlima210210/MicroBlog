@@ -60,6 +60,7 @@ extension MQLEmotionsView : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? MQLEmotionsCell ?? MQLEmotionsCell()
         
         cell.cellHeight = bounds.height - bottomConstraintOfBottomToolbar.constant - bottomToolbar.bounds.height
+        cell.emotions = MQLEmotionsManager.emotionsManager.packages[indexPath.section].emotion(page: indexPath.item)
         
         switch indexPath.section {
         case 0:
