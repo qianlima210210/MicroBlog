@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol MQLEmotionsCellDelegate : NSObjectProtocol {
+    func emotionsCellDidSelected(cell: MQLEmotionsCell, emotion: MQLEmotion?)
+}
+
 //每一个cell和collectionView大小一样
 //每一个cell中用九宫格的算法，自行添加20个表情
 //最后一个位置放置删除按钮
@@ -20,6 +24,7 @@ class MQLEmotionsCell: UICollectionViewCell {
             for v in containerView.subviews {
                 v.isHidden = true
             }
+            containerView.subviews.last?.isHidden = false
             
             for (i, item) in (emotions ?? []).enumerated() {
                 if let btn = containerView.subviews[i] as? UIButton {
@@ -37,6 +42,8 @@ class MQLEmotionsCell: UICollectionViewCell {
             addBtns()
         }
     }
+    
+    weak var delegate: MQLEmotionsCellDelegate?
    
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,10 +74,27 @@ class MQLEmotionsCell: UICollectionViewCell {
             let col = i % colCount
             
             let btn = UIButton()
+            btn.tag = i
+            btn.addTarget(self, action: #selector(emotionBtnClicked(sender:)), for: .touchUpInside)
+            
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 32)
             btn.frame = CGRect(x: CGFloat(col) * btnWidth, y: CGFloat(row) * btnHeight, width: btnWidth, height: btnHeight)
             containerView.addSubview(btn)
         }
+        
+        let lastBtn = containerView.subviews.last as! UIButton
+        let image = UIImage(named: "compose_emotion_delete", in: MQLEmotionsManager.emotionsManager.bundle, compatibleWith: nil)
+        lastBtn.setImage(image, for: .normal)
+    }
+    
+    @objc func emotionBtnClicked(sender: UIButton) -> () {
+        var emotion: MQLEmotion?
+        
+        if sender.tag < emotions?.count ?? 0 {
+            emotion = emotions?[sender.tag]
+        }
+        
+        delegate?.emotionsCellDidSelected(cell: self, emotion: emotion)
     }
 
 }

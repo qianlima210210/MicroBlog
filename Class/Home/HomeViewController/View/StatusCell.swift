@@ -14,7 +14,7 @@ import UIKit
 
 class StatusCell: UITableViewCell {
     
-    var delegate: StatusCellDelegate?
+    weak var delegate: StatusCellDelegate?
 
     @IBOutlet weak var touXiang: UIImageView!
     @IBOutlet weak var name: UILabel!

@@ -61,24 +61,17 @@ extension MQLEmotionsView : UICollectionViewDataSource{
         
         cell.cellHeight = bounds.height - bottomConstraintOfBottomToolbar.constant - bottomToolbar.bounds.height
         cell.emotions = MQLEmotionsManager.emotionsManager.packages[indexPath.section].emotion(page: indexPath.item)
-        
-        switch indexPath.section {
-        case 0:
-            cell.backgroundColor = .red
-        case 1:
-            cell.backgroundColor = .green
-        case 2:
-            cell.backgroundColor = .blue
-        case 3:
-            cell.backgroundColor = .yellow
-            
-        default:
-            cell.backgroundColor = .black
-        }
+        cell.delegate = self
         
         
         return cell
     }
     
     
+}
+
+extension MQLEmotionsView : MQLEmotionsCellDelegate {
+    func emotionsCellDidSelected(cell: MQLEmotionsCell, emotion: MQLEmotion?) {
+        print(emotion)
+    }
 }

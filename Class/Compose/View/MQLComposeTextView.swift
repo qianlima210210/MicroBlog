@@ -15,7 +15,7 @@ import UIKit
 class MQLComposeTextView: UITextView {
 
     var placeholderLab: UILabel = UILabel()
-    var delegateHasText: MQLComposeTextViewDelegate?
+    weak var delegateHasText: MQLComposeTextViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
