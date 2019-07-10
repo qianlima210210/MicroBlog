@@ -14,13 +14,16 @@ class MQLEmotionsView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bottomConstraintOfBottomToolbar: NSLayoutConstraint!
     
+    
+    var emotionSelected: ((MQLEmotion?) ->())?
     let cellId = "MQLEmotionsCell"
     
-    class func emotionsView(keyboardHeight: CGFloat) -> MQLEmotionsView? {
+    class func emotionsView(keyboardHeight: CGFloat, emotionSelected: @escaping (MQLEmotion?) ->()) -> MQLEmotionsView? {
         let nib = UINib(nibName: "MQLEmotionsView", bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil)[0] as? MQLEmotionsView
         
         view?.frame = CGRect(x: 0, y: 0, width: 0, height: keyboardHeight)
+        view?.emotionSelected = emotionSelected
         return view
     }
     
@@ -72,6 +75,6 @@ extension MQLEmotionsView : UICollectionViewDataSource{
 
 extension MQLEmotionsView : MQLEmotionsCellDelegate {
     func emotionsCellDidSelected(cell: MQLEmotionsCell, emotion: MQLEmotion?) {
-        print(emotion)
+        emotionSelected?(emotion)
     }
 }
