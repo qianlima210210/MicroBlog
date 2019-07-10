@@ -36,6 +36,9 @@ class MQLEmotionsView: UIView {
     }
     
     func initCollectionView() -> () {
+        
+        collectionView.backgroundColor = .gray
+        
         collectionView.register(MQLEmotionsCell.self, forCellWithReuseIdentifier: cellId)
     }
 
@@ -48,19 +51,7 @@ extension MQLEmotionsView : UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        switch section {
-        case 0:
-            return 5
-        case 1:
-            return 10
-        case 2:
-            return 15
-        case 3:
-            return 20
-            
-        default:
-            return 20
-        }
+        return MQLEmotionsManager.emotionsManager.packages[section].numberOfPages
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{

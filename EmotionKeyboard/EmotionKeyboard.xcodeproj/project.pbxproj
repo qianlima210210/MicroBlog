@@ -19,6 +19,7 @@
 		D02F10B422D338EE00A6E44F /* MQLEmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F10B322D338EE00A6E44F /* MQLEmotionsView.swift */; };
 		D02F10B622D3390000A6E44F /* MQLEmotionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02F10B522D3390000A6E44F /* MQLEmotionsView.xib */; };
 		D02F10BA22D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F10B922D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift */; };
+		D02F10BC22D56B3D00A6E44F /* MQLCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F10BB22D56B3D00A6E44F /* MQLCollectionViewFlowLayout.swift */; };
 		D02F7D7A22D4D5A1004FE15E /* MQLEmotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D7822D4D5A1004FE15E /* MQLEmotionsCell.swift */; };
 		D02F7D7B22D4D5A1004FE15E /* MQLEmotionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02F7D7922D4D5A1004FE15E /* MQLEmotionsCell.xib */; };
 		EB0CD740B72BF4549A1EA0CD /* Pods_EmotionKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DF28687B31F9A8BCEB9313 /* Pods_EmotionKeyboard.framework */; };
@@ -41,6 +42,7 @@
 		D02F10B322D338EE00A6E44F /* MQLEmotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLEmotionsView.swift; sourceTree = "<group>"; };
 		D02F10B522D3390000A6E44F /* MQLEmotionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLEmotionsView.xib; sourceTree = "<group>"; };
 		D02F10B922D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLEmotionsBottomToolbar.swift; sourceTree = "<group>"; };
+		D02F10BB22D56B3D00A6E44F /* MQLCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D02F7D7822D4D5A1004FE15E /* MQLEmotionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLEmotionsCell.swift; sourceTree = "<group>"; };
 		D02F7D7922D4D5A1004FE15E /* MQLEmotionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLEmotionsCell.xib; sourceTree = "<group>"; };
 		FB2D224112288B9D6ECECB80 /* Pods-EmotionKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmotionKeyboard/Pods-EmotionKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				D02F10B322D338EE00A6E44F /* MQLEmotionsView.swift */,
 				D02F10B522D3390000A6E44F /* MQLEmotionsView.xib */,
+				D02F10BB22D56B3D00A6E44F /* MQLCollectionViewFlowLayout.swift */,
 				D02F10B922D42B2A00A6E44F /* MQLEmotionsBottomToolbar.swift */,
 				D02F7D7822D4D5A1004FE15E /* MQLEmotionsCell.swift */,
 				D02F7D7922D4D5A1004FE15E /* MQLEmotionsCell.xib */,
@@ -295,6 +298,7 @@
 				D01B8F3F22CB401F007F1889 /* MQLEmotionPackage.swift in Sources */,
 				D01B8F1D22CB2674007F1889 /* ViewController.swift in Sources */,
 				D01B8F1B22CB2674007F1889 /* AppDelegate.swift in Sources */,
+				D02F10BC22D56B3D00A6E44F /* MQLCollectionViewFlowLayout.swift in Sources */,
 				D01B8F3022CB27C6007F1889 /* MQLEmotionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V49A63JU48;
 				INFOPLIST_FILE = EmotionKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V49A63JU48;
 				INFOPLIST_FILE = EmotionKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

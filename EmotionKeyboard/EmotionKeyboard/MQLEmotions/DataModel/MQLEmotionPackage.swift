@@ -33,6 +33,10 @@ import YYModel
     
     @objc var emotions = [MQLEmotion]()
     
+    var numberOfPages: Int {
+        return (emotions.count - 1 ) / 20 + 1
+    }
+    
     static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["emotions" : MQLEmotion.classForCoder()]
     }
