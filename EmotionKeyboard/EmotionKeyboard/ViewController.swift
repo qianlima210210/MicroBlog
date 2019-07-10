@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        textView.inputView = MQLEmotionsView.emotionsView()
+        textView.inputView = MQLEmotionsView.emotionsView(keyboardHeight: 346)
         
     }
 

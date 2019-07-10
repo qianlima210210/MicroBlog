@@ -16,11 +16,11 @@ class MQLEmotionsView: UIView {
     
     let cellId = "MQLEmotionsCell"
     
-    class func emotionsView() -> MQLEmotionsView? {
+    class func emotionsView(keyboardHeight: CGFloat) -> MQLEmotionsView? {
         let nib = UINib(nibName: "MQLEmotionsView", bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil)[0] as? MQLEmotionsView
         
-        view?.frame = CGRect(x: 0, y: 0, width: 0, height: 346)
+        view?.frame = CGRect(x: 0, y: 0, width: 0, height: keyboardHeight)
         return view
     }
     
@@ -39,7 +39,8 @@ class MQLEmotionsView: UIView {
         
         collectionView.backgroundColor = .gray
         
-        collectionView.register(MQLEmotionsCell.self, forCellWithReuseIdentifier: cellId)
+        let nib = UINib(nibName: cellId, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
     }
 
 }
@@ -56,7 +57,9 @@ extension MQLEmotionsView : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? MQLEmotionsCell ?? MQLEmotionsCell()
+        
+        cell.cellHeight = bounds.height - bottomConstraintOfBottomToolbar.constant - bottomToolbar.bounds.height
         
         switch indexPath.section {
         case 0:
