@@ -8,6 +8,7 @@
 
 import UIKit
 
+//自定义表情键盘视图
 class MQLEmotionsView: UIView {
 
     @IBOutlet weak var bottomToolbar: MQLEmotionsBottomToolbar!

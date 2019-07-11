@@ -12,7 +12,7 @@ import MJRefresh
 
 
 class MQLBaseViewController: UIViewController {
-    
+     
     //未登录显示游客视图
     var visitorView: MQLVisitorView = (Bundle.main.loadNibNamed("MQLVisitorView", owner: nil, options: nil)?.last as? MQLVisitorView) ?? MQLVisitorView()
     

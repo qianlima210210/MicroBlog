@@ -84,8 +84,12 @@ class MQLComposeViewContent: UIView {
     
     @objc func emoticonKeyboard() -> () {
         //1、创建自定义键盘视图（当textView.inputView等于nil时，使用的是系统键盘）
-        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: keybordHeight))
-        keyboardView.backgroundColor = .orange
+        let keyboardView = MQLEmotionsView.emotionsView(keyboardHeight: keybordHeight) { [weak self] (emotion) in
+            
+            self?.textView.insertEmotion(emotion: emotion)
+            self?.textView.handleForTextViewDidChange()
+        }
+        keyboardView?.backgroundColor = .orange
         
         //2、设置输入视图
         textView.inputView = (textView.inputView == nil) ? keyboardView : nil

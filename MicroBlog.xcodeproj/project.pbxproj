@@ -13,10 +13,6 @@
 		D01B8EA822C5A621007F1889 /* MQLComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8EA722C5A621007F1889 /* MQLComposeTypeView.swift */; };
 		D01B8EAA22C5A631007F1889 /* MQLComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */; };
 		D01B8EAC22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */; };
-		D01B8F4622CC6367007F1889 /* MQLEmotionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4122CC6367007F1889 /* MQLEmotionsManager.swift */; };
-		D01B8F4722CC6367007F1889 /* MQLEmotions.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F4222CC6367007F1889 /* MQLEmotions.bundle */; };
-		D01B8F4822CC6367007F1889 /* MQLEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4422CC6367007F1889 /* MQLEmotion.swift */; };
-		D01B8F4922CC6367007F1889 /* MQLEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */; };
 		D01B8F4B22CC860B007F1889 /* NSAttributedString+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4A22CC860B007F1889 /* NSAttributedString+extension.swift */; };
 		D01B8F4E22CCC009007F1889 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F4D22CCC009007F1889 /* FFLabel.swift */; };
 		D01B8F5222CD8D87007F1889 /* MQLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F5022CD8D87007F1889 /* MQLWebViewController.swift */; };
@@ -71,6 +67,17 @@
 		D01EA45222B3B7B9000FF0E6 /* MQLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01EA45022B3B7B9000FF0E6 /* MQLLoginViewController.swift */; };
 		D01EA45322B3B7B9000FF0E6 /* MQLLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01EA45122B3B7B9000FF0E6 /* MQLLoginViewController.xib */; };
 		D02F7D7722D1AC3D004FE15E /* MQLComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D7622D1AC3D004FE15E /* MQLComposeViewModel.swift */; };
+		D02F7D8A22D769A9004FE15E /* MQLEmotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D7D22D769A9004FE15E /* MQLEmotionsCell.swift */; };
+		D02F7D8B22D769A9004FE15E /* MQLEmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D7E22D769A9004FE15E /* MQLEmotionsView.swift */; };
+		D02F7D8C22D769A9004FE15E /* MQLEmotionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02F7D7F22D769A9004FE15E /* MQLEmotionsView.xib */; };
+		D02F7D8D22D769A9004FE15E /* MQLEmotionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02F7D8022D769A9004FE15E /* MQLEmotionsCell.xib */; };
+		D02F7D8E22D769A9004FE15E /* MQLCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D8122D769A9004FE15E /* MQLCollectionViewFlowLayout.swift */; };
+		D02F7D8F22D769A9004FE15E /* MQLEmotionsBottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D8222D769A9004FE15E /* MQLEmotionsBottomToolbar.swift */; };
+		D02F7D9022D769A9004FE15E /* MQLEmotionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D8422D769A9004FE15E /* MQLEmotionsManager.swift */; };
+		D02F7D9122D769A9004FE15E /* MQLEmotions.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02F7D8522D769A9004FE15E /* MQLEmotions.bundle */; };
+		D02F7D9222D769A9004FE15E /* MQLTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D8722D769A9004FE15E /* MQLTextAttachment.swift */; };
+		D02F7D9322D769A9004FE15E /* MQLEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D8822D769A9004FE15E /* MQLEmotion.swift */; };
+		D02F7D9422D769A9004FE15E /* MQLEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F7D8922D769A9004FE15E /* MQLEmotionPackage.swift */; };
 		D034A3DE22A7A8F700130D15 /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = D034A3DD22A7A8F700130D15 /* default.json */; };
 		D034A3E222AE274100130D15 /* NetworkRequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */; };
 		D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */; };
@@ -113,10 +120,6 @@
 		D01B8EA722C5A621007F1889 /* MQLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLComposeTypeView.swift; sourceTree = "<group>"; };
 		D01B8EA922C5A631007F1889 /* MQLComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLComposeTypeView.xib; sourceTree = "<group>"; };
 		D01B8EAB22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLMQLComposeTypeButton.swift; sourceTree = "<group>"; };
-		D01B8F4122CC6367007F1889 /* MQLEmotionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionsManager.swift; sourceTree = "<group>"; };
-		D01B8F4222CC6367007F1889 /* MQLEmotions.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MQLEmotions.bundle; sourceTree = "<group>"; };
-		D01B8F4422CC6367007F1889 /* MQLEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotion.swift; sourceTree = "<group>"; };
-		D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionPackage.swift; sourceTree = "<group>"; };
 		D01B8F4A22CC860B007F1889 /* NSAttributedString+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+extension.swift"; sourceTree = "<group>"; };
 		D01B8F4D22CCC009007F1889 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		D01B8F5022CD8D87007F1889 /* MQLWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLWebViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +191,17 @@
 		D01EA45022B3B7B9000FF0E6 /* MQLLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLLoginViewController.swift; sourceTree = "<group>"; };
 		D01EA45122B3B7B9000FF0E6 /* MQLLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MQLLoginViewController.xib; sourceTree = "<group>"; };
 		D02F7D7622D1AC3D004FE15E /* MQLComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLComposeViewModel.swift; sourceTree = "<group>"; };
+		D02F7D7D22D769A9004FE15E /* MQLEmotionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionsCell.swift; sourceTree = "<group>"; };
+		D02F7D7E22D769A9004FE15E /* MQLEmotionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionsView.swift; sourceTree = "<group>"; };
+		D02F7D7F22D769A9004FE15E /* MQLEmotionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MQLEmotionsView.xib; sourceTree = "<group>"; };
+		D02F7D8022D769A9004FE15E /* MQLEmotionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MQLEmotionsCell.xib; sourceTree = "<group>"; };
+		D02F7D8122D769A9004FE15E /* MQLCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		D02F7D8222D769A9004FE15E /* MQLEmotionsBottomToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionsBottomToolbar.swift; sourceTree = "<group>"; };
+		D02F7D8422D769A9004FE15E /* MQLEmotionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionsManager.swift; sourceTree = "<group>"; };
+		D02F7D8522D769A9004FE15E /* MQLEmotions.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MQLEmotions.bundle; sourceTree = "<group>"; };
+		D02F7D8722D769A9004FE15E /* MQLTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLTextAttachment.swift; sourceTree = "<group>"; };
+		D02F7D8822D769A9004FE15E /* MQLEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotion.swift; sourceTree = "<group>"; };
+		D02F7D8922D769A9004FE15E /* MQLEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLEmotionPackage.swift; sourceTree = "<group>"; };
 		D034A3DD22A7A8F700130D15 /* default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default.json; sourceTree = "<group>"; };
 		D034A3E122AE274100130D15 /* NetworkRequestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestUrl.swift; sourceTree = "<group>"; };
 		D034A3E322AE275500130D15 /* NetworkRequestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestEngine.swift; sourceTree = "<group>"; };
@@ -283,26 +297,6 @@
 				D0C6DF9522C887D0007B4F82 /* MQLComposeViewController.xib */,
 			);
 			path = Compose;
-			sourceTree = "<group>";
-		};
-		D01B8F4022CC6367007F1889 /* MQLEmotions */ = {
-			isa = PBXGroup;
-			children = (
-				D01B8F4322CC6367007F1889 /* DataModel */,
-				D01B8F4122CC6367007F1889 /* MQLEmotionsManager.swift */,
-				D01B8F4222CC6367007F1889 /* MQLEmotions.bundle */,
-			);
-			name = MQLEmotions;
-			path = EmotionKeyboard/EmotionKeyboard/MQLEmotions;
-			sourceTree = SOURCE_ROOT;
-		};
-		D01B8F4322CC6367007F1889 /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				D01B8F4422CC6367007F1889 /* MQLEmotion.swift */,
-				D01B8F4522CC6367007F1889 /* MQLEmotionPackage.swift */,
-			);
-			path = DataModel;
 			sourceTree = "<group>";
 		};
 		D01B8F4C22CCC009007F1889 /* FFLabel */ = {
@@ -580,9 +574,10 @@
 		D01E2C6E229EC2C800A22DE0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D02F7D8322D769A9004FE15E /* MQLEmotions */,
+				D02F7D7C22D769A9004FE15E /* MQLEmotionsView */,
 				D01B8F4F22CD8D5C007F1889 /* WebViewController */,
 				D01B8F4C22CCC009007F1889 /* FFLabel */,
-				D01B8F4022CC6367007F1889 /* MQLEmotions */,
 				D01EA44022B3AE65000FF0E6 /* Constant */,
 				D01EA42C22B0E252000FF0E6 /* MBProgressHUD+JRAdditional */,
 				D034A3E022AE26C800130D15 /* NetworkRequestEngine */,
@@ -718,6 +713,41 @@
 			path = ComposeViewModel;
 			sourceTree = "<group>";
 		};
+		D02F7D7C22D769A9004FE15E /* MQLEmotionsView */ = {
+			isa = PBXGroup;
+			children = (
+				D02F7D7D22D769A9004FE15E /* MQLEmotionsCell.swift */,
+				D02F7D8022D769A9004FE15E /* MQLEmotionsCell.xib */,
+				D02F7D7E22D769A9004FE15E /* MQLEmotionsView.swift */,
+				D02F7D7F22D769A9004FE15E /* MQLEmotionsView.xib */,
+				D02F7D8122D769A9004FE15E /* MQLCollectionViewFlowLayout.swift */,
+				D02F7D8222D769A9004FE15E /* MQLEmotionsBottomToolbar.swift */,
+			);
+			name = MQLEmotionsView;
+			path = EmotionKeyboard/EmotionKeyboard/MQLEmotionsView;
+			sourceTree = SOURCE_ROOT;
+		};
+		D02F7D8322D769A9004FE15E /* MQLEmotions */ = {
+			isa = PBXGroup;
+			children = (
+				D02F7D8422D769A9004FE15E /* MQLEmotionsManager.swift */,
+				D02F7D8522D769A9004FE15E /* MQLEmotions.bundle */,
+				D02F7D8622D769A9004FE15E /* DataModel */,
+			);
+			name = MQLEmotions;
+			path = EmotionKeyboard/EmotionKeyboard/MQLEmotions;
+			sourceTree = SOURCE_ROOT;
+		};
+		D02F7D8622D769A9004FE15E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				D02F7D8722D769A9004FE15E /* MQLTextAttachment.swift */,
+				D02F7D8822D769A9004FE15E /* MQLEmotion.swift */,
+				D02F7D8922D769A9004FE15E /* MQLEmotionPackage.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		D034A3E022AE26C800130D15 /* NetworkRequestEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,8 +875,8 @@
 				D0C6DF9722C887D0007B4F82 /* MQLComposeViewController.xib in Resources */,
 				D01EA43D22B0E44A000FF0E6 /* toast_right@2x.png in Resources */,
 				D03D5DD022BBAE4A00D7C22F /* WelcomeView.xib in Resources */,
-				D01B8F4722CC6367007F1889 /* MQLEmotions.bundle in Resources */,
 				D01EA43922B0E44A000FF0E6 /* toast_warning@3x.png in Resources */,
+				D02F7D9122D769A9004FE15E /* MQLEmotions.bundle in Resources */,
 				D01E2C54229E8E1B00A22DE0 /* MQLProfileViewController.xib in Resources */,
 				D01E2C69229EA1D400A22DE0 /* MQLHomeViewController.xib in Resources */,
 				D01EA43E22B0E44A000FF0E6 /* toast_loading@3x.png in Resources */,
@@ -854,6 +884,8 @@
 				D01B8EAA22C5A631007F1889 /* MQLComposeTypeView.xib in Resources */,
 				D03D5DDA22BBAEBC00D7C22F /* NewFeatureCollectionViewCell.xib in Resources */,
 				D01E2C5D229EA13300A22DE0 /* MQLDiscoverViewController.xib in Resources */,
+				D02F7D8D22D769A9004FE15E /* MQLEmotionsCell.xib in Resources */,
+				D02F7D8C22D769A9004FE15E /* MQLEmotionsView.xib in Resources */,
 				D01EA43B22B0E44A000FF0E6 /* toast_warning@2x.png in Resources */,
 				D00A0FBD22997B6700DF7A15 /* Assets.xcassets in Resources */,
 				D01EA43C22B0E44A000FF0E6 /* toast_right@3x.png in Resources */,
@@ -944,7 +976,6 @@
 				D0E23B5A22A1467D005E19FE /* UIBarButtonItem+extension.swift in Sources */,
 				D01E2C53229E8E1B00A22DE0 /* MQLProfileViewController.swift in Sources */,
 				D03D5DDD22BBAF3300D7C22F /* StatusCell.swift in Sources */,
-				D01B8F4922CC6367007F1889 /* MQLEmotionPackage.swift in Sources */,
 				D01E2C94229EC2DA00A22DE0 /* NSArray+Log.m in Sources */,
 				D01E2C57229EA0FF00A22DE0 /* MQLDiscoverDataModel.swift in Sources */,
 				D01B8F4B22CC860B007F1889 /* NSAttributedString+extension.swift in Sources */,
@@ -953,12 +984,12 @@
 				D01E2C93229EC2DA00A22DE0 /* NSAttributedString+CZAdditon.m in Sources */,
 				D01E2C91229EC2DA00A22DE0 /* UIViewController+CZAddition.m in Sources */,
 				D03D5DD822BBAEBC00D7C22F /* NewFeatureCollectionViewCell.swift in Sources */,
+				D02F7D9422D769A9004FE15E /* MQLEmotionPackage.swift in Sources */,
 				D0E23B5E22A174F6005E19FE /* MQLNavigationBar.swift in Sources */,
 				D01E2C89229EC2DA00A22DE0 /* UIColor+CZAddition.m in Sources */,
 				D02F7D7722D1AC3D004FE15E /* MQLComposeViewModel.swift in Sources */,
 				D01E2CA6229ED6BD00A22DE0 /* MQLMainTabBarController.swift in Sources */,
 				D01E2C59229EA11700A22DE0 /* MQLDiscoverViewModel.swift in Sources */,
-				D01B8F4622CC6367007F1889 /* MQLEmotionsManager.swift in Sources */,
 				D01E2C30229E795500A22DE0 /* MQLBaseViewController.swift in Sources */,
 				D01E2C8F229EC2DA00A22DE0 /* UIButton+CZAddition.m in Sources */,
 				D01EA45222B3B7B9000FF0E6 /* MQLLoginViewController.swift in Sources */,
@@ -967,9 +998,10 @@
 				D0E23B52229FD989005E19FE /* Bundle+extension.swift in Sources */,
 				D01E2C8E229EC2DA00A22DE0 /* NSString+CZPath.m in Sources */,
 				D05B372C22A66DDA0073E781 /* MQLVisitorView.swift in Sources */,
+				D02F7D9322D769A9004FE15E /* MQLEmotion.swift in Sources */,
+				D02F7D8A22D769A9004FE15E /* MQLEmotionsCell.swift in Sources */,
 				D01B8F5222CD8D87007F1889 /* MQLWebViewController.swift in Sources */,
 				D0F8897822BCDD550041A7D0 /* MQLUserDataModel.swift in Sources */,
-				D01B8F4822CC6367007F1889 /* MQLEmotion.swift in Sources */,
 				D0C6DF9122BF3B64007B4F82 /* NSStrin+extension.swift in Sources */,
 				D01E2C90229EC2DA00A22DE0 /* NSObject+CZRuntime.m in Sources */,
 				D01EA44D22B3B77A000FF0E6 /* MQLLoginDataModel.swift in Sources */,
@@ -979,9 +1011,12 @@
 				D01B8EAC22C5E56C007F1889 /* MQLMQLComposeTypeButton.swift in Sources */,
 				D0C6DF9D22D0F225007B4F82 /* MQLComposeTextView.swift in Sources */,
 				D0E23B5522A100FA005E19FE /* MQLBaseNavigationController.swift in Sources */,
+				D02F7D8F22D769A9004FE15E /* MQLEmotionsBottomToolbar.swift in Sources */,
 				D0E23B5822A1346E005E19FE /* MQLTestViewController.swift in Sources */,
+				D02F7D9022D769A9004FE15E /* MQLEmotionsManager.swift in Sources */,
 				D034A3E422AE275500130D15 /* NetworkRequestEngine.swift in Sources */,
 				D01E2C6B229EA1E900A22DE0 /* MQLHomeViewModel.swift in Sources */,
+				D02F7D8E22D769A9004FE15E /* MQLCollectionViewFlowLayout.swift in Sources */,
 				D01EA44F22B3B790000FF0E6 /* MQLLoginViewModel.swift in Sources */,
 				D01B8F5622CEE014007F1889 /* MQLComposeViewContent.swift in Sources */,
 				D01E2C4E229E8D7200A22DE0 /* MQLProfileDataModel.swift in Sources */,
@@ -994,6 +1029,7 @@
 				D0E23B5622A100FA005E19FE /* MQLBaseTabBarController.swift in Sources */,
 				D01E2C8B229EC2DA00A22DE0 /* UIScreen+CZAddition.m in Sources */,
 				D01E2C8A229EC2DA00A22DE0 /* UIView+CZAddition.m in Sources */,
+				D02F7D8B22D769A9004FE15E /* MQLEmotionsView.swift in Sources */,
 				D01E2C8C229EC2DA00A22DE0 /* UILabel+CZAddition.m in Sources */,
 				D01B8F4E22CCC009007F1889 /* FFLabel.swift in Sources */,
 				D03D5DD122BBAE4A00D7C22F /* NewFeatureView.swift in Sources */,
@@ -1002,6 +1038,7 @@
 				D01B8EA822C5A621007F1889 /* MQLComposeTypeView.swift in Sources */,
 				D01E2C92229EC2DA00A22DE0 /* NSString+CZHash.m in Sources */,
 				D01E2C6D229EA1F900A22DE0 /* MQLHomeDataModel.swift in Sources */,
+				D02F7D9222D769A9004FE15E /* MQLTextAttachment.swift in Sources */,
 				D034A3E222AE274100130D15 /* NetworkRequestUrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,12 +48,13 @@ class ViewController: UIViewController {
         textView.selectedRange = NSRange(location: loc + 1, length: 0)
     }
     
-    func pureString() -> () {
+    func pureString() -> String {
         
-        guard let attStr = textView.attributedText else {
-            return
-        }
         var resultStr: String = ""
+        guard let attStr = textView.attributedText else {
+            return resultStr
+        }
+        
         attStr.enumerateAttributes(in: NSRange(location: 0, length: attStr.length), options: []) { (dic, range, _) in
             if let attachment = dic[NSAttributedString.Key.attachment] as? MQLTextAttachment {
                 resultStr += attachment.chs ?? ""
@@ -61,11 +62,11 @@ class ViewController: UIViewController {
                 resultStr += attStr.attributedSubstring(from: range).string
             }
         }
-        print("======>\(resultStr)")
+        return resultStr
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        pureString()
+        print(pureString())
     }
 }
 
