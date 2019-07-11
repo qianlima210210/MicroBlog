@@ -57,7 +57,11 @@ import YYModel
         let attachment = NSTextAttachment()
         attachment.image = image
         attachment.bounds = CGRect(x: 0, y: -4, width: font.lineHeight, height: font.lineHeight)
-        return NSAttributedString(attachment: attachment)
+        
+        let attStrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        attStrM.addAttributes([NSAttributedString.Key.font : font], range: NSRange(location: 0, length: attStrM.length))
+        
+        return attStrM
     }
     
     override var description: String{
