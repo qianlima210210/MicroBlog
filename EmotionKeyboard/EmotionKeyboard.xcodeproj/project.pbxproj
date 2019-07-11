@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D017581E22D7106400BD3B8A /* MQLTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D017581D22D7106400BD3B8A /* MQLTextAttachment.swift */; };
 		D01B8F1B22CB2674007F1889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F1A22CB2674007F1889 /* AppDelegate.swift */; };
 		D01B8F1D22CB2674007F1889 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01B8F1C22CB2674007F1889 /* ViewController.swift */; };
 		D01B8F2022CB2674007F1889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01B8F1E22CB2674007F1889 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		21E80CF05BE2C2E870F9494D /* Pods-EmotionKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmotionKeyboard/Pods-EmotionKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		A1DF28687B31F9A8BCEB9313 /* Pods_EmotionKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmotionKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D017581D22D7106400BD3B8A /* MQLTextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQLTextAttachment.swift; sourceTree = "<group>"; };
 		D01B8F1722CB2674007F1889 /* EmotionKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01B8F1A22CB2674007F1889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D01B8F1C22CB2674007F1889 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				D01B8F3C22CB354A007F1889 /* MQLEmotion.swift */,
 				D01B8F3E22CB401F007F1889 /* MQLEmotionPackage.swift */,
+				D017581D22D7106400BD3B8A /* MQLTextAttachment.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				D01B8F1D22CB2674007F1889 /* ViewController.swift in Sources */,
 				D01B8F1B22CB2674007F1889 /* AppDelegate.swift in Sources */,
 				D02F10BC22D56B3D00A6E44F /* MQLCollectionViewFlowLayout.swift in Sources */,
+				D017581E22D7106400BD3B8A /* MQLTextAttachment.swift in Sources */,
 				D01B8F3022CB27C6007F1889 /* MQLEmotionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

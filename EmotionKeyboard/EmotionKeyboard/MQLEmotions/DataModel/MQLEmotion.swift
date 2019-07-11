@@ -54,7 +54,8 @@ import YYModel
             return NSAttributedString(string: "")
         }
         
-        let attachment = NSTextAttachment()
+        let attachment = MQLTextAttachment()
+        attachment.chs = chs
         attachment.image = image
         attachment.bounds = CGRect(x: 0, y: -4, width: font.lineHeight, height: font.lineHeight)
         
