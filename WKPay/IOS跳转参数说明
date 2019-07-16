@@ -1,0 +1,43 @@
+IOS跳转微信、支付宝所需协议及参数：
+
+==========================================================================================
+微信：
+
+	案例：weixin://app/wx5251fff2b8cdd759/pay/?nonceStr=1be2647f2f7019933ec15d72dbbda576&package=Sign%3DWXPay&partnerId=1519859371&prepayId=wx16172809149130642b796eb51752452200&timeStamp=1563269289&sign=2AB446A029DE8BE5038743FFF0FDE8EC&signType=SHA1
+
+
+	模板：weixin://app/%@/pay/?nonceStr=%@&package=%@&partnerId=%@&prepayId=%@&timeStamp=%@&sign=%@&signType=SHA1", appid, packageValue, noncestr, partnerid, prepayid, timeStamp,sign
+
+	所需Ping++ 参数：
+	此处%@依次代表appId、nonceStr、packageValue、partnerId、prepayId、timeStamp、sign
+
+	credential": {
+    "wx": {
+      "appId": "wx5251fff2b8cdd759",
+      "partnerId": "1519859371",
+      "prepayId": "wx151356008805155bc0c38f021613198700",
+      "nonceStr": "435d0f84bddc0df2896b3293a097ce81",
+      "timeStamp": "1563170160",
+      "packageValue": "Sign=WXPay",
+      "sign": "0B4804E643605722EDD2CE5BF9D1FB36"
+    }
+   }
+  
+==========================================================================================
+  支付宝:
+  		案例：alipay://alipayclient/?{"fromAppUrlScheme":"jurenschool","requestType":"SafePay","dataString":"app_id=2018111262080999&method=alipay.trade.app.pay&format=JSON&charset=utf-8&sign_type=RSA2&timestamp=2019-07-16%2017%3A31%3A34&version=1.0&biz_content=%7B%22body%22%3A%22%E5%B7%A8%E4%BA%BA%E7%BD%91%E6%A0%A1%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B%22%2C%22subject%22%3A%22%E5%B7%A8%E4%BA%BA%E7%BD%91%E6%A0%A1%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B%22%2C%22out_trade_no%22%3A%22587715632692871523860%22%2C%22total_amount%22%3A%22500.00%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22timeout_express%22%3A%22116m%22%7D&notify_url=https%3A%2F%2Fnotify.pingxx.com%2Fnotify%2Fcharges%2Fch_ff5ev5G4mb10aLa9u9Dqv9m1&sign=PUWQPslQB7wQcoQj1diLF2dgWmAIIwUr%2BoZEw6BtxXjLPI3rYTYtm4149srwrIfLZddsjTXM%2Bkc28rmH0Ae6eXTBsT0JOOFf3n1ho7%2FGe9PUR%2B7wPb5cSycHe000hzcPtA%2FsjSbR3WFOhW1mm9WTobQJyecbaS9TJNFqr6N6MfwiQvQY%2Fa6tbaTIP4iz7%2FSjivQDEO1tJS3g9JYKMNJSA8EuNlTDWWrCJm%2Bz0xOREspogfQ0S14vA1o%2B%2FkGS7g0rSS1AGd%2BEJLbo0ee7as25MrFzmRSySMw9tbj32S%2BE9KNrMFHee1HF2T4sZqKU6nM3Moaz3QdMu4z3PxS%2FuBStRg%3D%3D"}
+
+  		
+  		模板：alipay://alipayclient/?{\"fromAppUrlScheme\":\"jurenschool\",\"requestType\":\"SafePay\",\"dataString\":\"%@\"}  %@此处表示orderInfo
+
+	所需Ping++ 参数：orderInfo
+{
+    alipay =     {
+        orderInfo = "app_id=2018111262080999&method=alipay.trade.app.pay&format=JSON&charset=utf-8&sign_type=RSA2&timestamp=2019-07-16%2017%3A31%3A34&version=1.0&biz_content=%7B%22body%22%3A%22%E5%B7%A8%E4%BA%BA%E7%BD%91%E6%A0%A1%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B%22%2C%22subject%22%3A%22%E5%B7%A8%E4%BA%BA%E7%BD%91%E6%A0%A1%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B%22%2C%22out_trade_no%22%3A%22587715632692871523860%22%2C%22total_amount%22%3A%22500.00%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%2C%22timeout_express%22%3A%22116m%22%7D&notify_url=https%3A%2F%2Fnotify.pingxx.com%2Fnotify%2Fcharges%2Fch_ff5ev5G4mb10aLa9u9Dqv9m1&sign=PUWQPslQB7wQcoQj1diLF2dgWmAIIwUr%2BoZEw6BtxXjLPI3rYTYtm4149srwrIfLZddsjTXM%2Bkc28rmH0Ae6eXTBsT0JOOFf3n1ho7%2FGe9PUR%2B7wPb5cSycHe000hzcPtA%2FsjSbR3WFOhW1mm9WTobQJyecbaS9TJNFqr6N6MfwiQvQY%2Fa6tbaTIP4iz7%2FSjivQDEO1tJS3g9JYKMNJSA8EuNlTDWWrCJm%2Bz0xOREspogfQ0S14vA1o%2B%2FkGS7g0rSS1AGd%2BEJLbo0ee7as25MrFzmRSySMw9tbj32S%2BE9KNrMFHee1HF2T4sZqKU6nM3Moaz3QdMu4z3PxS%2FuBStRg%3D%3D";
+    };
+    object = credential;
+}
+
+
+
+
