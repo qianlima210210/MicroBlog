@@ -30,7 +30,8 @@
         [[_btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             
             NSLog(@"clicked");
-            //[self.subject sendNext:@"你收到了吗？"];
+            [self.subject sendNext:@"你收到了吗？"];
+            [self.subject sendCompleted];//sendCompleted调用后，subject将失效，需要重新创建。
             //[self sendValue:@"value" dic:@{@"name":@"RAC", @"age":@12}];
             
             //[[NSNotificationCenter defaultCenter]postNotificationName:@"NotificationName" object:@{@"name":@"RAC", @"age":@12}];

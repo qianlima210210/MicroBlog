@@ -12,6 +12,7 @@
 #import "RequestViewController.h"
 #import "DelegateViewController.h"
 #import "MainClassViewController.h"
+#import "SeasonViewController.h"
 
 @import ReactiveObjC;
 
@@ -23,7 +24,7 @@
 
 
 - (IBAction)test:(id)sender {
-    MainClassViewController *vc = [[MainClassViewController alloc]initWithNibName:@"MainClassViewController" bundle:nil];
+    SeasonViewController *vc = [[SeasonViewController alloc]initWithNibName:@"SeasonViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

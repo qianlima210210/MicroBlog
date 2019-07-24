@@ -14,15 +14,36 @@
 @property (nonatomic, strong) RACSubject *subject;
 @property (nonatomic, strong) RACReplaySubject *replaySubject;
 
+@property (nonatomic, assign) int num;
+
 @end
 
 @implementation MainClassViewController
 
+-(void)dealloc{
+    [self removeObserver:self forKeyPath:@"num"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    _num = 100;
     [self generailInit];
+    
+    //RACObserve(self, num)会自己触发一次sendNext
+    [RACObserve(self, num) subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    
+    [[RACObserve(self, num) skip:1] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    
+    [self addObserver:self forKeyPath:@"num" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+     NSLog(@"%@", change[@"new"]);
 }
 
 - (void)generailInit{
@@ -172,7 +193,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-
+    self.num += 1;
 }
 
 @end

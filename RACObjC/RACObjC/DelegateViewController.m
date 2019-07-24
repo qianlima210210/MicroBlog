@@ -47,7 +47,7 @@
         [self receivedData:x];
     }];
     
-    [self demo7];
+    //[self demo7];
 }
 
 -(void)receivedData:(NSNotification*)x{
