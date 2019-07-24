@@ -20,6 +20,14 @@
     return self;
 }
 
+- (RACSubject *)subject{
+    if (_subject == nil) {
+        _subject = [RACSubject subject];
+    }
+    
+    return _subject;
+}
+
 - (void)subcribeCommandSignals {
     @weakify(self)
     // 1. 订阅外层信号
@@ -27,33 +35,34 @@
         @strongify(self)
         // 2. 订阅内层信号
         [innerSignal subscribeNext:^(NSData *x) {
-            self.data = [NSJSONSerialization JSONObjectWithData:x options:0 error:nil];
+            [self.subject sendNext:x];
+            [self.subject sendCompleted];
+            self.subject = nil;
             self.requestStatus = HTTPRequestStatusEnd;
         }];
-        
-        self.error = nil;
+
         self.requestStatus = HTTPRequestStatusBegin;
     }];
     // 3. 订阅 errors 信号
     [self.requestData.errors subscribeNext:^(NSError * _Nullable x) {
+
         @strongify(self)
-        self.error = x;
-        self.data = nil;
         self.requestStatus = HTTPRequestStatusError; // 这一句必须放在最后一句，否者 controller 拿不到数据
+        [self.subject sendError:x];
+        self.subject = nil;
+        
     }];
 }
 
 - (RACCommand *)requestData {
     if (!_requestData) {
         @weakify(self);
-        _requestData = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSString* input) {
+        _requestData = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSDictionary *params) {
             @strongify(self);
             // 进行网络操作，同时将这个操作封装成信号 return
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                 
                 NSString *url = @"https://www.juren.cn/api/v1/common/dd/seasonlist";
-                NSDictionary *params = @{};
-                
                 [self postUrl:url params:params success:^(id  _Nonnull responseObject) {
                     [subscriber sendNext:responseObject];
                     [subscriber sendCompleted];

@@ -10,7 +10,6 @@
 #import <ReactiveObjC.h>
 #import "DataModel.h"
 
-
 typedef NS_ENUM(NSUInteger, HTTPRequestStatus) {
     HTTPRequestStatusBegin,
     HTTPRequestStatusEnd,
@@ -19,16 +18,11 @@ typedef NS_ENUM(NSUInteger, HTTPRequestStatus) {
 
 @interface ViewModel : NSObject
 
-@property (nonatomic, strong) RACCommand *requestData;
-@property(nonatomic, assign) HTTPRequestStatus requestStatus;
+@property(nonatomic, assign) HTTPRequestStatus requestStatus;   //请求状态
+@property (nonatomic, strong) RACCommand *requestData;          //外部获取数据指令
+@property (nonatomic, strong) RACSubject *subject;              //用来向外部传递信息
 
-@property (strong, nonatomic) NSDictionary *data;
-@property (strong, nonatomic) NSError* error;
-
-
-@property (nonatomic, strong) DataModel *dataModel;
-
-
+@property (nonatomic, strong) DataModel *dataModel;             //数据模型
 
 @end
 
