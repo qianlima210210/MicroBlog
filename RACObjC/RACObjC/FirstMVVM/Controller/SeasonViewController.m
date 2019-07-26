@@ -21,7 +21,7 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _viewModel = [ViewModel new];
+        _viewModel = [JRBaseViewModel new];
     }
     return self;
 }
@@ -55,7 +55,7 @@
         @strongify(self)
         
         [self.viewModel.subject subscribeNext:^(id  _Nullable x) {
-            
+            NSLog(@"%@", x);
         } error:^(NSError * _Nullable error) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             // Set the text mode to show only text.
@@ -66,7 +66,8 @@
             
         }];
         
-        [self.viewModel.requestData execute:@"96671e1a812e46dfa4264b9b39f3e225"];
+        //execute触发SignalBlock的调用
+        [self.viewModel.requestCommand execute:@"96671e1a812e46dfa4264b9b39f3e225"];
     }];
 }
 

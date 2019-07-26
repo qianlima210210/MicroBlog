@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewModel.h"
+#import "JRBaseViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SeasonViewController : UIViewController
 
-@property (nonatomic, strong) ViewModel *viewModel;
+@property (nonatomic, strong) JRBaseViewModel *viewModel;
 
 @end
 
