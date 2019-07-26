@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F49B01FDEB550DBBF7AAA79 /* Pods_RACObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23897A31607159479063A6BC /* Pods_RACObjC.framework */; };
+		D021E84A22EAAF8100915652 /* JRBaseViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = D021E84822EAAF8100915652 /* JRBaseViewMode.m */; };
 		D02F7DA322DC5890004FE15E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D02F7DA222DC5890004FE15E /* AppDelegate.m */; };
 		D02F7DA622DC5890004FE15E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02F7DA522DC5890004FE15E /* ViewController.m */; };
 		D02F7DA922DC5890004FE15E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F7DA722DC5890004FE15E /* Main.storyboard */; };
@@ -27,13 +28,14 @@
 		D02F7DD222E2B35E004FE15E /* MainClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02F7DD122E2B35E004FE15E /* MainClassViewController.xib */; };
 		D033A14622E6A6CD00533D95 /* SeasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D033A14522E6A6CD00533D95 /* SeasonViewController.xib */; };
 		D035EFF822E69048006984F4 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D035EFF722E69048006984F4 /* DataModel.m */; };
-		D035EFFB22E6905F006984F4 /* JRBaseViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = D035EFFA22E6905F006984F4 /* JRBaseViewMode.m */; };
 		D035EFFF22E691B9006984F4 /* SeasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D035EFFD22E691B9006984F4 /* SeasonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23897A31607159479063A6BC /* Pods_RACObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62411F5562654611B175B258 /* Pods-RACObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACObjC.debug.xcconfig"; path = "Target Support Files/Pods-RACObjC/Pods-RACObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		D021E84822EAAF8100915652 /* JRBaseViewMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRBaseViewMode.m; sourceTree = "<group>"; };
+		D021E84922EAAF8100915652 /* JRBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRBaseViewModel.h; sourceTree = "<group>"; };
 		D02F7D9E22DC5890004FE15E /* RACObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02F7DA122DC5890004FE15E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D02F7DA222DC5890004FE15E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		D033A14522E6A6CD00533D95 /* SeasonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonViewController.xib; sourceTree = "<group>"; };
 		D035EFF622E69048006984F4 /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		D035EFF722E69048006984F4 /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
-		D035EFF922E6905F006984F4 /* JRBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRBaseViewModel.h; sourceTree = "<group>"; };
-		D035EFFA22E6905F006984F4 /* JRBaseViewMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRBaseViewMode.m; sourceTree = "<group>"; };
 		D035EFFC22E691B9006984F4 /* SeasonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeasonViewController.h; sourceTree = "<group>"; };
 		D035EFFD22E691B9006984F4 /* SeasonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeasonViewController.m; sourceTree = "<group>"; };
 		F9D6E75850D9651DDF676EAE /* Pods-RACObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACObjC.release.xcconfig"; path = "Target Support Files/Pods-RACObjC/Pods-RACObjC.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +89,15 @@
 				23897A31607159479063A6BC /* Pods_RACObjC.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D021E84722EAAF8100915652 /* JRBaseViewMode */ = {
+			isa = PBXGroup;
+			children = (
+				D021E84822EAAF8100915652 /* JRBaseViewMode.m */,
+				D021E84922EAAF8100915652 /* JRBaseViewModel.h */,
+			);
+			path = JRBaseViewMode;
 			sourceTree = "<group>";
 		};
 		D02F7D9522DC5890004FE15E = {
@@ -146,8 +155,8 @@
 		D035EFF122E68E3C006984F4 /* FirstMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				D021E84722EAAF8100915652 /* JRBaseViewMode */,
 				D035EFF422E68F86006984F4 /* DataModel */,
-				D035EFF522E68F8F006984F4 /* ViewModel */,
 				D035EFF322E68F7F006984F4 /* View */,
 				D035EFF222E68F69006984F4 /* Controller */,
 			);
@@ -178,15 +187,6 @@
 				D035EFF722E69048006984F4 /* DataModel.m */,
 			);
 			path = DataModel;
-			sourceTree = "<group>";
-		};
-		D035EFF522E68F8F006984F4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				D035EFF922E6905F006984F4 /* JRBaseViewModel.h */,
-				D035EFFA22E6905F006984F4 /* JRBaseViewMode.m */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EAA27B7F0CB84D07BD96BFD7 /* Pods */ = {
@@ -330,12 +330,12 @@
 				D02F7DA622DC5890004FE15E /* ViewController.m in Sources */,
 				D02F7DD022E2B2D5004FE15E /* MainClassViewController.m in Sources */,
 				D02F7DC922E06A8F004FE15E /* DelegateViewController.m in Sources */,
-				D035EFFB22E6905F006984F4 /* JRBaseViewMode.m in Sources */,
 				D02F7DC422DF5C45004FE15E /* RequestViewController.m in Sources */,
 				D02F7DBF22DDFF52004FE15E /* RGBViewController.m in Sources */,
 				D02F7DB122DC5892004FE15E /* main.m in Sources */,
 				D035EFFF22E691B9006984F4 /* SeasonViewController.m in Sources */,
 				D02F7DCD22E06B04004FE15E /* ContentView.m in Sources */,
+				D021E84A22EAAF8100915652 /* JRBaseViewMode.m in Sources */,
 				D02F7DA322DC5890004FE15E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
