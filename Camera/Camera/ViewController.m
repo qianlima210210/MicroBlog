@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <Photos/Photos.h>
 
+
+
 @interface ViewController ()<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *cameraContainerView;
 @property (strong, nonatomic) UIImagePickerController *controller;
@@ -29,6 +31,8 @@
 //拍照
 - (IBAction)take:(id)sender {
     [_controller takePicture];//会触发didFinishPickingMediaWithInfo回调
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -86,15 +90,24 @@
     _controller.allowsEditing = NO;
     _controller.delegate = self;
     _controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
-    _controller.showsCameraControls = NO;
+    //_controller.showsCameraControls = NO;
     
-    //[self.navigationController presentViewController:_controller animated:YES completion:nil];
-    [_cameraContainerView addSubview:_controller.view];
+//    CGSize screenBounds = _cameraContainerView.bounds.size;
+//    CGFloat cameraAspectRatio = 4.0f/3.0f;
+//    CGFloat camViewHeight = screenBounds.width * cameraAspectRatio;
+//    CGFloat scale = screenBounds.height / camViewHeight;
+//    _controller.cameraViewTransform = CGAffineTransformMakeTranslation(0, (screenBounds.height - camViewHeight) / 2.0);
+//    _controller.cameraViewTransform = CGAffineTransformScale(_controller.cameraViewTransform, scale, scale);
+    
+    [self.navigationController presentViewController:_controller animated:YES completion:nil];
+//    _controller.view.frame = _cameraContainerView.bounds;
+//    [_cameraContainerView addSubview:_controller.view];
+    
+    //注释掉，说明UIImagePickerController自定义相机不合适。
 }
 
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    _controller.view.frame = _cameraContainerView.bounds;
 }
 
 //照相机是否可用
@@ -205,7 +218,7 @@
 
 //MARK: UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> *)info{
-    //[picker dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     NSString *mediaType = info[@"UIImagePickerControllerMediaType"];
     if ([mediaType isEqualToString:@"public.image"]) {
         UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
@@ -216,7 +229,7 @@
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     }
     
-    [_controller.view removeFromSuperview];
+    //[_controller.view removeFromSuperview];
     _controller = nil;
 }
 
@@ -229,8 +242,8 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    //[picker dismissViewControllerAnimated:YES completion:nil];
-    [_controller.view removeFromSuperview];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    //[_controller.view removeFromSuperview];
     _controller = nil;
 }
 
