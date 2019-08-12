@@ -8,7 +8,7 @@
 
 import Cocoa
 import AppKit
-
+import SnapKit
 
 
 @NSApplicationMain
@@ -91,7 +91,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if self.tempVC == nil {
             //县创建window
             let frame = CGRect(x: 0, y: 0, width: 400, height: 280)
-            let style : NSWindow.StyleMask = [NSWindow.StyleMask.titled,NSWindow.StyleMask.closable,NSWindow.StyleMask.resizable]
+            let style : NSWindow.StyleMask = [NSWindow.StyleMask.titled,
+                                              NSWindow.StyleMask.closable,
+                                              NSWindow.StyleMask.resizable,
+                                                NSWindow.StyleMask.miniaturizable]
             let myWindow = NSWindow(contentRect:frame, styleMask:style, backing:.buffered, defer:false)
             myWindow.title = "New Create Window"
             
@@ -120,14 +123,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func addButtonToTitleBar(){
-        let titleView = self.window.standardWindowButton(.closeButton)?.superview
+        guard let titleView = self.window.standardWindowButton(.closeButton)?.superview else {
+            return
+        }
+        
         let button = NSButton()
-        let x = (self.window.contentView?.frame.size.width)! - 100
-        let frame = CGRect(x: x, y: 0, width: 80, height: 24)
-        button.frame = frame
+//        let x = (self.window.contentView?.frame.size.width)! - 100
+//        let frame = CGRect(x: x, y: 0, width: 80, height: 24)
+//        button.frame = frame
         button.title = "Register"
         button.bezelStyle = .rounded
-        titleView?.addSubview(button)
+        titleView.addSubview(button)
+        
+        button.snp.makeConstraints { (make) in
+            make.right.equalTo(titleView.snp.right).offset(-5)
+            make.width.equalTo(80)
+            make.height.equalTo(titleView.snp.height).offset(-14)
+            make.centerY.equalToSuperview()
+        }
     }
 
 }
