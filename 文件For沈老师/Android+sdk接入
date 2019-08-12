@@ -1,0 +1,37 @@
+直播sdk
+1. 百家云 直播
+2：拓课云  直播+回放（code）
+
+
+第三方： 统一gradle集成接入
+
+
+友盟统计 统计
+growingio 数据分析
+听云 数据分析
+智齿客服
+阿里云推送
+支付宝支付
+微信支付 分享
+ping++ 支付
+驰声  语音评测
+
+rxjava+rxandroid+retrofit+okhttp+fastjson  网络架构实现
+autodispose 生命周期处理
+material-dialogs 对话框dialog
+timber 日志打印
+leakcanary 性能检测
+Matisse +glide+ucrop 图片选择库+图片处理+图片裁剪
+jsbridge js调用
+aspectj aop
+livedata+room+ktx+kodein  android Jetpack +kotlin 支持
+Androidx系列 系统支持控件 界面布局
+
+
+
+
+本地缓存 ：
+
+Hawk 键值对缓存
+ObjectBox 数据库缓存
+room 数据库缓存
