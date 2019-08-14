@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -668,23 +669,26 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="View" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="View" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="465" height="341"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="465" height="341"/>
+            <value key="maxSize" type="size" width="465" height="341"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="465" height="341"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="9n2-PE-SIy" customClass="CustomView" customModule="View" customModuleProvider="target">
-                        <rect key="frame" x="125" y="139" width="231" height="182"/>
+                        <rect key="frame" x="0.0" y="0.0" width="231" height="182"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="182" id="0UT-jQ-R0k"/>
+                            <constraint firstAttribute="height" constant="182" id="Emy-gX-u0U"/>
+                            <constraint firstAttribute="width" constant="231" id="rl8-Be-C4n"/>
                         </constraints>
                     </customView>
-                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-re-rs7">
-                        <rect key="frame" x="151" y="38" width="162" height="32"/>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-re-rs7">
+                        <rect key="frame" x="283" y="64" width="162" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="7nQ-el-DXn"/>
                             <constraint firstAttribute="height" constant="21" id="Poh-b9-q8l"/>
@@ -699,14 +703,13 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Zhg-re-rs7" secondAttribute="bottom" constant="46" id="3a0-v1-Qcz"/>
-                    <constraint firstAttribute="trailing" secondItem="9n2-PE-SIy" secondAttribute="trailing" constant="109" id="5tt-Rh-fqW"/>
-                    <constraint firstItem="Zhg-re-rs7" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="118" id="74W-vL-nEY"/>
-                    <constraint firstItem="9n2-PE-SIy" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="8pV-3F-iRw"/>
-                    <constraint firstItem="9n2-PE-SIy" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="125" id="y5h-hy-AGP"/>
+                    <constraint firstAttribute="bottom" secondItem="Zhg-re-rs7" secondAttribute="bottom" constant="71" id="3a0-v1-Qcz"/>
+                    <constraint firstItem="Zhg-re-rs7" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="289" id="74W-vL-nEY"/>
+                    <constraint firstItem="9n2-PE-SIy" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="9fl-ng-Y1l"/>
+                    <constraint firstAttribute="bottom" secondItem="9n2-PE-SIy" secondAttribute="bottom" id="xoL-48-zIg"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="131.5" y="-114.5"/>
+            <point key="canvasLocation" x="102" y="-222"/>
         </window>
     </objects>
 </document>

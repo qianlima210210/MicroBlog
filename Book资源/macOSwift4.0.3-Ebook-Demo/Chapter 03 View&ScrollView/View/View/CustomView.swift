@@ -74,7 +74,8 @@ final class CustomView: NSView {
             let imageData = rep?.representation(using:.png, properties: [:])
             let fileManager = FileManager.default
             //写死的文件路径
-            let path = "/Users/idevfans/Documents/myCapture.png"
+            //let path = "/Users/maqianli/Documents/myCapture.png"
+            let path = String(format: "/Users/maqianli/Documents/myCapture%d.png", arguments: [i])
             fileManager.createFile(atPath: path, contents: imageData, attributes: nil)
             
             //定位文件路径
@@ -84,6 +85,7 @@ final class CustomView: NSView {
     }
     
     func saveSelfAsImage() {
+        
         self.lockFocus()
         let image = NSImage(data:self.dataWithPDF(inside: self.bounds))
         self.unlockFocus()
@@ -91,7 +93,7 @@ final class CustomView: NSView {
         
         let fileManager = FileManager.default
         //写死的文件路径
-        let path = "/Users/idevfans/Documents/myCapture.png"
+        let path = "/Users/maqianli/Documents/myCapture.png"
         fileManager.createFile(atPath: path, contents: imageData, attributes: nil)
         
         //定位文件路径
