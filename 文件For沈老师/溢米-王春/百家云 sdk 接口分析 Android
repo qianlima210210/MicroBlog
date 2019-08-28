@@ -1,0 +1,57 @@
+1：直播 
+
+
+(1)通过参加码进入直播间
+/**
+* 通过参加码进入房间
+* @param context
+* @param code     参加码
+* @param name     昵称
+* @param listener = onSuccess() onError()
+*/
+LiveSDKWithUI.enterRoom(context, code, name, listener);
+
+(2)通过roomId和sign进入进入直播间
+/**
+*
+* @param context
+* @param roomId   房间号
+* @param sign     签名
+* @param model    用户model (包含昵称、头像、角色等)
+* @param listener listener = onSuccess() onError()
+*/
+LiveSDKWithUI.enterRoom(context, roomId, sign, model, listener);
+
+签名：
+Sign生成规则
+百家视频云每个接口除了传递业务参数外，还有一个用于校验的sign参数。具体规则如下：
+
+sign的生成规则如下：
+将请求参数按key字典顺序(ASCII值大小)升序排序。
+将排好序的参数接成key1=value1&key2=value2&...&keyN=valueN。
+将以上拼好的串后面再拼上&partner_key=<partner_key>，其中<partner_key>替换成具体值。
+对以上拼好的串算一个32位md5值（小写），即得到了签名。
+
+2：点播
+
+Intent intent = new Intent(VideoLauncherActivity.this, VideoPlayActivity.class);
+ intent.putExtra("videoId", Long.parseLong(videoId)); // videoId
+ intent.putExtra("token", videoToken); //token
+ intent.putExtra("isOffline", false); //是否在线播放
+ startActivity(intent);
+
+3：回放
+
+
+/**
+  * 进入回放标准UI界面
+  *
+  * @param context                     Activity
+  * @param roomId                      房间id
+  * @param roomToken                   token
+  * @param sessionId                   sessionId 长期课才需要填，非长期课默认传-1
+  * @param onEnterPBRoomFailedListener 进房间错误监听，可为null
+  */
+public static void enterPBRoom(Context context, String roomId, String roomToken, String sessionId, OnEnterPBRoomFailedListener onEnterPBRoomFailedListener)
+
+OnEnterPBRoomFailedListener
